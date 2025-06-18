@@ -1,16 +1,18 @@
-from cag import generate, clean_up
+from cag import get_answer
+from cache_params import CACHE_PATH
+import torch
 
-def test(model, tokenizer, device, my_cache, origin_len):
+def test(model, tokenizer, device):
     questions = [
-        "Who was Napoleon Bonaparte?",
-        "Who was Albert Einstein?",
-        "What happened after the breakdown of the Treaty of Amiens?",
+        "Who is Roberto Anselmi?",
+        "What is Roberto Anselmi's father's job?",
+        "What city does Roberto Anselmi live in?",
+        "What color are Roberto Anselmi's eyes?",
+        "What are Roberto Anselmi's favorite writers?",
+        "What is Roberto Anselmi's cat called?"
     ]
     for question in questions:
-        input_ids_q = tokenizer(question + "\n", return_tensors="pt").input_ids.to(device)
-        gen_ids_q = generate(model, input_ids_q, my_cache)
-        answer = tokenizer.decode(gen_ids_q[0], skip_special_tokens=True)
+        loaded_cache = torch.load(CACHE_PATH)
         print("Q:", question)
+        answer = get_answer(question, tokenizer, model, device, loaded_cache)
         print("A:", answer)
-        clean_up(my_cache, origin_len)
-

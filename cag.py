@@ -127,7 +127,6 @@ def clean_up(cache: DynamicCache, origin_len: int) -> None:
         
 
 def save_cache(my_cache: DynamicCache, origin_len: int) -> None:
-    clean_up(my_cache, origin_len)
     os.makedirs(CACHE_DIR, exist_ok=True)
     torch.save(my_cache, CACHE_PATH)
 

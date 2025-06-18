@@ -9,7 +9,7 @@ def build_system_prompt():
 
     system_prompt = f"""
     <|system|>
-    You are an assistant who provides concise factual answers.
+    You are an assistant who provides concise factual answers based on the context provided.
     <|user|>
     Context: 
     {context}

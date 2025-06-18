@@ -17,8 +17,7 @@ def main():
     if not os.path.exists(CACHE_PATH):
         print("Cache not found, generating new cache...")
         my_cache = get_kv_cache(model, tokenizer, system_prompt)
-        origin_len = my_cache.key_cache[0].shape[-2]
-        save_cache(my_cache, origin_len)
+        save_cache(my_cache)
         print("Cache saved successfully.")
  
     test(model, tokenizer, device)

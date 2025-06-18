@@ -16,4 +16,4 @@ def test(model, tokenizer, device):
         print("Q:", question)
         answer = get_answer(question, tokenizer, model, device, loaded_cache)
         print("A:", answer)
-        clean_up(loaded_cache, loaded_cache.key_cache[0].shape[-2])
+        clean_up(loaded_cache)

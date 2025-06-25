@@ -1,3 +1,9 @@
+# Prerequisites
+[Python](https://www.python.org/)
+pip
+
+# Instructions
+
 ## (Optional) Create and activate venv
 `python -m venv .venv`
 

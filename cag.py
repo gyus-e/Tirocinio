@@ -4,7 +4,7 @@ from typing import Optional
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from transformers.cache_utils import DynamicCache
 from hf_token import hf_token as HF_TOKEN
-from cache_params import CACHE_PATH, CACHE_DIR
+from params import CACHE_PATH, CACHE_DIR
 
 
 def load_llm(model_name: str = "meta-llama/Llama-3.2-1B-Instruct") -> tuple[AutoModelForCausalLM, AutoTokenizer, str]:

@@ -3,10 +3,8 @@ import torch
 from transformers.cache_utils import DynamicCache
 from cag import load_llm, get_device, get_kv_cache, save_cache
 from prompt import build_system_prompt
-from llm_model import MODEL_NAME
-from cache_params import CACHE_PATH
+from params import MODEL_NAME, CACHE_PATH
 from test import test
-
 
 def main():
     torch.serialization.add_safe_globals([DynamicCache])

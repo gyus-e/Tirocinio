@@ -1,11 +1,14 @@
-def build_context():
-    with open("documents/document.txt", "r", encoding="utf-8") as file:
-        doc_text = file.read()
-    return doc_text
+from DocumentsManager import DocumentsManager
+from llama_index.core import Document
+
+def build_context() -> list[Document]:
+    documents = DocumentsManager.get_documents()
+    return documents
 
 
 def build_system_prompt():
-    context = build_context()
+    documents = build_context()
+    context = "\n".join([doc.text for doc in documents])
 
     system_prompt = f"""
     <|system|>

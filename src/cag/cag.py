@@ -7,12 +7,6 @@ from transformers.cache_utils import DynamicCache
 from hf_token import HF_TOKEN as HF_TOKEN
 from params import CACHE_PATH, CACHE_DIR, MODEL_NAME
 from .CAGModelManager import CAGModelManager
-from ..custom_types import DeviceType
-
-
-
-def get_device_type() -> DeviceType:
-    return DeviceType.CUDA if torch.cuda.is_available() else DeviceType.CPU
 
 
 
@@ -25,10 +19,10 @@ def generate(model, input_ids, past_key_values, max_new_tokens: int = 50) -> tor
     """@param max_new_tokens: The maximum number of new tokens to generate."""
     """@return: A tensor containing the generated token IDs."""
 
-    device: torch.device = CAGModelManager.get_device()
+    torch_device: torch.device = CAGModelManager.get_torch_device()
     origin_len: int = input_ids.shape[-1]
 
-    input_ids = input_ids.to(device)
+    input_ids = input_ids.to(torch_device)
 
     output_ids: torch.Tensor = input_ids.clone()
     next_token: torch.Tensor = input_ids
@@ -53,7 +47,7 @@ def generate(model, input_ids, past_key_values, max_new_tokens: int = 50) -> tor
             past_key_values = out.past_key_values
             
             # The newly generated token becomes the input for the next iteration
-            next_token = token.to(device)
+            next_token = token.to(torch_device)
 
             # Terminate early if an end-of-sequence token is generated
             if model.config.eos_token_id is not None and token.item() == model.config.eos_token_id:
@@ -71,11 +65,11 @@ def get_kv_cache(model, tokenizer, prompt: str) -> DynamicCache:
     """@param prompt: a string input used as the prompt"""
     """@return: DynamicCache object containing the key-value cache."""
 
-    device: torch.device = CAGModelManager.get_device()
-    print(f"Using device: {device}")
+    torch_device: torch.device = CAGModelManager.get_torch_device()
+    print(f"Using device: {torch_device}")
 
     # Tokenize the prompt using the tokenizer and convert it into input IDs
-    input_ids: torch.Tensor = tokenizer(prompt, return_tensors="pt").input_ids.to(device)
+    input_ids: torch.Tensor = tokenizer(prompt, return_tensors="pt").input_ids.to(torch_device)
     print("Prompt tokenized.")
 
     # Initialize the DynamicCache object

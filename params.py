@@ -1,6 +1,8 @@
 import os 
+from GenerationType import GenerationType
 
 
+GENERATION_TYPE: GenerationType = GenerationType.CAG
 SYSTEM_PROMPT = "You are an assistant who provides concise factual answers based on the context provided."
 DOCUMENTS_DIR = "documents"
 

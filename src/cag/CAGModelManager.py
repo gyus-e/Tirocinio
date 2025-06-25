@@ -33,7 +33,7 @@ class CAGModelManager:
     
 
     @classmethod
-    def get_device(cls) -> torch.device:
+    def get_torch_device(cls) -> torch.device:
         # Mistral/Llama models
         if hasattr(cls._model, 'model') and hasattr(cls._model.model, 'embed_tokens'):
             device = cls._model.model.embed_tokens.weight.device

@@ -4,9 +4,10 @@ import torch
 from transformers.cache_utils import DynamicCache
 from params import MODEL_NAME, CACHE_PATH
 from src.prompt import build_system_prompt
-from src.settings import load_model, init_llama_index_settings
-from src.cag import get_device, get_kv_cache, save_cache
-from src.test import test_cag, test_rag
+from src.cag.load_model import load_model
+from src.cag.cag import get_device, get_kv_cache, save_cache
+from src.rag.llama_index_settings import init_llama_index_settings
+from test import test_cag, test_rag
 
 
 async def main():
@@ -15,7 +16,7 @@ async def main():
     model.eval()
 
     with torch.no_grad():
-        await run_rag_test(model, tokenizer)
+        await run_rag_test()
         run_cag_test(model, tokenizer)
     
 
@@ -32,8 +33,8 @@ def run_cag_test(model, tokenizer):
     test_cag(model, tokenizer, device)
 
 
-async def run_rag_test(model, tokenizer):
-    init_llama_index_settings(model, tokenizer)
+async def run_rag_test():
+    init_llama_index_settings()
     await test_rag()
 
 

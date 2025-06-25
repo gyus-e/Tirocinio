@@ -4,8 +4,8 @@ from transformers.models.auto.modeling_auto import AutoModelForCausalLM
 from llama_index.core.workflow import Context
 from llama_index.core.agent.workflow import AgentWorkflow
 from params import CACHE_PATH
-from .cag import get_answer, clean_up
-from .rag.RAGAgentManager import RAGAgentManager
+from src.cag.cag import get_answer, clean_up
+from src.rag.RAGAgentManager import RAGAgentManager
 
 
 delimiter = "\n"

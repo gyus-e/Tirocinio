@@ -7,7 +7,7 @@ from transformers.cache_utils import DynamicCache
 from llama_index.core import Settings
 from hf_token import HF_TOKEN as HF_TOKEN
 from params import CACHE_PATH, CACHE_DIR, MODEL_NAME
-from .custom_types import DeviceType
+from ..custom_types import DeviceType
 
 
 

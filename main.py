@@ -12,9 +12,11 @@ from src.test import test_cag, test_rag
 async def main():
     torch.serialization.add_safe_globals([DynamicCache])
     model, tokenizer = load_model(MODEL_NAME)
+    model.eval()
 
-    run_cag_test(model, tokenizer)
-    await run_rag_test(model, tokenizer)
+    with torch.no_grad():
+        await run_rag_test(model, tokenizer)
+        run_cag_test(model, tokenizer)
     
 
 def run_cag_test(model, tokenizer):

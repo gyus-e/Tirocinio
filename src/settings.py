@@ -1,14 +1,14 @@
 import torch
+from llama_index.core import Settings
 from transformers.models.auto.tokenization_auto import AutoTokenizer
 from transformers.models.auto.modeling_auto import AutoModelForCausalLM
-from llama_index.core import Settings
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 
 #FOR TESTING
-from llama_index.llms.huggingface import HuggingFaceLLM
-from llama_index.llms.ollama import Ollama
+# from llama_index.llms.huggingface import HuggingFaceLLM
+# from llama_index.llms.ollama import Ollama
 from llama_index.llms.openai import OpenAI
 
-from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from hf_token import HF_TOKEN
 from params import (
     MODEL_NAME,

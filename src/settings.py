@@ -41,7 +41,17 @@ def load_model(model_name: str = MODEL_NAME) :
 
 def init_llama_index_settings(model, tokenizer) -> None:
     # TODO: wrap the model and the tokenizer in a llama-index compatible format.
-    # Settings.llm = model
+    # Settings.llm = HuggingFaceLLM(
+    #     model=model,
+    #     tokenizer=tokenizer,
+    #     context_window=CONTEXT_WINDOW,
+    #     device_map="auto",
+    # )
+
+    # for testing
+    Settings.llm = OpenAI(
+        model="gpt-3.5-turbo"
+    )
 
     # Leave to default to use tiktoken, which is compatible with OpenAI models.
     # Settings.tokenizer = tokenizer
@@ -50,5 +60,5 @@ def init_llama_index_settings(model, tokenizer) -> None:
         model_name=EMBED_MODEL_NAME,
     )
 
-    Settings.chunk_size = CHUNK_SIZE
-    Settings.chunk_overlap = CHUNK_OVERLAP
+    # Settings.chunk_size = CHUNK_SIZE
+    # Settings.chunk_overlap = CHUNK_OVERLAP

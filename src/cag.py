@@ -3,24 +3,16 @@ import torch
 from typing import Optional
 from transformers import AutoTokenizer, AutoModelForCausalLM
 from transformers.cache_utils import DynamicCache
-from hf_token import hf_token as HF_TOKEN
-from params import CACHE_PATH, CACHE_DIR
+from llama_index.core import Settings
+from hf_token import HF_TOKEN as HF_TOKEN
+from params import CACHE_PATH, CACHE_DIR, MODEL_NAME
+from .custom_types import DeviceType
 
 
-def load_llm(model_name: str = "meta-llama/Llama-3.2-1B-Instruct") -> tuple[AutoModelForCausalLM, AutoTokenizer, str]:
-    tokenizer: AutoTokenizer = AutoTokenizer.from_pretrained(model_name, token=HF_TOKEN, trust_remote_code=True)
-    model: AutoModelForCausalLM = AutoModelForCausalLM.from_pretrained(
-        model_name,
-        torch_dtype=torch.float16 if torch.cuda.is_available() else torch.float32,
-        device_map="auto",
-        trust_remote_code=True,
-        token=HF_TOKEN,
-    )
 
-    device_type: str = "cuda" if torch.cuda.is_available() else "cpu"
-    print(f"Loaded {model_name}")
+def get_device_type() -> DeviceType:
+    return DeviceType.CUDA if torch.cuda.is_available() else DeviceType.CPU
 
-    return model, tokenizer, device_type
 
 
 def get_device(model) -> torch.device:
@@ -37,6 +29,7 @@ def get_device(model) -> torch.device:
         device = next(model.parameters()).device
 
     return device
+
 
 
 def generate(model, input_ids, past_key_values, max_new_tokens: int = 50) -> torch.Tensor:
@@ -85,6 +78,7 @@ def generate(model, input_ids, past_key_values, max_new_tokens: int = 50) -> tor
     return output_ids[:, origin_len:]
 
 
+
 def get_kv_cache(model, tokenizer, prompt: str) -> DynamicCache:
     """prepares a reusable key-value cache for a transformer model's attention mechanism."""
     """passes a prompt through the model once, creating a KV cache that records all the hidden states from each layer"""
@@ -117,6 +111,7 @@ def get_kv_cache(model, tokenizer, prompt: str) -> DynamicCache:
     return cache
     
 
+
 def clean_up(cache: DynamicCache, origin_len: Optional[int] = None) -> None:
     """Cleans the key-value cache by removing unnecessary entries"""
     """Trims a DynamicCache object to match the original sequence length by removing additional tokens added during processing"""
@@ -130,9 +125,11 @@ def clean_up(cache: DynamicCache, origin_len: Optional[int] = None) -> None:
         cache.value_cache[i] = cache.value_cache[i][:, :, origin_len:, :]
         
 
+
 def save_cache(my_cache: DynamicCache) -> None:
     os.makedirs(CACHE_DIR, exist_ok=True)
     torch.save(my_cache, CACHE_PATH)
+
 
 
 def get_answer(question: str, tokenizer, model: AutoModelForCausalLM, device: torch.device, loaded_cache: DynamicCache) -> str:
@@ -143,6 +140,7 @@ def get_answer(question: str, tokenizer, model: AutoModelForCausalLM, device: to
     # Decode the final result with tokenizer.decode
     answer = tokenizer.decode(gen_ids_q[0], skip_special_tokens=True)
     return answer.strip()
+
 
 
 def get_origin_len(cache: DynamicCache) -> int:

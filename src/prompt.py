@@ -1,5 +1,6 @@
-from DocumentsManager import DocumentsManager
 from llama_index.core import Document
+from params import SYSTEM_PROMPT
+from .DocumentsManager import DocumentsManager
 
 def build_context() -> list[Document]:
     documents = DocumentsManager.get_documents()
@@ -12,7 +13,7 @@ def build_system_prompt():
 
     system_prompt = f"""
     <|system|>
-    You are an assistant who provides concise factual answers based on the context provided.
+    {SYSTEM_PROMPT}
     <|user|>
     Context: 
     {context}

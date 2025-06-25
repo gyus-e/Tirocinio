@@ -1,5 +1,5 @@
 from llama_index.core import Document, SimpleDirectoryReader
-from params import documents_dir
+from params import DOCUMENTS_DIR
 
 class DocumentsManager:
     _documents:list[Document]
@@ -17,7 +17,7 @@ class DocumentsManager:
     def _load_documents(cls):
         print("Loading documents from directory...")
 
-        cls._documents = SimpleDirectoryReader(input_dir=documents_dir).load_data()
+        cls._documents = SimpleDirectoryReader(input_dir=DOCUMENTS_DIR).load_data()
 
         print(f"Loaded {len(cls._documents)} documents.")
         cls._initialized = True

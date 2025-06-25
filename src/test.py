@@ -1,8 +1,9 @@
-from cag import get_answer, clean_up
-from params import CACHE_PATH
 import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
+from params import CACHE_PATH
+from .cag import get_answer, clean_up
 
-def test(model, tokenizer, device):
+def test(model, tokenizer, device: torch.device):
     questions = [
         "Can you tell me what the context is about?",
         "What city does My best friend live in?",

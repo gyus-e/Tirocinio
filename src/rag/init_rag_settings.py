@@ -19,7 +19,7 @@ from params import (
 )
 
 
-def init_llama_index_settings(model_name = MODEL_NAME) -> None:
+def init_rag_settings(model_name = MODEL_NAME) -> None:
     
     # Leave default tokenizer to use tiktoken, which is compatible with OpenAI models.
     # Settings.tokenizer = AutoTokenizer.from_pretrained(

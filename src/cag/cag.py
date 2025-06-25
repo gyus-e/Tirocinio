@@ -4,32 +4,15 @@ from typing import Optional
 from transformers.models.auto.tokenization_auto import AutoTokenizer
 from transformers.models.auto.modeling_auto import AutoModelForCausalLM
 from transformers.cache_utils import DynamicCache
-from llama_index.core import Settings
 from hf_token import HF_TOKEN as HF_TOKEN
 from params import CACHE_PATH, CACHE_DIR, MODEL_NAME
+from .CAGModelManager import CAGModelManager
 from ..custom_types import DeviceType
 
 
 
 def get_device_type() -> DeviceType:
     return DeviceType.CUDA if torch.cuda.is_available() else DeviceType.CPU
-
-
-
-def get_device(model) -> torch.device:
-    # Mistral/Llama models
-    if hasattr(model, 'model') and hasattr(model.model, 'embed_tokens'):
-        device = model.model.embed_tokens.weight.device
-    
-    # GPT-2 models
-    elif hasattr(model, 'transformer') and hasattr(model.transformer, 'wte'):
-        device = model.transformer.wte.weight.device
-    
-    # Fallback to first parameter device
-    else:
-        device = next(model.parameters()).device
-
-    return device
 
 
 
@@ -42,7 +25,7 @@ def generate(model, input_ids, past_key_values, max_new_tokens: int = 50) -> tor
     """@param max_new_tokens: The maximum number of new tokens to generate."""
     """@return: A tensor containing the generated token IDs."""
 
-    device: torch.device = get_device(model)
+    device: torch.device = CAGModelManager.get_device()
     origin_len: int = input_ids.shape[-1]
 
     input_ids = input_ids.to(device)
@@ -88,7 +71,7 @@ def get_kv_cache(model, tokenizer, prompt: str) -> DynamicCache:
     """@param prompt: a string input used as the prompt"""
     """@return: DynamicCache object containing the key-value cache."""
 
-    device: torch.device = get_device(model)
+    device: torch.device = CAGModelManager.get_device()
     print(f"Using device: {device}")
 
     # Tokenize the prompt using the tokenizer and convert it into input IDs
@@ -133,7 +116,7 @@ def save_cache(my_cache: DynamicCache) -> None:
 
 
 
-def get_answer(question: str, tokenizer, model: AutoModelForCausalLM, device: torch.device, loaded_cache: DynamicCache) -> str:
+def get_answer(question: str, tokenizer, model, device: torch.device, loaded_cache: DynamicCache) -> str:
     # Call generate to produce the answer
     input_ids_q = tokenizer(question + "\n", return_tensors="pt").input_ids.to(device)
     gen_ids_q = generate(model, input_ids_q, loaded_cache, max_new_tokens=100)

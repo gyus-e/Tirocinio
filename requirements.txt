@@ -1,11 +1,11 @@
 torch
-transformers
 accelerate
+hf_xet
+transformers
+llama-index
 llama-index-core
 llama-index-readers-file
 llama-index-embeddings-huggingface
-
-#temporary
+llama-index-llms-huggingface
 llama-index-llms-openai 
 llama-index-llms-ollama
-llama-index-llms-huggingface

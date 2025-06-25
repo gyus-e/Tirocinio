@@ -1,5 +1,5 @@
 def build_context():
-    with open("document.txt", "r", encoding="utf-8") as file:
+    with open("documents/document.txt", "r", encoding="utf-8") as file:
         doc_text = file.read()
     return doc_text
 

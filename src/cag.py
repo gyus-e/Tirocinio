@@ -1,7 +1,8 @@
 import os
 import torch
 from typing import Optional
-from transformers import AutoTokenizer, AutoModelForCausalLM
+from transformers.models.auto.tokenization_auto import AutoTokenizer
+from transformers.models.auto.modeling_auto import AutoModelForCausalLM
 from transformers.cache_utils import DynamicCache
 from llama_index.core import Settings
 from hf_token import HF_TOKEN as HF_TOKEN

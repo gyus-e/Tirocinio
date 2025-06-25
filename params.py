@@ -24,5 +24,5 @@ VECTOR_STORE_DIR = "storage/vector_store"
 # CAG Parameters
 
 CACHE_DIR = "storage"
-CACHE_NAME = "my_knowledge.cache"
+CACHE_NAME = "cag.cache"
 CACHE_PATH = os.path.join(CACHE_DIR, CACHE_NAME)

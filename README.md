@@ -11,6 +11,7 @@
 
 ## Install dependencies
 - `pip install -r requirements-lock.txt`
+
 Some libraries tend to change quite often, so stick to `requirements-lock.txt` to get a working version.
 Only use `requirements.txt` if you know what you're doing and are prepared to change the code in case something breaks.
 
@@ -32,7 +33,7 @@ You can change the values of the variables in the file `config.py` to your likin
 - `python main.py`
 
 ## Cleanup
-You can clean the cache and the vector store by deleting the `storage` folder.
-You can safely delete all __pycache__ folders.
-You can perform a clean install by deleting the `.venv` folder and repeating the instructions from the start.
-You can also delete the downloaded HuggingFace models (stored at the path pointed by the `HF_HOME` environment variable).
+- You can clean the cache and the vector store by deleting the `storage` folder.
+- You can safely delete all __pycache__ folders.
+- You can perform a clean install by deleting the `.venv` folder and repeating the instructions from the start.
+- You can also delete the downloaded HuggingFace models (stored at the path pointed by the `HF_HOME` environment variable).

@@ -20,8 +20,10 @@ In the `.env` file, change the value of HF_TOKEN at the following line:
 - ```HF_TOKEN = "SET_YOUR_HF_TOKEN_HERE"```
 
 You can optionally set other environment variables:
-- `HF_HOME`: set the download path of HuggingFace models (defaults at: `C:\Users\<YourUsername>\.cache\huggingface\hub` on Windows; `~/.cache/huggingface/hub` on Linux/macOS)
-- `OPENAI_API_KEY`: if you plan to use OpenAI models for RAG;
+- `HF_HOME`: set the download path of HuggingFace models (defaults at: `C:\Users\<YourUsername>\.cache\huggingface\hub` on Windows; `~/.cache/huggingface/hub` on Linux/macOS);
+- `OPENAI_API_KEY`: if you plan to use [OpenAI](https://openai.com/api/) models for RAG.
+
+- Note: to make the software portable, it's recommended to set `HF_HOME` to a directory within the root of this application, such as `./models`.
 
 ## (Optional) Edit the configuration
 You can change the values of the variables in the file `config.py` to your liking.

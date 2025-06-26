@@ -29,6 +29,10 @@ You can optionally set other environment variables:
 ## (Optional) Edit the configuration
 You can change the values of the variables in the file `config.py` to your liking.
 
+## Add the context documents
+Delete the placeholder documents in the `documents` folder and replace them with the documents that will provide the context for the LLM's responses.
+Supported formats are: `.txt|.json|.pdf`
+
 ## Run the script
 - `python main.py`
 

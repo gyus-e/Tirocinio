@@ -2,7 +2,7 @@ from llama_index.core import Settings
 from llama_index.core.agent.workflow import AgentWorkflow
 from .ragTools import search_documents
 from .QueryEngineManager import QueryEngineManager
-from params import SYSTEM_PROMPT
+from config import SYSTEM_PROMPT
 
 class RAGAgentManager:
     _rag_agent: AgentWorkflow

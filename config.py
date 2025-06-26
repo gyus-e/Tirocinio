@@ -1,18 +1,17 @@
 import os 
-from GenerationType import GenerationType
 
-
-GENERATION_TYPE: GenerationType = GenerationType.CAG
-SYSTEM_PROMPT = "You are an assistant who provides concise factual answers based on the context provided."
+SYSTEM_PROMPT = """You are an assistant who provides concise factual answers based on the context provided."""
 DOCUMENTS_DIR = "documents"
 
 
 # LLM Parameters
+# Note: only MODEL_NAME is used for CAG, the rest are only used for RAG
 
 MODEL_NAME = "meta-llama/Llama-3.2-1B-Instruct"
-TEMPERATURE = 0.25
-REQUEST_TIMEOUT = 360.0
-CONTEXT_WINDOW = 4096
+CONTEXT_WINDOW = 3900
+TEMPERATURE = 0.7
+TOP_K = 50
+TOP_P = 0.95
 
 
 # RAG Parameters

@@ -6,19 +6,28 @@
 ## (Optional) Create and activate venv
 - `python -m venv .venv`
 
-- On Linux: `source .venv/bin/activate`
-- On Windows: `.\venv\Scripts\activate`
+- On Windows: `.\.venv\Scripts\activate`
+- On Linux/macOS: `source .venv/bin/activate`
 
 ## Install dependencies
 - `pip install -r requirements.txt`
 
 ## Set HuggingFace token
 Make sure you have a working [HuggingFace token](https://huggingface.co/).
-In the root directory, create a file named `hf_token.py` with the following line:
-- ```HF_TOKEN = "YOUR_HF_TOKEN"```
+In the `.env` file, change the value of HF_TOKEN at the following line:
+- ```HF_TOKEN = "SET_YOUR_HF_TOKEN_HERE"```
 
-## (Optional) Edit the default configuration
-You can change the values of the variables in the file `params.py` to your liking.
+You can optionally set other environment variables:
+- `HF_HOME`: set the download path of HuggingFace models (defaults at: `C:\Users\<YourUsername>\.cache\huggingface\hub` on Windows; `~/.cache/huggingface/hub` on Linux/macOS)
+- `OPENAI_API_KEY`: if you plan to use OpenAI models for RAG;
+
+## (Optional) Edit the configuration
+You can change the values of the variables in the file `config.py` to your liking.
 
 ## Run the script
 - `python main.py`
+
+## Cleanup
+You can clean the cache and the vector store by deleting the `storage` folder.
+You can perform a clean install by deleting the `.venv` folder and repeating the instructions from the start.
+You can also delete the downloaded HuggingFace models (stored at the path pointed by the `HF_HOME` environment variable).

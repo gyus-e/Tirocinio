@@ -1,5 +1,5 @@
 from llama_index.core import Document
-from params import SYSTEM_PROMPT
+from config import SYSTEM_PROMPT
 from ..DocumentsManager import DocumentsManager
 
 

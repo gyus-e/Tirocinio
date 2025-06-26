@@ -1,25 +1,23 @@
 import os
 import torch
 from typing import Optional
-from transformers.models.auto.tokenization_auto import AutoTokenizer
-from transformers.models.auto.modeling_auto import AutoModelForCausalLM
 from transformers.cache_utils import DynamicCache
-from hf_token import HF_TOKEN as HF_TOKEN
-from params import CACHE_PATH, CACHE_DIR, MODEL_NAME
-from .CAGModelManager import CAGModelManager
+from config import CACHE_PATH, CACHE_DIR
+from ..ModelManager import ModelManager
 
 
 
 def generate(model, input_ids, past_key_values, max_new_tokens: int = 50) -> torch.Tensor:
     """The generate function handles token-by-token generation with the cached knowledge using greedy decoding."""
     """Greedy decoding is a simple text generation method where, at each step, the token with the highest probability (maximum value in the logits) is selected as the next token."""
+    """Greedy decoding is equivalent to temperature=0 in the context of text generation."""
     """@param model: The LLM."""
     """@param input_ids: A tensor containing the tokenized input sequence."""
     """@param past_key_values: the core component of CAG: a cache of previously computed attention values used to speed up inference by avoiding recomputation."""
     """@param max_new_tokens: The maximum number of new tokens to generate."""
     """@return: A tensor containing the generated token IDs."""
 
-    torch_device: torch.device = CAGModelManager.get_torch_device()
+    torch_device: torch.device = ModelManager.get_torch_device()
     origin_len: int = input_ids.shape[-1]
 
     input_ids = input_ids.to(torch_device)
@@ -65,7 +63,7 @@ def get_kv_cache(model, tokenizer, prompt: str) -> DynamicCache:
     """@param prompt: a string input used as the prompt"""
     """@return: DynamicCache object containing the key-value cache."""
 
-    torch_device: torch.device = CAGModelManager.get_torch_device()
+    torch_device: torch.device = ModelManager.get_torch_device()
     print(f"Using device: {torch_device}")
 
     # Tokenize the prompt using the tokenizer and convert it into input IDs

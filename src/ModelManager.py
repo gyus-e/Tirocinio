@@ -2,18 +2,15 @@ import torch
 from transformers.models.auto.tokenization_auto import AutoTokenizer
 from transformers.models.auto.modeling_auto import AutoModelForCausalLM
 
-from hf_token import HF_TOKEN
-from params import (
+from environ import HF_TOKEN
+from config import (
     MODEL_NAME,
-    EMBED_MODEL_NAME,
-    CHUNK_SIZE,
-    CHUNK_OVERLAP,
     TEMPERATURE,
-    REQUEST_TIMEOUT,
     CONTEXT_WINDOW
 )
 
-class CAGModelManager:
+
+class ModelManager:
     _model = None
     _tokenizer = None
 
@@ -32,6 +29,7 @@ class CAGModelManager:
         return cls._tokenizer
     
 
+    # If you've set type checking in your IDE, this method could signal false positives
     @classmethod
     def get_torch_device(cls) -> torch.device:
         # Mistral/Llama models

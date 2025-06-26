@@ -1,43 +1,42 @@
 from llama_index.core import Settings
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from transformers.models.auto.tokenization_auto import AutoTokenizer
+from llama_index.llms.huggingface import HuggingFaceLLM
+from ..ModelManager import ModelManager
 
-#FOR TESTING
-# from llama_index.llms.huggingface import HuggingFaceLLM
-# from llama_index.llms.ollama import Ollama
-from llama_index.llms.openai import OpenAI
 
-from hf_token import HF_TOKEN
-from params import (
+from environ import HF_TOKEN
+from config import (
     MODEL_NAME,
     EMBED_MODEL_NAME,
     CHUNK_SIZE,
     CHUNK_OVERLAP,
+    CONTEXT_WINDOW,
     TEMPERATURE,
-    REQUEST_TIMEOUT,
-    CONTEXT_WINDOW
+    TOP_K,
+    TOP_P,
 )
 
 
 def init_rag_settings(model_name = MODEL_NAME) -> None:
-    
-    # Leave default tokenizer to use tiktoken, which is compatible with OpenAI models.
-    # Settings.tokenizer = AutoTokenizer.from_pretrained(
-    #     model_name, 
-    #     token=HF_TOKEN, 
-    #     trust_remote_code=True
-    # )
 
-    # Settings.llm = HuggingFaceLLM(
-    #     model=model_name,
-    #     tokenizer=Settings.tokenizer,
-    #     context_window=CONTEXT_WINDOW,
-    #     device_map="auto",
-    # )
+    # model = ModelManager.get_model(model_name)
+    # tokenizer = ModelManager.get_tokenizer(model_name)
+    # pad_token_id = tokenizer.pad_token_id or tokenizer.eos_token_id
 
-    # for testing
-    Settings.llm = OpenAI(
-        model="gpt-3.5-turbo"
+    Settings.llm = HuggingFaceLLM(
+        model_name=model_name,
+        tokenizer_name=model_name,
+        # model=model,
+        # tokenizer=tokenizer,
+        context_window=CONTEXT_WINDOW,
+        # generate_kwargs={
+        #     "temperature": TEMPERATURE if TEMPERATURE>0 else 0.1,
+        #     "do_sample": True if TEMPERATURE==0 else False,
+        #     "top_k": TOP_K, 
+        #     "top_p": TOP_P,
+        #     "pad_token_id": pad_token_id,
+        # },
     )
 
     Settings.embed_model = HuggingFaceEmbedding(

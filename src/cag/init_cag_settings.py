@@ -1,13 +1,13 @@
 import os
 from src.cag.cag_prompt import build_cag_prompt
-from src.cag.CAGModelManager import CAGModelManager
-from src.cag.cag import get_kv_cache, save_cache
+from ..ModelManager import ModelManager
+from .cag import get_kv_cache, save_cache
 
-from params import MODEL_NAME, CACHE_PATH
+from config import MODEL_NAME, CACHE_PATH
 
 def init_cag_settings():
-    model = CAGModelManager.get_model(MODEL_NAME)
-    tokenizer = CAGModelManager.get_tokenizer(MODEL_NAME)
+    model = ModelManager.get_model(MODEL_NAME)
+    tokenizer = ModelManager.get_tokenizer(MODEL_NAME)
 
     system_prompt = build_cag_prompt()
 

@@ -1,11 +1,21 @@
+python-dotenv
 torch
 accelerate
 hf_xet
 transformers
+
+# Installs everything. For a lighter installation and more fine-grained control, comment this line and select the components you need below.
 llama-index
+
+# These are required for the code to run.
 llama-index-core
 llama-index-readers-file
 llama-index-embeddings-huggingface
-llama-index-llms-huggingface
-llama-index-llms-openai 
-llama-index-llms-ollama
+
+# Choose one of the following model providers to use with LlamaIndex. 
+# Please note that this will only affect RAG, as CAG will only work with local HuggingFace models.
+# Remember to change src/rag/init_rag_settings.py accordingly.
+llama-index-llms-huggingface        # For local HuggingFace models
+llama-index-llms-ollama             # For local Ollama models
+llama-index-llms-huggingface-api    # For remote HuggingFace API models
+llama-index-llms-openai             # For remote OpenAI models

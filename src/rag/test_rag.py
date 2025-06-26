@@ -2,11 +2,13 @@ from llama_index.core.workflow import Context
 from llama_index.core.agent.workflow import AgentWorkflow
 
 from ..test_questions import questions, delimiter
+from ..ModelConfiguration import ModelConfiguration
 from .RAGAgentManager import RAGAgentManager
 
 
-async def test_rag() -> None:
-    agent: AgentWorkflow = await RAGAgentManager.get_rag_agent()
+async def test_rag(model_configuration: ModelConfiguration) -> None:
+    model = model_configuration.model()
+    agent = await RAGAgentManager.get_rag_agent()
     test_context = Context(agent)
 
     for question in questions:

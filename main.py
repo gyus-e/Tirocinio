@@ -4,23 +4,21 @@ from dotenv import load_dotenv
 from transformers.cache_utils import DynamicCache
 
 from src.cag.init_cag_settings import init_cag_settings
-from src.cag.test_cag import test_cag
-
 from src.rag.init_rag_settings import init_rag_settings
+
+from src.cag.test_cag import test_cag
 from src.rag.test_rag import test_rag
 
 
 async def main():
     load_dotenv()
-
     torch.set_grad_enabled(False)
     torch.serialization.add_safe_globals([DynamicCache])
+    rag_model_config = init_rag_settings()
+    cag_model_config = init_cag_settings()
 
-    init_rag_settings()
-    await test_rag()
-
-    # init_cag_settings()
-    # test_cag()
+    await test_rag(rag_model_config)
+    test_cag(cag_model_config)
 
 
 if __name__ == "__main__":

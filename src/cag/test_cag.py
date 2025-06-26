@@ -1,14 +1,14 @@
 import torch
 from config import CACHE_PATH
 from ..test_questions import questions, delimiter
-from ..ModelManager import ModelManager
-from .cag import get_answer, clean_up
+from ..ModelConfiguration import ModelConfiguration
+from .cag import get_answer, clean_up_cache
 
 
-def test_cag() -> None:
-    model = ModelManager.get_model()
-    tokenizer = ModelManager.get_tokenizer()
-    torch_device = ModelManager.get_torch_device()
+def test_cag(model_configuration: ModelConfiguration) -> None:
+    model = model_configuration.model()
+    tokenizer = model_configuration.tokenizer()
+    torch_device = ModelConfiguration.torch_device()
 
     for question in questions:
         loaded_cache = torch.load(CACHE_PATH)
@@ -18,4 +18,4 @@ def test_cag() -> None:
         print("CAG:", answer)
         print(delimiter)
 
-        clean_up(loaded_cache)
+        clean_up_cache(loaded_cache)

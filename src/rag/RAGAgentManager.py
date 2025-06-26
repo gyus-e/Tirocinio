@@ -1,8 +1,8 @@
 from llama_index.core import Settings
 from llama_index.core.agent.workflow import AgentWorkflow
-from config import SYSTEM_PROMPT
-from .ragTools import search_documents
 from .QueryEngineManager import QueryEngineManager
+from .rag_prompt import build_rag_prompt
+from .ragTools import search_documents
 
 
 class RAGAgentManager:
@@ -25,7 +25,7 @@ class RAGAgentManager:
         cls._rag_agent = AgentWorkflow.from_tools_or_functions(
             tools_or_functions=[search_documents],
             llm=Settings.llm,
-            system_prompt=SYSTEM_PROMPT,
+            system_prompt=build_rag_prompt(),
         )
 
         cls._initialized = True

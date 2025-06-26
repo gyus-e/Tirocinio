@@ -3,7 +3,7 @@
 - pip
 
 # Instructions
-## (Optional) Create and activate venv
+## (Optional) Create and activate a virtual environment
 - `python -m venv .venv`
 
 - On Windows: `.\.venv\Scripts\activate`
@@ -11,13 +11,14 @@
 
 ## Install dependencies
 - `pip install -r requirements-lock.txt`
+Note: the dependencies are approximately 1.7GB in size.
 
 Some libraries tend to change quite often, so stick to `requirements-lock.txt` to get a working version.
 Only use `requirements.txt` if you know what you're doing and are prepared to change the code in case something breaks.
 
 ## Set HuggingFace token
 Make sure you have a working [HuggingFace token](https://huggingface.co/).
-Rename `.env.example` to `.env` and change the value of HF_TOKEN at the following line:
+Rename `.env.example` to `.env` and change the value of HF_TOKEN to your HuggingFace token at the following line:
 - ```HF_TOKEN=YOUR_HF_TOKEN```
 
 You can optionally set other environment variables:
@@ -28,6 +29,7 @@ You can optionally set other environment variables:
 
 ## (Optional) Edit the configuration
 You can change the values of the variables in the file `config.py` to your liking.
+Note that the model you choose will be downloaded to your machine.
 
 ## Add the context documents
 Delete the placeholder documents in the `documents` folder and replace them with the documents that will provide the context for the LLM's responses.

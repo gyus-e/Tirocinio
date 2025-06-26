@@ -3,11 +3,79 @@ import torch
 from typing import Optional
 from transformers.cache_utils import DynamicCache
 from config import CACHE_PATH, CACHE_DIR
-from ..ModelManager import ModelManager
+from ..ModelConfiguration import ModelConfiguration
 
 
-def generate(
-    model, input_ids, past_key_values, max_new_tokens: int = 50
+def create_kv_cache(model, tokenizer, prompt: str) -> DynamicCache:
+    """prepares a reusable key-value cache for a transformer model's attention mechanism."""
+    """passes a prompt through the model once, creating a KV cache that records all the hidden states from each layer"""
+    """@param model: the transformer model used for encoding the prompt."""
+    """@param tokenizer: the tokenizer to convert the prompt into the token IDs."""
+    """@param prompt: a string input used as the prompt"""
+    """@return: DynamicCache object containing the key-value cache."""
+
+    torch_device: torch.device = ModelConfiguration.torch_device()
+    print(f"Using device: {torch_device}")
+
+    # Tokenize the prompt using the tokenizer and convert it into input IDs
+    input_ids: torch.Tensor = tokenizer(prompt, return_tensors="pt").input_ids.to(
+        torch_device
+    )
+    print("Prompt tokenized.")
+
+    # Initialize the DynamicCache object
+    cache: DynamicCache = DynamicCache()
+    print("DynamicCache initialized.")
+
+    # Perform forward pass through the model with caching enabled,
+    # populating the cache with key-value pairs resulting from the model's computation
+    with torch.no_grad():
+        _ = model(
+            input_ids=input_ids,
+            past_key_values=cache,
+            use_cache=True,
+        )
+
+    print("KV cache created.")
+    return cache
+
+
+def save_cache(my_cache: DynamicCache) -> None:
+    os.makedirs(CACHE_DIR, exist_ok=True)
+    torch.save(my_cache, CACHE_PATH)
+
+
+def clean_up_cache(cache: DynamicCache, origin_len: Optional[int] = None) -> None:
+    """Cleans the key-value cache by removing unnecessary entries"""
+    """Trims a DynamicCache object to match the original sequence length by removing additional tokens added during processing"""
+    """For each layer of the cache, it slices both the key and value tensors to retain only the first origin_len tokens along the sequence dimension"""
+
+    if origin_len == None:
+        origin_len = _default_cache_len(cache)
+
+    for i in range(len(cache.key_cache)):
+        cache.key_cache[i] = cache.key_cache[i][:, :, origin_len:, :]
+        cache.value_cache[i] = cache.value_cache[i][:, :, origin_len:, :]
+
+
+def _default_cache_len(cache: DynamicCache) -> int:
+    return cache.key_cache[0].shape[-2]
+
+
+def get_answer(
+    question: str, tokenizer, model, device: torch.device, loaded_cache: DynamicCache
+) -> str:
+    # Call generate to produce the answer
+    input_ids_q = tokenizer(question + "\n", return_tensors="pt").input_ids.to(device)
+    gen_ids_q = _generate(model, input_ids_q, loaded_cache, max_new_tokens=100)
+
+    # Decode the final result with tokenizer.decode
+    answer = tokenizer.decode(gen_ids_q[0], skip_special_tokens=True)
+    return answer.strip()
+
+
+def _generate(
+    model, input_ids, past_key_values: DynamicCache, max_new_tokens: int = 50
 ) -> torch.Tensor:
     """The generate function handles token-by-token generation with the cached knowledge using greedy decoding."""
     """Greedy decoding is a simple text generation method where, at each step, the token with the highest probability (maximum value in the logits) is selected as the next token."""
@@ -18,7 +86,7 @@ def generate(
     """@param max_new_tokens: The maximum number of new tokens to generate."""
     """@return: A tensor containing the generated token IDs."""
 
-    torch_device: torch.device = ModelManager.get_torch_device()
+    torch_device: torch.device = ModelConfiguration.torch_device()
     origin_len: int = input_ids.shape[-1]
 
     input_ids = input_ids.to(torch_device)
@@ -56,71 +124,3 @@ def generate(
                 break
 
     return output_ids[:, origin_len:]
-
-
-def get_kv_cache(model, tokenizer, prompt: str) -> DynamicCache:
-    """prepares a reusable key-value cache for a transformer model's attention mechanism."""
-    """passes a prompt through the model once, creating a KV cache that records all the hidden states from each layer"""
-    """@param model: the transformer model used for encoding the prompt."""
-    """@param tokenizer: the tokenizer to convert the prompt into the token IDs."""
-    """@param prompt: a string input used as the prompt"""
-    """@return: DynamicCache object containing the key-value cache."""
-
-    torch_device: torch.device = ModelManager.get_torch_device()
-    print(f"Using device: {torch_device}")
-
-    # Tokenize the prompt using the tokenizer and convert it into input IDs
-    input_ids: torch.Tensor = tokenizer(prompt, return_tensors="pt").input_ids.to(
-        torch_device
-    )
-    print("Prompt tokenized.")
-
-    # Initialize the DynamicCache object
-    cache: DynamicCache = DynamicCache()
-    print("DynamicCache initialized.")
-
-    # Perform forward pass through the model with caching enabled,
-    # populating the cache with key-value pairs resulting from the model's computation
-    with torch.no_grad():
-        _ = model(
-            input_ids=input_ids,
-            past_key_values=cache,
-            use_cache=True,
-        )
-
-    print("KV cache created.")
-    return cache
-
-
-def clean_up(cache: DynamicCache, origin_len: Optional[int] = None) -> None:
-    """Cleans the key-value cache by removing unnecessary entries"""
-    """Trims a DynamicCache object to match the original sequence length by removing additional tokens added during processing"""
-    """For each layer of the cache, it slices both the key and value tensors to retain only the first origin_len tokens along the sequence dimension"""
-
-    if origin_len == None:
-        origin_len = get_origin_len(cache)
-
-    for i in range(len(cache.key_cache)):
-        cache.key_cache[i] = cache.key_cache[i][:, :, origin_len:, :]
-        cache.value_cache[i] = cache.value_cache[i][:, :, origin_len:, :]
-
-
-def save_cache(my_cache: DynamicCache) -> None:
-    os.makedirs(CACHE_DIR, exist_ok=True)
-    torch.save(my_cache, CACHE_PATH)
-
-
-def get_answer(
-    question: str, tokenizer, model, device: torch.device, loaded_cache: DynamicCache
-) -> str:
-    # Call generate to produce the answer
-    input_ids_q = tokenizer(question + "\n", return_tensors="pt").input_ids.to(device)
-    gen_ids_q = generate(model, input_ids_q, loaded_cache, max_new_tokens=100)
-
-    # Decode the final result with tokenizer.decode
-    answer = tokenizer.decode(gen_ids_q[0], skip_special_tokens=True)
-    return answer.strip()
-
-
-def get_origin_len(cache: DynamicCache) -> int:
-    return cache.key_cache[0].shape[-2]

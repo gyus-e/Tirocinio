@@ -12,13 +12,13 @@ from src.rag.test_rag import test_rag
 
 async def main():
     load_dotenv()
-    torch.set_grad_enabled(False)
+    # torch.set_grad_enabled(False)
     torch.serialization.add_safe_globals([DynamicCache])
-    rag_model_config = init_rag_settings()
-    cag_model_config = init_cag_settings()
+    init_rag_settings()
+    # cag_model_config = init_cag_settings()
 
-    await test_rag(rag_model_config)
-    test_cag(cag_model_config)
+    await test_rag()
+    # test_cag(cag_model_config)
 
 
 if __name__ == "__main__":

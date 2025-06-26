@@ -6,8 +6,7 @@ from ..ModelConfiguration import ModelConfiguration
 from .RAGAgentManager import RAGAgentManager
 
 
-async def test_rag(model_configuration: ModelConfiguration) -> None:
-    model = model_configuration.model()
+async def test_rag():
     agent = await RAGAgentManager.get_rag_agent()
     test_context = Context(agent)
 

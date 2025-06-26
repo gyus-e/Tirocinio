@@ -1,13 +1,21 @@
 import os
 
-SYSTEM_PROMPT = """You are a helpful assistant who provides concise answers based on contextual information extracted from a set of documents about my best friend."""
 DOCUMENTS_DIR = "documents"
+
+
+# It is recommended to clarify the context of the documents in the system prompt.
+
+SYSTEM_PROMPT = """
+    You must answer the user's questions with information extracted from a set of documents provided.
+    Do not try to answer questions that are not related to the documents.
+    The subject of the documents is the user's best friend.
+    """
 
 
 # LLM Parameters
 # Note: only MODEL_NAME is used for CAG, the rest are only used for RAG
 
-MODEL_NAME = "meta-llama/Llama-3.2-1B-Instruct"
+MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.3"
 CONTEXT_WINDOW = 8192
 TEMPERATURE = 0.1
 TOP_K = 50

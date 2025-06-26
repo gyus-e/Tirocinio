@@ -24,7 +24,7 @@ You can optionally set other environment variables:
 - `HF_HOME`: set the download path of HuggingFace models (defaults at: `C:\Users\<YourUsername>\.cache\huggingface\hub` on Windows; `~/.cache/huggingface/hub` on Linux/macOS);
 - `OPENAI_API_KEY`: if you plan to use [OpenAI](https://openai.com/api/) models for RAG.
 
-- Note: to make the software portable, it's recommended to set `HF_HOME` to a directory within the root of this application, such as `./models`.
+- Note: to make the software portable, it's recommended to set `HF_HOME` to a directory within the root of this application, such as `./models` (use absolute path).
 
 ## (Optional) Edit the configuration
 You can change the values of the variables in the file `config.py` to your liking.
@@ -34,6 +34,6 @@ You can change the values of the variables in the file `config.py` to your likin
 
 ## Cleanup
 - You can clean the cache and the vector store by deleting the `storage` folder.
-- You can safely delete all __pycache__ folders.
+- You can safely delete all `__pycache__` folders.
 - You can perform a clean install by deleting the `.venv` folder and repeating the instructions from the start.
 - You can also delete the downloaded HuggingFace models (stored at the path pointed by the `HF_HOME` environment variable).

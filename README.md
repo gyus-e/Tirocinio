@@ -17,8 +17,8 @@ Only use `requirements.txt` if you know what you're doing and are prepared to ch
 
 ## Set HuggingFace token
 Make sure you have a working [HuggingFace token](https://huggingface.co/).
-In the `.env` file, change the value of HF_TOKEN at the following line:
-- ```HF_TOKEN = "SET_YOUR_HF_TOKEN_HERE"```
+Rename `.env.example` to `.env` and change the value of HF_TOKEN at the following line:
+- ```HF_TOKEN=YOUR_HF_TOKEN```
 
 You can optionally set other environment variables:
 - `HF_HOME`: set the download path of HuggingFace models (defaults at: `C:\Users\<YourUsername>\.cache\huggingface\hub` on Windows; `~/.cache/huggingface/hub` on Linux/macOS);

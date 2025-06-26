@@ -4,6 +4,7 @@ from llama_index.core.agent.workflow import AgentWorkflow
 from ..test_questions import questions, delimiter
 from .RAGAgentManager import RAGAgentManager
 
+
 async def test_rag() -> None:
     agent: AgentWorkflow = await RAGAgentManager.get_rag_agent()
     test_context = Context(agent)

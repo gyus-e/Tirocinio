@@ -17,7 +17,7 @@ from config import (
 )
 
 
-def init_rag_settings(model_name = MODEL_NAME, embed_model_name = EMBED_MODEL_NAME) -> None:
+def init_rag_settings(model_name=MODEL_NAME, embed_model_name=EMBED_MODEL_NAME) -> None:
 
     # model = ModelManager.get_model(model_name)
     # tokenizer = ModelManager.get_tokenizer(model_name)
@@ -32,7 +32,7 @@ def init_rag_settings(model_name = MODEL_NAME, embed_model_name = EMBED_MODEL_NA
     #     # generate_kwargs={
     #     #     "temperature": TEMPERATURE if TEMPERATURE>0 else 0.1,
     #     #     "do_sample": True if TEMPERATURE==0 else False,
-    #     #     "top_k": TOP_K, 
+    #     #     "top_k": TOP_K,
     #     #     "top_p": TOP_P,
     #     #     "pad_token_id": pad_token_id,
     #     # },

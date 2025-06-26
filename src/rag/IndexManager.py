@@ -10,13 +10,11 @@ class IndexManager:
     _index: BaseIndex
     _initialized: bool = False
 
-
     @classmethod
     async def get_index(cls) -> BaseIndex:
         if not cls._initialized:
             await cls._initialize_index()
         return cls._index
-    
 
     @classmethod
     async def _initialize_index(cls):
@@ -24,13 +22,12 @@ class IndexManager:
         if not os.path.exists(VECTOR_STORE_DIR):
             print("Creating index...")
             cls._create_index()
-            
+
         else:
             print("Loading index from storage...")
             cls._load_index()
 
         cls._initialized = True
-
 
     @classmethod
     def _create_index(cls):
@@ -40,7 +37,6 @@ class IndexManager:
         print("Index created. Persisting to storage...")
         cls._index.storage_context.persist(persist_dir=VECTOR_STORE_DIR)
         print("Index persisted to storage.")
-
 
     @classmethod
     def _load_index(cls):

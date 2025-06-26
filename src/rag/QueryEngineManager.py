@@ -2,17 +2,16 @@ from llama_index.core import Settings
 from llama_index.core.base.base_query_engine import BaseQueryEngine
 from .IndexManager import IndexManager
 
+
 class QueryEngineManager:
     _query_engine: BaseQueryEngine
     _initialized: bool = False
-
 
     @classmethod
     async def get_query_engine(cls, force_new=False) -> BaseQueryEngine:
         if force_new or not cls._initialized:
             await cls._create_query_engine()
         return cls._query_engine
-
 
     @classmethod
     async def _create_query_engine(cls):

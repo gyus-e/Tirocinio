@@ -18,11 +18,10 @@ async def main():
 
     init_rag_settings()
     await test_rag()
-    
+
     # init_cag_settings()
     # test_cag()
-    
-    
+
 
 if __name__ == "__main__":
     asyncio.run(main())

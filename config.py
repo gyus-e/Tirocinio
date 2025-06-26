@@ -1,4 +1,4 @@
-import os 
+import os
 
 SYSTEM_PROMPT = """You are an assistant who provides concise factual answers based on the context provided."""
 DOCUMENTS_DIR = "documents"

@@ -20,15 +20,15 @@ from config import (
 
 def init_rag_settings(model_name = MODEL_NAME) -> None:
 
-    model = ModelManager.get_model(model_name)
-    tokenizer = ModelManager.get_tokenizer(model_name)
-    pad_token_id = tokenizer.pad_token_id or tokenizer.eos_token_id
+    # model = ModelManager.get_model(model_name)
+    # tokenizer = ModelManager.get_tokenizer(model_name)
+    # pad_token_id = tokenizer.pad_token_id or tokenizer.eos_token_id
 
     Settings.llm = HuggingFaceLLM(
-        # model_name=model_name,
-        # tokenizer_name=model_name,
-        model=model,
-        tokenizer=tokenizer,
+        model_name=model_name,
+        tokenizer_name=model_name,
+        # model=model,
+        # tokenizer=tokenizer,
         context_window=CONTEXT_WINDOW,
         # generate_kwargs={
         #     "temperature": TEMPERATURE if TEMPERATURE>0 else 0.1,

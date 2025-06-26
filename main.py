@@ -19,8 +19,8 @@ async def main():
     init_rag_settings()
     await test_rag()
     
-    init_cag_settings()
-    test_cag()
+    # init_cag_settings()
+    # test_cag()
     
     
 

@@ -2,10 +2,10 @@ from llama_index.core import Settings
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from transformers.models.auto.tokenization_auto import AutoTokenizer
 from llama_index.llms.huggingface import HuggingFaceLLM
+from llama_index.llms.openai import OpenAI
+from ..environ import OPENAI_API_KEY, HF_TOKEN
 from ..ModelManager import ModelManager
 
-
-from environ import HF_TOKEN
 from config import (
     MODEL_NAME,
     EMBED_MODEL_NAME,
@@ -24,24 +24,29 @@ def init_rag_settings(model_name = MODEL_NAME) -> None:
     # tokenizer = ModelManager.get_tokenizer(model_name)
     # pad_token_id = tokenizer.pad_token_id or tokenizer.eos_token_id
 
-    Settings.llm = HuggingFaceLLM(
-        model_name=model_name,
-        tokenizer_name=model_name,
-        # model=model,
-        # tokenizer=tokenizer,
-        context_window=CONTEXT_WINDOW,
-        # generate_kwargs={
-        #     "temperature": TEMPERATURE if TEMPERATURE>0 else 0.1,
-        #     "do_sample": True if TEMPERATURE==0 else False,
-        #     "top_k": TOP_K, 
-        #     "top_p": TOP_P,
-        #     "pad_token_id": pad_token_id,
-        # },
+    # Settings.llm = HuggingFaceLLM(
+    #     model_name=model_name,
+    #     tokenizer_name=model_name,
+    #     # model=model,
+    #     # tokenizer=tokenizer,
+    #     context_window=CONTEXT_WINDOW,
+    #     # generate_kwargs={
+    #     #     "temperature": TEMPERATURE if TEMPERATURE>0 else 0.1,
+    #     #     "do_sample": True if TEMPERATURE==0 else False,
+    #     #     "top_k": TOP_K, 
+    #     #     "top_p": TOP_P,
+    #     #     "pad_token_id": pad_token_id,
+    #     # },
+    # )
+
+    Settings.llm = OpenAI(
+        model_name="gpt-3.5-turbo",
+        api_key=OPENAI_API_KEY,
     )
 
-    Settings.embed_model = HuggingFaceEmbedding(
-        model_name=EMBED_MODEL_NAME,
-    )
+    # Settings.embed_model = HuggingFaceEmbedding(
+    #     model_name=EMBED_MODEL_NAME,
+    # )
 
-    Settings.chunk_size = CHUNK_SIZE
-    Settings.chunk_overlap = CHUNK_OVERLAP
+    # Settings.chunk_size = CHUNK_SIZE
+    # Settings.chunk_overlap = CHUNK_OVERLAP

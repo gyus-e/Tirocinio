@@ -10,7 +10,9 @@
 - On Linux/macOS: `source .venv/bin/activate`
 
 ## Install dependencies
-- `pip install -r requirements.txt`
+- `pip install -r requirements-lock.txt`
+Some libraries tend to change quite often, so stick to `requirements-lock.txt` to get a working version.
+Only use `requirements.txt` if you know what you're doing and are prepared to change the code in case something breaks.
 
 ## Set HuggingFace token
 Make sure you have a working [HuggingFace token](https://huggingface.co/).

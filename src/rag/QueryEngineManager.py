@@ -8,8 +8,8 @@ class QueryEngineManager:
 
 
     @classmethod
-    async def get_query_engine(cls) -> BaseQueryEngine:
-        if not cls._initialized:
+    async def get_query_engine(cls, force_new=False) -> BaseQueryEngine:
+        if force_new or not cls._initialized:
             await cls._create_query_engine()
         return cls._query_engine
 

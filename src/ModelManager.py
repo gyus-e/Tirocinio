@@ -2,7 +2,7 @@ import torch
 from transformers.models.auto.tokenization_auto import AutoTokenizer
 from transformers.models.auto.modeling_auto import AutoModelForCausalLM
 
-from environ import HF_TOKEN
+from .environ import HF_TOKEN
 from config import (
     MODEL_NAME,
     TEMPERATURE,

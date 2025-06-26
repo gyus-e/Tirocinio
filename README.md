@@ -31,5 +31,6 @@ You can change the values of the variables in the file `config.py` to your likin
 
 ## Cleanup
 You can clean the cache and the vector store by deleting the `storage` folder.
+You can safely delete all __pycache__ folders.
 You can perform a clean install by deleting the `.venv` folder and repeating the instructions from the start.
 You can also delete the downloaded HuggingFace models (stored at the path pointed by the `HF_HOME` environment variable).

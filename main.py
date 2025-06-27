@@ -15,10 +15,10 @@ async def main():
     # torch.set_grad_enabled(False)
     torch.serialization.add_safe_globals([DynamicCache])
     init_rag_settings()
-    # cag_model_config = init_cag_settings()
+    cag_model_config = init_cag_settings()
 
     await test_rag()
-    # test_cag(cag_model_config)
+    test_cag(cag_model_config)
 
 
 if __name__ == "__main__":

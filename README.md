@@ -1,3 +1,6 @@
+# Colab notebook
+[Tirocinio.ipynb](https://colab.research.google.com/drive/1RRcFArelbFlL2wS3fFYKjztTXXvbPmXV?usp=sharing)
+
 # Prerequisites
 - [Python](https://www.python.org/)
 - pip

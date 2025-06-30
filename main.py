@@ -17,10 +17,10 @@ from config import CAG, RAG
 
 async def main():
     load_dotenv()
+    torch.serialization.add_safe_globals([DynamicCache])
+    # torch.set_grad_enabled(False)
 
     if (CAG):
-        # torch.set_grad_enabled(False)
-        torch.serialization.add_safe_globals([DynamicCache])
         cag_model_config = init_cag_settings()
         test_cag(cag_model_config)
         run_cag(cag_model_config)
@@ -29,7 +29,6 @@ async def main():
         init_rag_settings()
         await test_rag()
         await run_rag()
-
 
 
 if __name__ == "__main__":

@@ -14,7 +14,7 @@ RAG = True
 
 SYSTEM_PROMPT = """
     Answer the user's questions using the information contained in the documents.
-    The context of the documents is the user's best friend.
+    The documents are about the user's best friend.
     """
 
 # LLM Parameters

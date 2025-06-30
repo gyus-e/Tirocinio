@@ -1,13 +1,16 @@
 import os
 
-DOCUMENTS_DIR = "documents"
+DOCUMENTS_DIR = "documents/pontaniana"
+
+# Set to True for CAG, False for RAG
+CAG = False  
 
 
 # It is recommended to clarify the context of the documents in the system prompt.
 
 SYSTEM_PROMPT = """
-    You must answer the user's questions with information taken from a set of documents.
-    The subject of the documents is the user's best friend.
+    Rispondi alle domande dell'utente utilizzando le informazioni contenute nei documenti.
+    L'argomento dei documenti è il catalogo della biblioteca pontaniana di Napoli.
     """
 
 

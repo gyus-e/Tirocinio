@@ -4,3 +4,6 @@ storage
 models
 .env
 outputs
+documents/*
+
+!documents/test

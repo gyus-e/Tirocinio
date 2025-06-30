@@ -5,15 +5,16 @@ from ..ModelConfiguration import ModelConfiguration
 from .cag import get_answer, clean_up_cache
 
 
-def test_cag(model_configuration: ModelConfiguration) -> None:
+def run_cag(model_configuration: ModelConfiguration) -> None:
     model = model_configuration.model()
     tokenizer = model_configuration.tokenizer()
     torch_device = ModelConfiguration.torch_device()
 
-    for question in questions:
+    print("Press ctrl+C to exit.")
+    while True:
         loaded_cache = torch.load(CACHE_PATH)
 
-        print("Q:", question)
+        question = input()
         answer = get_answer(question, tokenizer, model, torch_device, loaded_cache)
         print("CAG:", answer)
         print(delimiter)

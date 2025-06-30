@@ -12,7 +12,7 @@ from src.rag.run_rag import run_rag
 from src.rag.test_rag import test_rag
 from src.cag.run_cag import run_cag
 
-from config import CAG
+from config import CAG, RAG
 
 
 async def main():
@@ -25,7 +25,7 @@ async def main():
         test_cag(cag_model_config)
         run_cag(cag_model_config)
 
-    else:
+    if (RAG):
         init_rag_settings()
         await test_rag()
         await run_rag()

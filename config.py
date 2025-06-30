@@ -3,7 +3,7 @@ import os
 DOCUMENTS_DIR = "documents/pontaniana"
 
 # Set to True for CAG, False for RAG
-CAG = False  
+CAG = True  
 
 
 # It is recommended to clarify the context of the documents in the system prompt.

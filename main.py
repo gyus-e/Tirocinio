@@ -2,17 +2,7 @@ import asyncio
 import torch
 from dotenv import load_dotenv
 from transformers.cache_utils import DynamicCache
-
-from src.cag.init_cag_settings import init_cag_settings
-from src.rag.init_rag_settings import init_rag_settings
-
-from src.cag.test_cag import test_cag
-from src.rag.run_rag import run_rag
-
-from src.rag.test_rag import test_rag
-from src.cag.run_cag import run_cag
-
-from config import CAG, RAG
+from config import DO_CAG, DO_RAG
 
 
 async def main():
@@ -20,15 +10,21 @@ async def main():
     torch.serialization.add_safe_globals([DynamicCache])
     # torch.set_grad_enabled(False)
 
-    if (CAG):
-        cag_model_config = init_cag_settings()
-        test_cag(cag_model_config)
-        run_cag(cag_model_config)
+    if DO_RAG:
+        import rag
+        from rag.test_rag import test_rag
+        from rag.run_rag import run_rag
 
-    if (RAG):
-        init_rag_settings()
         await test_rag()
-        await run_rag()
+        # await run_rag()
+
+    if DO_CAG:
+        import cag
+        from cag.test_cag import test_cag
+        from cag.run_cag import run_cag
+
+        test_cag()
+        # run_cag()
 
 
 if __name__ == "__main__":

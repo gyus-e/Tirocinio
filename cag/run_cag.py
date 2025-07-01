@@ -1,11 +1,12 @@
 import torch
 from config import CACHE_PATH
 from test_questions import questions, delimiter
-from ..ModelConfiguration import ModelConfiguration
+from utils import ModelConfiguration
 from .cag import get_answer, clean_up_cache
+from . import model_configuration
 
 
-def run_cag(model_configuration: ModelConfiguration) -> None:
+def run_cag() -> None:
     model = model_configuration.model()
     tokenizer = model_configuration.tokenizer()
     torch_device = ModelConfiguration.torch_device()

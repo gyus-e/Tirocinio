@@ -3,7 +3,7 @@ from transformers.models.auto.tokenization_auto import AutoTokenizer
 from transformers.models.auto.modeling_auto import AutoModelForCausalLM
 from accelerate import Accelerator
 
-from .environ import HF_TOKEN
+from environ import HF_TOKEN
 from config import MODEL_NAME
 
 
@@ -19,7 +19,9 @@ class ModelConfiguration:
             token=HF_TOKEN,
         )
         self._tokenizer = AutoTokenizer.from_pretrained(
-            model_name, token=HF_TOKEN, trust_remote_code=True
+            model_name,
+            token=HF_TOKEN,
+            trust_remote_code=True,
         )
         # self._model.eval()
         # self._model.to(self._accelerator.device)

@@ -3,7 +3,7 @@ from llama_index.core import VectorStoreIndex, StorageContext, load_index_from_s
 from llama_index.core.indices.base import BaseIndex
 
 from config import VECTOR_STORE_DIR
-from ..DocumentsManager import DocumentsManager
+from utils import DocumentsManager
 
 
 class IndexManager:

@@ -2,8 +2,6 @@
 __pycache__
 storage
 models
-.env
 outputs
 documents/*
-
-!documents/test
+.env

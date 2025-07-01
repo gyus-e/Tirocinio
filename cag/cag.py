@@ -3,7 +3,7 @@ import torch
 from typing import Optional
 from transformers.cache_utils import DynamicCache
 from config import CACHE_PATH, CACHE_DIR
-from ..ModelConfiguration import ModelConfiguration
+from utils import ModelConfiguration
 
 
 def create_kv_cache(model, tokenizer, prompt: str) -> DynamicCache:

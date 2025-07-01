@@ -1,11 +1,11 @@
 import os
 
-DOCUMENTS_DIR = "documents/test"
+DOCUMENTS_DIR = "documents\test"
 
-CAG = True  
-RAG = True
+DO_CAG = True
+DO_RAG = True
 
-# It is recommended to clarify the context of the documents in the system prompt.
+# It is recommended to specify the context of the documents in the system prompt.
 
 # SYSTEM_PROMPT = """
 #     Rispondi alle domande dell'utente utilizzando le informazioni contenute nei documenti.
@@ -21,7 +21,9 @@ SYSTEM_PROMPT = """
 # Note: only MODEL_NAME is used for CAG, the rest are only used for RAG
 
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
+# MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.3"
 CONTEXT_WINDOW = 8192
+# CONTEXT_WINDOW = 32768
 TEMPERATURE = 0.1
 TOP_K = 50
 TOP_P = 0.95
@@ -30,8 +32,8 @@ TOP_P = 0.95
 # RAG Parameters
 
 EMBED_MODEL_NAME = "BAAI/bge-base-en-v1.5"
-CHUNK_SIZE = 512
-CHUNK_OVERLAP = 128
+CHUNK_SIZE = 1024
+CHUNK_OVERLAP = 256
 VECTOR_STORE_DIR = "storage/vector_store"
 
 

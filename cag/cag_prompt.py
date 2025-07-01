@@ -1,6 +1,6 @@
 from llama_index.core import Document
 from config import SYSTEM_PROMPT
-from ..DocumentsManager import DocumentsManager
+from utils import DocumentsManager
 
 
 def build_context() -> list[Document]:

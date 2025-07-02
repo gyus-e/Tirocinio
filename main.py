@@ -3,7 +3,7 @@ import torch
 from dotenv import load_dotenv
 from transformers.cache_utils import DynamicCache
 from config import DO_CAG, DO_RAG
-from utils.list_models import list_models
+from utils.list_models import list_models, list_embed_models
 
 
 async def main():
@@ -12,6 +12,7 @@ async def main():
     # torch.set_grad_enabled(False)
 
     list_models()
+    list_embed_models()
 
     if DO_RAG:
         import rag

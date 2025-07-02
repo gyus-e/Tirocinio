@@ -12,6 +12,7 @@ from utils import ModelConfiguration
 from config import (
     MODEL_NAME,
     EMBED_MODEL_NAME,
+    EMBED_MODEL_DIR,
     CONTEXT_WINDOW,
     CHUNK_SIZE,
     CHUNK_OVERLAP,
@@ -45,7 +46,7 @@ Settings.llm = HuggingFaceLLM(
 
 Settings.embed_model = HuggingFaceEmbedding(
     model_name=EMBED_MODEL_NAME,
-    cache_folder=os.path.join(HF_HOME, "embed-models") if HF_HOME else None,
+    cache_folder=os.path.join(HF_HOME, EMBED_MODEL_DIR) if HF_HOME else None,
 )
 
 Settings.chunk_size = CHUNK_SIZE

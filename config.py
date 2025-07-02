@@ -22,8 +22,9 @@ TOP_P = 0.95
 # RAG Parameters
 
 EMBED_MODEL_NAME = "BAAI/bge-base-en-v1.5"
-CHUNK_SIZE = 2048  # Optimized for Llama 3.2 - larger chunks for better context retention
-CHUNK_OVERLAP = 512  # Increased overlap proportionally to maintain context continuity
+CHUNK_SIZE = 2048
+CHUNK_OVERLAP = 512 
+EMBED_MODEL_DIR = "embed-models"
 VECTOR_STORE_DIR = "storage/vector_store"
 
 

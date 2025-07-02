@@ -3,7 +3,7 @@ import torch
 from dotenv import load_dotenv
 from transformers.cache_utils import DynamicCache
 from config import DO_CAG, DO_RAG
-from utils.list_models import list_models, list_embed_models
+from utils.list_models import get_models_list, get_embed_models_list
 
 
 async def main():
@@ -11,8 +11,8 @@ async def main():
     torch.serialization.add_safe_globals([DynamicCache])
     # torch.set_grad_enabled(False)
 
-    list_models()
-    list_embed_models()
+    print(get_models_list())
+    print(get_embed_models_list())
 
     if DO_RAG:
         import rag

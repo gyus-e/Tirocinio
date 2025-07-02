@@ -2,12 +2,17 @@ import os
 from environ import HF_HOME
 from config import EMBED_MODEL_DIR
 
-def list_models() -> list[str]:
-    models_list = os.listdir(f"{HF_HOME}/hub")
-    print("Available models:", *[(f"{i}: [{model_name}]") for i, model_name in enumerate(models_list) if not model_name.startswith('.')], sep="\n")
-    return models_list
+def get_models_list() -> list[str]:
+    models_list = os.listdir(f"{HF_HOME}/hub") if os.path.exists(f"{HF_HOME}/hub") else []
+    if not models_list:
+        return []
+    return [_parse_model_name(model_name) for model_name in models_list if not model_name.startswith('.')]
 
-def list_embed_models() -> list[str]:
-    embed_models_list = os.listdir(f"{HF_HOME}/{EMBED_MODEL_DIR}")
-    print("Available embed models:", *[(f"{i}: [{model_name}]") for i, model_name in enumerate(embed_models_list) if not model_name.startswith('.')], sep="\n")
-    return embed_models_list
+def get_embed_models_list() -> list[str]:
+    embed_models_list = os.listdir(f"{HF_HOME}/{EMBED_MODEL_DIR}") if os.path.exists(f"{HF_HOME}/{EMBED_MODEL_DIR}") else []
+    if not embed_models_list:
+        return []
+    return [_parse_model_name(model_name) for model_name in embed_models_list if not model_name.startswith('.')]
+
+def _parse_model_name(model_name: str) -> str:
+    return model_name.removeprefix("models--").replace("--", "/")

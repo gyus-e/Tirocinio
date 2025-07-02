@@ -3,7 +3,7 @@ import torch
 from dotenv import load_dotenv
 from transformers.cache_utils import DynamicCache
 from config import DO_CAG, DO_RAG
-from utils.list_models import get_models_list, get_embed_models_list
+from utils import get_models_list, get_embed_models_list
 
 
 async def main():

@@ -34,25 +34,25 @@ from config import (
 #     "top_p": TOP_P,
 # }
 
-Settings.llm = HuggingFaceLLM(
-    model_name=MODEL_NAME,
-    tokenizer_name=MODEL_NAME,
-    context_window=CONTEXT_WINDOW,
-    # model=model,
-    # tokenizer=tokenizer,
-    # generate_kwargs=kwargs,
-)
+# Settings.llm = HuggingFaceLLM(
+#     model_name=MODEL_NAME,
+#     tokenizer_name=MODEL_NAME,
+#     context_window=CONTEXT_WINDOW,
+#     # model=model,
+#     # tokenizer=tokenizer,
+#     # generate_kwargs=kwargs,
+# )
 
-Settings.embed_model = HuggingFaceEmbedding(
-    model_name=EMBED_MODEL_NAME,
-    cache_folder=os.path.join(HF_HOME, "embed-models") if HF_HOME else None,
-)
+# Settings.embed_model = HuggingFaceEmbedding(
+#     model_name=EMBED_MODEL_NAME,
+#     cache_folder=os.path.join(HF_HOME, "embed-models") if HF_HOME else None,
+# )
 
-Settings.chunk_size = CHUNK_SIZE
-Settings.chunk_overlap = CHUNK_OVERLAP
+# Settings.chunk_size = CHUNK_SIZE
+# Settings.chunk_overlap = CHUNK_OVERLAP
 
 # For testing, comment all the above and uncomment the following lines. Set up your OpenAI API key in the .env file.
-# Settings.llm = OpenAI(
-#     model="gpt-3.5-turbo",
-#     api_key=OPENAI_API_KEY,
-# )
+Settings.llm = OpenAI(
+    model="gpt-3.5-turbo",
+    api_key=OPENAI_API_KEY,
+)

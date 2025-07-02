@@ -1,7 +1,7 @@
 .venv
 __pycache__
 storage
-models
+huggingface
 outputs
 documents/*
 .env

@@ -12,15 +12,13 @@ DO_CAG = True
 DO_RAG = True
 
 SYSTEM_PROMPT = """
-    Answer the user's questions using the information contained in the documents.
-    The documents are about the user's best friend.
+    You are an assistant who provides concise factual answers.
     """
 
 # LLM parameters
 # Note: only MODEL_NAME is used for CAG, the rest are only used for RAG
 
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
-
 CONTEXT_WINDOW = 8192
 TEMPERATURE = 0.1
 TOP_K = 50

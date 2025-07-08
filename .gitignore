@@ -1,7 +1,7 @@
 .venv
 __pycache__
-storage
-models
-outputs
-documents/*
+_models
+_storage
+_outputs
+_documents/*
 .env

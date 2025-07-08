@@ -2,7 +2,7 @@ import os
 import torch
 from typing import Optional
 from transformers.cache_utils import DynamicCache
-from config import CACHE_PATH, CACHE_DIR
+from config import CACHE_PATH, STORAGE
 from utils import ModelConfiguration
 
 
@@ -41,7 +41,7 @@ def create_kv_cache(model, tokenizer, prompt: str) -> DynamicCache:
 
 
 def save_cache(my_cache: DynamicCache) -> None:
-    os.makedirs(CACHE_DIR, exist_ok=True)
+    os.makedirs(STORAGE, exist_ok=True)
     torch.save(my_cache, CACHE_PATH)
 
 

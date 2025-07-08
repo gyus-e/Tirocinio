@@ -1,29 +1,27 @@
 import os
 
-DOCUMENTS_DIR = "documents\test"
+DOCUMENTS_DIR = "_documents/test"
+STORAGE = "_storage"
+CACHE_NAME = "cag.cache"
+CACHE_PATH = os.path.join(STORAGE, CACHE_NAME)
+VECTOR_STORE_DIR = os.path.join(STORAGE, "vector_store")
+
+# User parameters
 
 DO_CAG = True
 DO_RAG = True
-
-# It is recommended to specify the context of the documents in the system prompt.
-
-# SYSTEM_PROMPT = """
-#     Rispondi alle domande dell'utente utilizzando le informazioni contenute nei documenti.
-#     L'argomento dei documenti è il catalogo della biblioteca pontaniana di Napoli.
-#     """
 
 SYSTEM_PROMPT = """
     Answer the user's questions using the information contained in the documents.
     The documents are about the user's best friend.
     """
 
-# LLM Parameters
+# LLM parameters
 # Note: only MODEL_NAME is used for CAG, the rest are only used for RAG
 
 MODEL_NAME = "meta-llama/Llama-3.2-3B-Instruct"
-# MODEL_NAME = "mistralai/Mistral-7B-Instruct-v0.3"
+
 CONTEXT_WINDOW = 8192
-# CONTEXT_WINDOW = 32768
 TEMPERATURE = 0.1
 TOP_K = 50
 TOP_P = 0.95
@@ -34,11 +32,47 @@ TOP_P = 0.95
 EMBED_MODEL_NAME = "BAAI/bge-base-en-v1.5"
 CHUNK_SIZE = 1024
 CHUNK_OVERLAP = 256
-VECTOR_STORE_DIR = "storage/vector_store"
 
 
-# CAG Parameters
+# class Config:
+#     do_cag: bool
+#     do_rag: bool
+#     system_prompt: str
+#     model_name: str
+#     __initialized: bool = False
 
-CACHE_DIR = "storage"
-CACHE_NAME = "cag.cache"
-CACHE_PATH = os.path.join(CACHE_DIR, CACHE_NAME)
+#     @classmethod
+#     def initialize(
+#         cls,
+#         do_cag: bool,
+#         do_rag: bool,
+#         system_prompt: str,
+#         model_name: str,
+#     ):
+#         cls.do_cag = do_cag
+#         cls.do_rag = do_rag
+#         cls.system_prompt = system_prompt
+#         cls.model_name = model_name
+#         cls.__initialized = True
+
+
+# class RagConfig:
+#     context_window: int
+#     temperature: float
+#     top_k: int
+#     top_p: float
+#     __initialized: bool = False
+
+#     @classmethod
+#     def initialize(
+#         cls,
+#         context_window: int,
+#         temperature: float,
+#         top_k: int,
+#         top_p: float,
+#     ):
+#         cls.context_window = context_window
+#         cls.temperature = temperature
+#         cls.top_k = top_k
+#         cls.top_p = top_p
+#         cls.__initialized = True

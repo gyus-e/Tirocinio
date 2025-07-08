@@ -1,7 +1,8 @@
 .venv
-__pycache__
+**/__pycache__
 _storage
 _huggingface
+_models
 _outputs
 _documents/*
 .env

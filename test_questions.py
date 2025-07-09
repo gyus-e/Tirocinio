@@ -11,9 +11,9 @@
 # ]
 
 questions = [
-    "What is my best friend's eye color?",
-    "What can you tell me about my best friend's family?",
-    "What are the hobbies of my best friend and his wife?",
+    "What is my best friend's wife's eye color?",
+    "What can you tell me about my best friend's interests?",
+    "Where are my best friend and his wife from?",
 ]
 
 delimiter = "\n"

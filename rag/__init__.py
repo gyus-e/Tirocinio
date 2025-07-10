@@ -26,14 +26,11 @@ from config import (
 # model = model_configuration.model()
 # tokenizer = model_configuration.tokenizer()
 
-# temperature = TEMPERATURE if TEMPERATURE > 0 else 0.1
-# do_sample = True if TEMPERATURE == 0 else False
-# kwargs = {
-#     "temperature": temperature,
-#     "do_sample": do_sample,
-#     "top_k": TOP_K,
-#     "top_p": TOP_P,
-# }
+temperature = TEMPERATURE if TEMPERATURE > 0 else 0.1
+do_sample = True if TEMPERATURE == 0 else False
+kwargs = {"do_sample": do_sample} if TEMPERATURE == 0 else {"temperature": temperature}
+kwargs = {"top_k": TOP_K} if TOP_K > 0 else kwargs
+kwargs = {"top_p": TOP_P} if TOP_P > 0 else kwargs
 
 Settings.llm = HuggingFaceLLM(
     model_name=MODEL_NAME,
@@ -41,7 +38,7 @@ Settings.llm = HuggingFaceLLM(
     context_window=CONTEXT_WINDOW,
     # model=model,
     # tokenizer=tokenizer,
-    # generate_kwargs=kwargs,
+    generate_kwargs=kwargs,
 )
 
 Settings.embed_model = HuggingFaceEmbedding(

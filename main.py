@@ -14,14 +14,6 @@ async def main():
     print(get_models_list())
     print(get_embed_models_list())
 
-    if DO_RAG:
-        import rag
-        from rag.test_rag import test_rag
-        from rag.run_rag import run_rag
-
-        await test_rag()
-        # await run_rag()
-
     if DO_CAG:
         import cag
         from cag.test_cag import test_cag
@@ -29,6 +21,14 @@ async def main():
 
         test_cag()
         # run_cag()
+
+    if DO_RAG:
+        import rag
+        from rag.test_rag import test_rag
+        from rag.run_rag import run_rag
+
+        await test_rag()
+        # await run_rag()
 
 
 if __name__ == "__main__":

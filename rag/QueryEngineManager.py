@@ -1,4 +1,3 @@
-from llama_index.core import Settings
 from llama_index.core.base.base_query_engine import BaseQueryEngine
 from .IndexManager import IndexManager
 

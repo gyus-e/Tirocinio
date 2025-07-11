@@ -1,5 +1,5 @@
 from llama_index.core import Document, SimpleDirectoryReader
-from config import DOCUMENTS_DIR
+from environ import DOCUMENTS_DIR
 
 
 class DocumentsManager:

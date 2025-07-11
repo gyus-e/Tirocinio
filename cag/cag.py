@@ -2,7 +2,7 @@ import os
 import torch
 from typing import Optional
 from transformers.cache_utils import DynamicCache
-from config import CACHE_PATH, STORAGE
+from environ import CACHE_PATH, STORAGE
 from utils import ModelConfiguration
 
 

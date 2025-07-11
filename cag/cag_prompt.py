@@ -18,7 +18,6 @@ def build_cag_prompt():
     <|user|>
     Context: 
     {context}
-    Question:
     """.strip()
 
     return cag_prompt

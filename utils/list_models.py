@@ -1,6 +1,5 @@
 import os
-from environ import HF_HOME
-from config import EMBED_MODEL_DIR
+from environ import HF_HOME, EMBED_MODEL_DIR
 
 def get_models_list() -> list[str]:
     models_list = os.listdir(f"{HF_HOME}/hub") if os.path.exists(f"{HF_HOME}/hub") else []

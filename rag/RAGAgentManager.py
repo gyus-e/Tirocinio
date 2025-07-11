@@ -4,6 +4,7 @@ from llama_index.core.agent.workflow import AgentWorkflow
 from .QueryEngineManager import QueryEngineManager
 from .rag_prompt import build_rag_prompt
 from .ragTools import search_documents
+from . import initialize_settings
 
 
 class RAGAgentManager:
@@ -40,6 +41,7 @@ class RAGAgentManager:
 
     @classmethod
     async def _init_rag_agent(cls):
+        initialize_settings()
         # Initialize query engine (optional, can be done automatically with the first query)
         await QueryEngineManager.get_query_engine()
 

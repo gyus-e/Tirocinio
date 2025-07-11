@@ -1,14 +1,17 @@
 import torch
-from config import CACHE_PATH
+from transformers.cache_utils import DynamicCache
+from environ import CACHE_PATH
 from test_questions import questions, delimiter
 from utils import ModelConfiguration
 from .cag import get_answer, clean_up_cache
-from . import model_configuration
+from . import initialize_settings
 
 
 def test_cag() -> None:
-    model = model_configuration.model()
-    tokenizer = model_configuration.tokenizer()
+    torch.serialization.add_safe_globals([DynamicCache])
+    model_configuration = initialize_settings()
+    model = model_configuration.model() if model_configuration else None
+    tokenizer = model_configuration.tokenizer() if model_configuration else None
     torch_device = ModelConfiguration.torch_device()
 
     for question in questions:

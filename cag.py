@@ -132,9 +132,9 @@ def get_or_create_kv_cache(model, tokenizer, kv_cache_path: str):
     if os.path.exists(kv_cache_path):
         knowledge_cache, kv_len = read_kv_cache(kv_cache_path)
     else:
-        from knowledge import documents
+        from documents import documents
 
-        knowledge = "\n".join([doc.text for doc in documents])
+        knowledge = "\n".join([doc.text.strip() for doc in documents])
         knowledge_cache, kv_len = prepare_kvcache(model, tokenizer, documents=knowledge)
         write_kv_cache(knowledge_cache, kv_cache_path)
 

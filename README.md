@@ -9,7 +9,7 @@
     ```
         python -m venv .venv
         source .venv/bin/activate   # For Linux/MacOS users
-        .\venv\Scripts\activate     # For Windows users
+        .\.venv\Scripts\activate     # For Windows users
     ```
 - Install the requirements: 
     ```

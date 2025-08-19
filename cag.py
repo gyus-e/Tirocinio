@@ -1,6 +1,7 @@
 import torch
 import bitsandbytes as bnb
 from transformers.cache_utils import DynamicCache
+import os
 
 
 def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
@@ -123,3 +124,27 @@ def generate(
             if (next_token.item() in model.config.eos_token_id) and (_ > 0):
                 break
     return output_ids[:, origin_ids.shape[-1] :]
+
+
+def get_or_create_kv_cache(model, tokenizer, kv_cache_path: str):
+    from cag import read_kv_cache, prepare_kvcache, write_kv_cache
+
+    if os.path.exists(kv_cache_path):
+        knowledge_cache, kv_len = read_kv_cache(kv_cache_path)
+    else:
+        from knowledge import documents
+
+        knowledge = "\n".join([doc.text for doc in documents])
+        knowledge_cache, kv_len = prepare_kvcache(model, tokenizer, documents=knowledge)
+        write_kv_cache(knowledge_cache, kv_cache_path)
+
+    return knowledge_cache, kv_len
+
+
+def run_cag(model, tokenizer, knowledge_cache: DynamicCache, kv_len: int, query: str):
+    from cag import clean_up, generate
+
+    clean_up(knowledge_cache, kv_len)
+    input_ids = tokenizer.encode(query, return_tensors="pt").to(model.device)
+    output = generate(model, input_ids, knowledge_cache)
+    return tokenizer.decode(output[0], skip_special_tokens=True, temperature=None)

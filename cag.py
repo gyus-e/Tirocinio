@@ -6,7 +6,7 @@ import os
 
 def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
     """
-    Prepare knowledge kv cache for CAG.
+    Prepare knowledge kv cache for CAG by passing the prompt to the model.
     Args:
         model: HuggingFace model with automatic device mapping
         tokenizer: HuggingFace tokenizer
@@ -39,8 +39,23 @@ def prepare_kvcache(
     system_prompt="You are a medical assistant for giving short answers based on given reports.",
     answer_instruction="Answer the question with a super short answer.",
 ):
-    # The structure of this prompt, including any specific instructions or special tokens,
-    # is crucial and depends heavily on the chosen model
+    """
+    Prepares kv cache for CAG by constructing a prompt with the content of the documents.
+    The structure of this prompt, including any specific instructions or special tokens,
+    is crucial and depends heavily on the chosen model.
+    The size of the documents is also an important factor to consider,
+    as it can overflow the context window of the model or saturate the memory of the machine that runs the program.
+    Args:
+        model: HuggingFace model with automatic device mapping
+        tokenizer: HuggingFace tokenizer
+        documents: any object that can be converted to a string, containing the documents contents
+        system_prompt: The general instructions for the model
+        answer_instruction: Other instructions for answering questions
+
+    Returns:
+        DynamicCache: KV Cache
+    """
+
     knowledges = f"""
     <|begin_of_text|>
     <|start_header_id|>system<|end_header_id|>
@@ -127,15 +142,12 @@ def generate(
 
 
 def get_or_create_kv_cache(model, tokenizer, kv_cache_path: str):
-    from cag import read_kv_cache, prepare_kvcache, write_kv_cache
+    from documents import json_data
 
     if os.path.exists(kv_cache_path):
         knowledge_cache, kv_len = read_kv_cache(kv_cache_path)
     else:
-        from documents import documents
-
-        knowledge = "\n".join([doc.text.strip() for doc in documents])
-        knowledge_cache, kv_len = prepare_kvcache(model, tokenizer, documents=knowledge)
+        knowledge_cache, kv_len = prepare_kvcache(model, tokenizer, documents=json_data)
         write_kv_cache(knowledge_cache, kv_cache_path)
 
     return knowledge_cache, kv_len

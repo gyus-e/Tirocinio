@@ -3,6 +3,7 @@ from llama_index.core import (
     StorageContext,
     Settings,
 )
+from llama_index.core.workflow import Context
 from llama_index.core.agent.workflow import AgentWorkflow
 from llama_index.vector_stores.chroma import ChromaVectorStore
 import chromadb
@@ -49,3 +50,5 @@ agent = AgentWorkflow.from_tools_or_functions(
     llm=Settings.llm,
     system_prompt="""You are a helpful assistant that can search through documents to answer questions.""",
 )
+
+context = Context(agent)

@@ -1,0 +1,1154 @@
+[
+  {
+    "index": 1,
+    "number": "4B1",
+    "author": "CARACCIOLO ROBERTO",
+    "title": "NAPOLI, ACCADEMIA PONTANIANA, 4B1",
+    "name": "Incunabolo cartaceo",
+    "year": "1485",
+    "pages": "cc. 64",
+    "size": "mm 335 x 236",
+    "details": "L'incunabolo Sermones Quadragesimales di CARACCIOLO ROBERTO é stato pubblicato in Venezia ad opera di Thomaso de Alexandria nel 1485.",
+    "digitalSource": "/collections/incunaboli/4b1-caracciolo-roberto-viewer",
+    "description": {
+      "id": "1",
+      "popupinfo": {
+        "author": "Caracciolo Roberto",
+        "title": "Sermones Quadragesimales",
+        "publication": "In Venecia (Venezia): Thomaso de Alexandria, MCCCCLXXXV. Incunabolo cartaceo, carte di guardia cartacee; cc. 64; cartulazione manoscritta, in cifre arabiche nell’angolo inferiore a sinistra del recto. Sul contropiatto anteriore etichetta dell’Accademia Pontaniana che segnala la collocazione 4B1 e annotazione RARI C2 F.T.                                                                     Sul verso della c. 64 timbro rotondo in inchiostro blu dell’Accademia Pontaniana, timbro del numero di inventario in inchiostro nero e marca tipografica: Croce latina con traversa orizzontale biforcuta e traversa verticale terminante a forma di Y rovesciata su cerchio quadripartito con iniziali T e A sormontate da accento circonflesso.",
+        "dimensions": "4°, mm 335 x 236 (carta di guardia anteriore r).",
+        "signature": "a-lvi. Fascicolo prevalente: 6 bifogli (senioni).",
+        "imprint": "o.on rira giso tere (C) 1485 (R).",
+        "textLayout": "Bicolonnare.",
+        "lines": "ll. 46 in inchiostro nero.",
+        "requests": "Richiami di attenzione in blu, rosso e matita nella maggior parte delle carte.",
+        "binding": "Legatura novecentesca in pergamena rigida su piatti di cartone, eseguita da Achille Fiore; sul contropiatto posteriore etichetta: Legatoria A. FIORE Napoli. Nell’occasione aggiunte una carta di guardia anteriore ed una posteriore. Dorso liscio con nome dell’autore e titolo dell’opera: CARACCIOLUS – SERMONES QUADRAGESIMALES.",
+        "language": "Latino, volgare.",
+        "NamesLinkedToHistory": "Ferdinando I, re di Napoli, dedicatario; Tommaso di Alessandria, stampatore veneziano; Mocenigo Giovanni, Doge della Repubblica di Venezia.",
+        "condition": "Coperta restaurata. Sparsi fori da insetti. Solo nei casi più evidenti interventi di restauro con carta giapponese. Alla c. 42v strappo nella parte inferiore della colonna sinistra.",
+        "decoration": "Spazi capitali vuoti senza lettere guida; aggiunte successivamente alcune iniziali in inchiostro nero, di mediocre fattura.",
+        "location": "4B1",
+        "summary": {
+                        "subject": "Il titolo \"Sermones Quadragesimales\" si riferisce a una raccolta di sermoni per il periodo di Quaresima, una stagione penitenziale nella liturgia cristiana. Ecco i punti principali:\n\nContenuto e struttura\n- Sermoni per la Quaresima: Questi sermoni sono progettati per essere predicati durante il periodo di Quaresima, che precede la Pasqua. Sono spesso organizzati in cicli che coprono le domeniche e i giorni feriali di Quaresima.\n- Autore e stile: Le raccolte di *Sermones Quadragesimales* possono essere attribuite a vari autori, come Jacobus de Voragine o Roberto Caracciolo. Gli stili variano, ma spesso includono un mix di esegesi biblica, dottrina morale e inviti alla penitenza.\n\nImportanza storica e culturale\n- Influenza culturale: I sermoni quaresimali hanno esercitato un'influenza significativa sulla cultura religiosa medievale e rinascimentale, contribuendo a diffondere la dottrina cristiana e a promuovere la pratica della penitenza.\n- Rinascita culturale: Queste raccolte riflettono l'interesse per la cultura religiosa e la riscoperta delle fonti spirituali, che caratterizzò il Rinascimento come un momento di rinnovamento culturale e intellettuale.\n\nEsempi di raccolte\n- Jacobus de Voragine: Una delle raccolte più note è quella di Jacobus de Voragine, che include sermoni per la Quaresima basati sulla sua *Legenda Aurea*.\n- Roberto Caracciolo: Un'altra raccolta è quella di Roberto Caracciolo, che si concentra sulla penitenza e include sermoni specifici per il periodo quaresimale.\n\nIn sintesi, i *Sermones Quadragesimales* sono un'importante fonte per lo studio della cultura religiosa e della pratica della predicazione durante il Rinascimento, arricchita da contributi di vari autori che aiutano a comprendere meglio la dottrina cristiana e la sua diffusione nel periodo.",
+                        "sources": [
+                          "https://www.textmanuscripts.com/enlu-assets/catalogues/primer/primer-1-sermons/primer-1-sermons.pdf",
+                          "https://www.geschichte.hhu.de/fileadmin/redaktion/Oeffentliche_Medien/Fakultaeten/Philosophische_Fakultaet/Geschichtswissenschaften/Mittelalterliche_Geschichte/Dateien/Hanska._PDF.pdf",
+                          "https://bibliophilly.library.upenn.edu/viewer.php?id=MS+1174%2F14",
+                          "https://www.tandfonline.com/doi/full/10.1080/13660691.2021.1992893",
+                          "https://archive.org/details/ms_1174_014",
+                          "https://www.academia.edu/113265925/Law_as_the_Sermon_The_Sermones_quadragesimales_de_legibus_of_Leonardo_Mattei_da_Udine_c_1399_1469_",
+                          "https://cris.unibo.it/retrieve/handle/11585/855583/e1dcb339-5594-7715-e053-1705fe0a6cc9/Hidden%20in%20a%20European%20Bestseller%20(Delcorno%202021).pdf",
+                          "https://archive.org/details/ita-bnc-in1-00000311-001"
+                        ]
+                      },
+        "Internal_description": [
+          {
+            "page": "c. 1r",
+            "title": "Prologo di frate Ruberto ai Ferdinando Re di Napoli.",
+            "name": "Roberto frate, Ferdinando re.",
+            "Incipit": "Me havete astricto o illustrissima corona.",
+            "Explicit": "Or prendete con dignatione la picola offerta del vostro suggeto."
+          },
+          {
+            "page": "cc. 1r-3v",
+            "title": "Feria quarta.",
+            "name": "Marco evangelista, Aristotele, Mosè, Salomone, Sant’Agostino, San Tommaso d’Aquino, Matteo evangelista, Luca evangelista, Giacomo apostolo, Severino Boezio, San Paolo, San Riccardo, Adamo, Pietro apostolo, Eva, San Girolamo, Daniele profeta, Giovanni evangelista, Gesù, Nabucodonosor, Sant’Ambrogio, Elia profeta.",
+            "Incipit": "Cum Ieiunatis nolite fieri sicut hypocrite tristes. Parole della sancta scriptura originalmente di sancto Marcho nel sexto capitulo transumptem nel evangelio di hogi.",
+            "Explicit": "Extingue la libidine porta lume a castita: & a li homini concede vita beata. a la quale dio ne conduca in secula seculorum Amen."
+          },
+          {
+            "page": "cc. 3v-5v",
+            "title": "Feria quinta.",
+            "name": "San Tommaso, Aristotele, Giovanni Damasceno, Sant’Anselmo, Matteo evangelista, Cristo, Davide re, San Giacomo, Maria Vergine, San Sebastiano, Sant’Apollonia, Santa Lucia, San Pietro, Santa Maria, San Giovanni Battista, Luca evangelista, San Giacomo apostolo, Marta di Betania, Giovanni evangelista, Isaia profeta, Ezechia re, san Paolo, Giobbe, Mosè, Giovanni Crisostomo.",
+            "Incipit": "[D]omine puer meus iacét in domo paraliticus: Mathei octavo.",
+            "Explicit": "Pregiamo lo omnipotente dio spesso che ne facia habitar i cosi bello pallazo qui vivit in secula seculorum. Amen."
+          },
+          {
+            "page": "cc. 5v-7v",
+            "title": "Feria sexta.",
+            "name": "Matteo evangelista, Cristo Gesù, Paolo apostolo, Salomone, Tobia, Giobbe, Adamo, Elia pofeta, Nabucodonosor, Daniele profeta, Luca evangelista.",
+            "Incipit": "[C]um facis elemosyna nesciat sinistra tua quod faciat destra tua. Mathei quinto.",
+            "Explicit": "& consequenter beatificarse per infinita secula seculorum Amen."
+          },
+          {
+            "page": "cc. 7v-9r",
+            "title": "Sabbato.",
+            "name": "Matteo evangelista, Vergine Maria, Cristo, Santo Stefano, San Pietro, Ezechiele profeta, Salomone, San Francesco, Noè.",
+            "Incipit": " [E]rat navis i medio maris. Mathei vi capitulo.",
+            "Explicit": "la qual pregamo devotamente che priega el suo dilectissimo figliolo Iesu christo che ne perdoni in questa vita per gratia & in altra per gloria per infinita secula seculorum Amen."
+          },
+          {
+            "page": "cc. 9r-10v",
+            "title": "Dominica prima.",
+            "name": "Cristo Gesù, Matteo evangelista, Giovanni Crisostomo, Adamo, Aristotele, Cristo, Mosè, Malachia profeta, Roberto frate, San Pietro, Cesare, Davide re, San Tommaso, San Paolo, Dio, San Giacomo, Isaia profeta.",
+            "Incipit": "[D]uctus est iesus in desertum a spiritu ut tentaret a diabolo: mathei iiii capitulo.",
+            "Explicit": "Ad quam perducat nos omnipotens & misericors deus. Amen."
+          },
+          {
+            "page": "10v-12r",
+            "title": "Feria secunda.",
+            "name": "Matteo evangelista, Geremia profeta, Roberto frate, Abramo, Giovanni Battista, San Pietro, Cristo, Isaia profeta, Davide re, San Bernardo.",
+            "Incipit": "[V]enite benedicti patris mei percipite paratum vobis regnum ab origine mundi. Mathei vigesimoquinto & in evangelio hodierno.",
+            "Explicit": "Ad usque convertiteve & timete Dio cognositelo & amatelo fratelli mei servate li soi precepti acio meritate aldire quella voce. Venite benedicti & c."
+          },
+          {
+            "page": "12r-13v",
+            "title": "Feria tertia.",
+            "name": "Matteo evangelista, San Pietro, San Tommaso, Bonaventura da Bagnoregio, Davide re, San Gregorio, San Patrizio, Pascasio cardinale, Germano di Capua vescovo, Sant’Agostino, Santo Stefano, Sant’Ambrogio, Lazzaro, Graziano.",
+            "Incipit": "[C]ommota est universa civitas. Mathei vigesimo primo & in evangelio hodierno.",
+            "Explicit": "Piangemo adunque noi & non loro: ma pregamo dio chi presto li cavi da tal pena."
+          },
+          {
+            "page": "13v-14v",
+            "title": "Feria quarta.",
+            "name": "Matteo evangelista, Giobbe, San Paolo, Sant’Agostino, Maria, Sant’Ambrogio, Abramo, San Teodoro, Tobia, Graziano.",
+            "Incipit": "[M]agister volumus a te signum videre Mathei: xii capitulo.",
+            "Explicit": "Il.iiii.remedio e dicto solicita executione de testamenti facti."
+          },
+          {
+            "page": "14v-16r",
+            "title": "Feria quinta.",
+            "name": " Davide re, Matteo evangelista, Tertulliano, Virgilio, Bruto, Cicerone, Platone, Scipione Mercurio, Giacobbe, Giobbe, Salomone, Isaia profeta, Luca evangelista, Gesù Cristo, Giovanni evangelista, Matteo evangelista, Noè, Sant’Agostino, Gregorio Magno. ",
+            "Incipit": "[M]iserere mei fili David: filia mea male a demonio vexat. Mathei xv capitulo.",
+            "Explicit": "o povera creatura pensa e ripensa le toe stentate zornate che farai la zoso & guardarate dal peccare & questo ne conceda dio per gratia."
+          },
+          {
+            "page": "16r-17r",
+            "title": "Feria sexta",
+            "name": "Giovanni evangelista, Matteo evangelista, Ezechiele profeta, San Macario, Gesù Cristo, Roberto frate, Sant’Agostino, Isaia profeta, Giobbe, Davide, Mosè, Ramses II faraone, Daniele profeta, Gregorio Magno, Geremia profeta.",
+            "Incipit": "[I]acebat multitudo languentium expectantium atque motum. Ioannis v capitulo.",
+            "Explicit": "acio habiate di qua gratia & di la sulo gloria: Amen."
+          },
+          {
+            "page": "17v-18v",
+            "title": "Sabbato",
+            "name": "Matteo evangelista, san Pietro apostolo, Davide re, Cristo, Elia profeta, Mosè, Giacomo apostolo, Giovanni apostolo, Paolo apostolo, Giovanni evangelista, Sant’Agostino, Dio, Santa Veronica, Tiberio imperatore, Santo Stefano, San Lorenzo, Santo Bernardo, Salomone, Sant’Anselmo, Vergine Maria.",
+            "Incipit": "[D]omine bonum est nos hie(hic) esse Mathei xvii capitulo & in evangelio presenti.",
+            "Explicit": "Regina di cieli. Madona de li angeli solatio di bea di vita di iusticia."
+          },
+          {
+            "page": "18v-20r",
+            "title": "Dominica secunda",
+            "name": "Matteo evangelista, Cristo, Pilato, Giovanni evangelista, Davide re, Dio, Pietro apostolo, San Girolamo, Valerio Massimo, Isaia profeta, Mardocheo, Antioco re, San Paolo, Sant’Agostino, Mosè, Giobbe, Salomone, Tobia.",
+            "Incipit": "[C]eciderunt discipuli in facies suas. Mathei xvii capitulo & in evangelio hodierno.",
+            "Explicit": "& cossi per contrario a gli peccatori discorrecti timete adunque dio & honorati la sua iustitia: la sua deita: la sua maiesta acio che habiati da lui qua gratia & di la gloria."
+          },
+          {
+            "page": "20r-21v",
+            "title": "Feria secunda",
+            "name": "Giovanni evangelista, Bonaventura da Bagnoregio, Dio, Isaia profeta, Sant’Agostino, Matteo evangelista, San Paolo, Timoteo, San Girolamo, Gregorio Magno, Abramo, Cornelio centurione, Giobbe, Salomone, Davide re, Cristo, Luca evangelista.",
+            "Incipit": "[E]go vado & queritis me&i peccato vestro moriemini. Ioannis octavo capitulo.",
+            "Explicit": "Facete adunque sempre il bene benche siate in peccato mortale perho che dio ve ne cavera &daravi la gratia & finalmente la gloria."
+          },
+          {
+            "page": "21v-23r",
+            "title": "Feria tertia",
+            "name": "Matteo evangelista, San Tommaso, Samuele profeta, Saul re, Davide re, Dio, Cristo, Mosè, Luca evangelista, Sant’Agostino, Giosuè, Pietro apostolo, San Bernardo, Adamo.",
+            "Incipit": "Omnia quecumque dixerit vobis fervate & facite. Mathei xxiii capitulo.",
+            "Explicit": "Per tanto dice christo hogi: Qeucumque dixerit nobis facite & cetera Amen."
+          },
+          {
+            "page": "23v-24r",
+            "title": "Feria quarta",
+            "name": "Matteo evangelista, Cristo, San Tommaso, Gregorio Magno, Oloferne, Aristotele, Giovanni evangelista, Adamo, Caino, Giacobbe, San Giuseppe, Salomone.",
+            "Incipit": "[U]t audientes decem indignati sunt de duobus fratribus. Mathei xxxviii capitulo.",
+            "Explicit": "Onde iesu christo maestro de la pace inimico de le discordie monstro qua a fugire la radice de la invidia confortando gli discipuli ad humile povertade per la quale ci fiaciamo degni havere in questa vita la gratia & in laltra la gloria. Amen."
+          },
+          {
+            "page": "24r-25v",
+            "title": "Feria quinta",
+            "name": "Luca evangelista, Cristo, Sant’Agostino, Ezechiele profeta, San Tommaso, San Leone magno papa, Gregorio Magno, Davide re, Sansone, San Paolo.",
+            "Incipit": "[E]levans autem oculus cum esset in tormentis ait pater Abraam miserere mei. Luce xvi.",
+            "Explicit": "Per tanto siamo solliciti in amar dio per tempo a cio che habiamo da lui gratia e poi gloria Amen."
+          },
+          {
+            "page": "25v-27r",
+            "title": "Feria sexta",
+            "name": "Matteo evangelista, Davide re, Giovanni evangelista, Adamo, Pietro apostolo, Sansone, Cristo, Mosè, Abramo, Giacobbe, San Tommaso, Isacco, Luca evangelista, Sant’Agostino, Isaia profeta, Marco evangelista, Paolo apostolo, Gregorio Magno.",
+            "Incipit": "[M]alos male perdet: & vineam suam locabit aliis agricolis. Mathei xxi capitulo.",
+            "Explicit": "Tanto piu cialchuno debe eseere humile e prompto a servire a dio gli doni receuti quanto piu il se sente obligato in dovere rendere la ragione del ben havuto de lo qual Dio ne faza gratia Amen."
+          },
+          {
+            "page": "27r-28v",
+            "title": "Sabbato",
+            "name": "Luca evangelista, San Tommaso, Davide re, Salomone.",
+            "Incipit": "[D]issipavit substantiam suam vivendo luxuriose Luce xv capitulo.",
+            "Explicit": "Hai facto la vendecta: lassa la terza parte principale e dirai uno miraculo de la dona."
+          },
+          {
+            "page": "28v-30r",
+            "title": "Dominica tertia",
+            "name": "Luca evangelista, Abramo, Sant’Agostino, San Girolamo, Isaia profeta, Ciro di Persia re, Giona, Cristo, Tito, Vespasiano, Sedecia re, Geremia profeta, Nabucodonosor II, Baruc profeta, Amasia re, Davide re, Dio, Benadad re, Ezechia re, Sennacherib re, Giuditta, Oloferne.",
+            "Incipit": "[O]mne regnum in se ipsum divisum desolabitur. Lucae xi.",
+            "Explicit": "Tu dio solo sei la mia forteza: & in le tue mane sono tutti li reami del mondo."
+          },
+          {
+            "page": "30r-31v",
+            "title": "Feria secunda",
+            "name": "Luca evangelista, Gesù Cristo, San Tommaso, Giovanni Damasceno, Arsenio il Grande, Aristotele, Gregorio Magno, Seneca, Ettore, Sansone, Valerio Massimo, Silla, Catone, Teodosio, Sant’Ambrogio, Davide re, San Girolamo, Ercole, Matteo evangelista.",
+            "Incipit": "[R]epleti sunt omnes in synagogal ira Luce iiii capitulo.",
+            "Explicit": "Beati gli pacifici perche serano diciti figlioli de dio. Amen."
+          },
+          {
+            "page": "31v-32v",
+            "title": "Feria tertia",
+            "name": "Matteo evangelista, San Tommaso, Davide re, Cristo, Cassiodoro, Sant’Agostino, Luca evangelista, Giovanni evangelista, Paolo apostolo, Dio, Cesare, Aristotele.",
+            "Incipit": "[S]i peccaverit in te frater tuus vade & corripe eum inter te & ipsum solum Mathei.xviii capitulo. & in evangelio hodierno.",
+            "Explicit": "O padre perdona a questa gente perche non intendeno quello che essi faciano. Mathei vigessimo sexto."
+          },
+          {
+            "page": "32v-34r",
+            "title": "Feria quarta",
+            "name": "Matteo evangelista, Alessandro di Hales, Cristo, Belzebù, Salomone, Sant’Agostino, San Giovanni Crisostomo, Davide re, Sant’Anselmo d’Aosta, Plinio il Vecchio, Isaia profeta, San Girolamo, Maddalena, San Pietro.",
+            "Incipit": "[Q]uod percedit ex ore hoc conquinat hominem. Mathei x capitulo.",
+            "Explicit": "Amative adunche saporative luno con laltro non detrahendovi: non iniuriandovi de parole vevendo come boni christiani."
+          },
+          {
+            "page": "34r-35r",
+            "title": "Feria quinta",
+            "name": "Luca evangelista, Adamo, Dio, Dionigi l’Aeropagita, Bonaventura da Bagnoregio, San Giovanni Battista, Giovanni evangelista, Paolo apostolo, Gregorio Magno, Pietro apostolo, Maddalena, Riccardo di Mediavilla, Cristo, Davide re.",
+            "Incipit": "[S]tans super illam imperavit febri: & dimisit illam. Luce capitulo iiii.",
+            "Explicit": "Hor basta per hogi haver veduto a che modo homo di sua natura e variabile apto al male sotoposto al peccato per volunta poter essere impeccabile."
+          },
+          {
+            "page": "35r-36v",
+            "title": "Feria sexta",
+            "name": "Giovanni evangelista, Cristo, Bonaventura da Bagnoregio, Sant’Agostino, Dio, Matteo evangelista, Seneca, Geremia profeta, Salomone, Davide re, Pietro Lombardo vescovo, Sant’Ambrogio, Graziano giurista, Luca evangelista, Mosè, Caino, Esaù, Giacobbe, Dina, Maria, Giuda, Pietro apostolo, Simone apostolo, San Bernardo.",
+            "Incipit": "[V]enit mulier de Samaria aquam haurire: Ioannis iiii capitulo.",
+            "Explicit": "Acio che in quella croce fusse crucifixo el peccato per farne capace di gratia: e poi la gloria: Amen."
+          },
+          {
+            "page": "36v-37r",
+            "title": "Sabbato",
+            "name": "Giovanni evangelista, Pietro apostolo, Sant’Agostino, Michea profeta, Salomone, Saul re, Davide re, Giovanni Crisostomo, Samuele profeta, Natan profeta, Luca evangelista, Cristo, Maddalena, Dio.",
+            "Incipit": "[V]ade & amplius noli peccare: ne deterius tibi contingat: Dechiara lo evangelio secundo la lettera.",
+            "Explicit": "Acio che lalto dio ne conseda misericordia."
+          },
+          {
+            "page": "37r-38r",
+            "title": "Dominica quarta",
+            "name": "Gesù Cristo, Sant’Agostino, Davide re, Bonaventura da Bagnoregio, Giovanni evangelista, Marco evangelista, San Giacomo, Giovanni Duns Scoto.",
+            "Incipit": "[H]ic est vere propheta: qui venturus est in mumdum. Ioannis capitulo sexto.",
+            "Explicit": "Se tu hai una infirmita corporale tu cerchi de havere uno bono medico quanto magiormente essendo l’anima piu nobile chel corpo la debie tu havere cara & cerchare la sua perfecta salute. Sequita poi come te piace."
+          },
+          {
+            "page": "38r-39r",
+            "title": "Feria secunda",
+            "name": "Giovanni evangelista, Cristo, Geremia profeta, Davide re, Salomone, Carlo Magno, Osea profeta, Pietro apostolo, Paolo apostolo, Alessandro di Ales, Ezechia re, Dio.",
+            "Incipit": "Solvite templum hoc & in tribus deibus reedificabo illud. Ioannis secondo capitulo.",
+            "Explicit": "Confessative a dio del Cielo & altrovi confessative a Dio invocate il suo nome acio che habia te in questo mondo lagratia ne laltro la gloria Amen."
+          },
+          {
+            "page": "39r-40r",
+            "title": "Feria tertia",
+            "name": "Giovanni evangelista, Gesù Cristo, San Matteo, Davide re, Maria Maddalena, Abramo.",
+            "Incipit": "[N]olite iudicare secundum faciem sed rectum iudicium iudicate. Ioannis septimo capitulo.",
+            "Explicit": "Come non puo vivere il corpo senza lanima cosi ne il peccatore senza penitentia puo haver gloria."
+          },
+          {
+            "page": "40r-41r",
+            "title": "Feria quarta",
+            "name": "Giovanni evangelista, Gesù, Adamo, Matteo evangelista, Timoteo, Virgilio, Priamo re, Polidoro, Geremia, Davide re, Mosè, Noè, Esaù, Oloferne, Erode, Giovanni Battista, Caino, Giacobbe, San Giuseppe, Pilato, San Paolo.",
+            "Incipit": "[R]abbi quis peccavit: hic aut parentes eius ut cecus nasceretur Ioannis capitulo ix.",
+            "Explicit": "Voler uscire di questa servitu & farli libero & bisgona confessarsi aprire la bocca & dire: Io ho peccato: tu dio habi misericordia Amen."
+          },
+          {
+            "page": "41v-42r",
+            "title": "Feria quinta",
+            "name": "Luca evangelista, San Tommaso, San Paolo apostolo, Matteo evangelista, San Gregorio, Bonaventura da Bagnoregio.",
+            "Incipit": "[Ec]ce defunctus efferebatur filius unicus matris sue. Luce capitulo vii.",
+            "Explicit": "Solamente e obbligata la persona de peccati per quelli chel tiene a batpesemo quando non son amaistrati in la fede & boni costumi del padre de consecrati. di. iiii. capitulo. Vos ante omnia."
+          },
+          {
+            "page": "42r-43r",
+            "title": "Feria sexta",
+            "name": "Giovanni evangelista, Santa Maria, Matteo evangelista, Dio, Gesù Cristo, Davide re, Salomone, Sant’Agostino, San Paolo apostolo, San Bernardo.",
+            "Incipit": "[E]ecce quomodo amabat eum. Ioannis xi.",
+            "Explicit": "O signore de le virtu quanto sono amate le tue habitatione: l’animamia & el cuore mio ha desiderio & zelo de habitare in quelle: & le mie carne se relegrano del signor mio divino."
+          },
+          {
+            "page": "43r-43v",
+            "title": "Sabbato",
+            "name": "Dio, Sansone, Davide re, Salomone, San Paolo apostolo, Cristo, Vergine Maria, Davide re, Giovanni evangelista.",
+            "Incipit": "[E]go sum lux mundi. Declarato tutto lo evangelio: hogi sequetaremo del amor divino.",
+            "Explicit": "Gli sancti exultaranno in gloria & se ralegraranno in li lor lecti e camere: la legreza de dio sara in li lor cuori & fauce."
+          },
+          {
+            "page": "43v-44v",
+            "title": "Dominica in passione",
+            "name": "Giovanni evangelista, Dio, San Bernardo, Mosè, Cristo, Matteo evangelista, Luca evangelista, San Pietro, San Paolo apostolo.",
+            "Incipit": "[S]I quis sermonem meum servarerit mortem non gustabit in eternum. Ioannis capitulo viii.",
+            "Explicit": "Voi christiani siati comparati con gratia precio: glorificate & portate dio nel cuor & corpo vostro."
+          },
+          {
+            "page": "44v-45v",
+            "title": "Feria secunda",
+            "name": "Giovanni evangelista, Gregorio Magno, Dio, Cristo, San Tommaso, San Paolo apostolo, Vergine Maria, San Pietro, Eva, Davide re, Anselmo, San Luca, Gesù.",
+            "Incipit": "[S]i qui sitit veniat ad me & bibat. Ioannis capitulo vii.",
+            "Explicit": "Adunche chi ha sete venga e beva in questo mondo la gratia in laltro la gloria. Amen."
+          },
+          {
+            "page": "45v-46r",
+            "title": "Feria tertia",
+            "name": "Giovanni evangelista, Dio, Davide re, Sant’Agostino, Bonaventura da Bagnoregio, Gesù, Paolo apostolo, Abramo, Cristo, San Matteo evangelista, Atanasio.",
+            "Incipit": "[T]empus autem vestrum semper est paratum. Ioannis capitulo vii.",
+            "Explicit": "Reiponde lui perche il vostro tempo est sempre apparecchiato. Amen."
+          },
+          {
+            "page": "46r-47r",
+            "title": "Feria quarta",
+            "name": "Giovanni evangelista, San Tommaso d’Aquino, Giobbe, Dio, Mosè, San Macario, Gesù Cristo.",
+            "Incipit": "[O]ves mee vocem meam audiunt & cognosco eas: & sequuntur me Ioannis capitulo vii.",
+            "Explicit": "O peccatori sequitate la voce de lo ver pastore Iesu christo: acio che ti conceda qua gratia di la gloria Amen."
+          },
+          {
+            "page": "47r-47v",
+            "title": "Feria quinta",
+            "name": "Luca evangelista, Maria Maddalena, Giovanni evangelista, Gesù Cristo, Matteo evangelista, San Giovanni Battista, Dio, Taide, Pafnuzio di Tebe monaco, Isaia profeta, Nicodemo discepolo.",
+            "Incipit": "[R]emittuntur tibi peccata tua. Luce: capitulo vii.",
+            "Explicit": "Pregamo dio non ti lassa cascare in simel errore. Acio che noi habiamo di qua la gloria."
+          },
+          {
+            "page": "47v-48v",
+            "title": "Feria sexta",
+            "name": "Giovanni evangelista, Caifa sacerdote, Dio, Davide re, San Paolo apostolo, San Bernardo, Sant’Agostino, Cristo, Salomone, Isaia profeta.",
+            "Incipit": "[E]xpedit ut unus moriatur homo pro populo. Ioannis capitulo xi.",
+            "Explicit": "Domane vederemo lo testo: a cio che per tal cognitione possiamo acquistare gratia. Amen."
+          },
+          {
+            "page": "48v-49v",
+            "title": "Sabbato",
+            "name": "Giovanni evangelista, Cristo, Dio, Gregorio Magno, Matteo evangelista, Stefano protomartire, San Giacomo, San Paolo, Davide re, Gesù.",
+            "Incipit": "[H]ec est vita eterna ut cognoscant te Ioannis xvii. dicto lo evangelio dirai cossi.",
+            "Explicit": "Io son certo che morte ne vita ne angeli: ne podesta di alcuna creatura non potera separare da la charita del mio signore iesu christo la quale ho in questo mondo per gratia: dio la voglia confirmare in gloria. Amen."
+          },
+          {
+            "page": "49v-50v",
+            "title": "Dominica in ramis palmarum",
+            "name": "Gesù Cristo, San Geronimo, San Giuseppe, Zaccaria profeta, Luca evangelista, Davide re, Dio, Isaia profeta, Adamo, Abacuc profeta, Esdra, Sibilla Eritrea, Sant’Agostino, Abramo, Giacobbe, Isacco, Maria, Eva, San Paolo, San Pietro, Gioele profeta.",
+            "Incipit": "[P]ropter quod & deus exaltavit illum & donavi tilli nomen: quod est super omne nomen: ut in nomine iesu omne genuflectatur. Ad philipenses: ii capitulo.",
+            "Explicit": "non troverai persona niuna havere invocato questo nome che pianamente non habia havuto remissione de ogni peccato: & poi gratia finalmente la gloria Amen."
+          },
+          {
+            "page": "50v-51r",
+            "title": "Feria seconda",
+            "name": "Giovanni evangelista, San Tommaso, Sant’Agostino, Cristo, Dio, Cesare.",
+            "Incipit": "[Fu]r erat & loculos habens. Ioannis xii capitulo. Dicto lo evangelio procederai cosi.",
+            "Explicit": "rendeti cio che del Cesaro al Cesare: & cio che est de dio a dio. Amen."
+          },
+          {
+            "page": "51r-52r",
+            "title": "Feria tertia",
+            "name": "Cristo, Melchisedec sacerdote, Abramo, Davide re, San Paolo apostolo, Sant’Agostino, Dio.",
+            "Incipit": "[M]emoriam fecit mirabilium suorum misericors & miserator dominus escam dedit timentibus se. Psalmo centesimo & decimo.",
+            "Explicit": "Noi adunche come fideli christiani le disponeremo a digna communione acio che possiamo havere gratia in vita eterna."
+          },
+          {
+            "page": "52r-53r",
+            "title": "Feria quarta",
+            "name": "Matteo evangelista, Dio, San Paolo apostolo, Cristo, Giovanni evangelista, Davide re, Salomone, Sant’Agostino.",
+            "Incipit": "[M]emoriam fecit mirabilium suorum misericors & cetera: Hogi sequitando la nostra lectione incominciata dal corpo di christo.",
+            "Explicit": "Domane vederemo una bella predica de la utilita del corpo de christo Amen."
+          },
+          {
+            "page": "53r-53v",
+            "title": "Feria quarta in cena domini",
+            "name": "Gesù, Giovanni evangelista, Davide re, Cristo, Matteo evangelista, Sant’Agostino, San Paolo apostolo.",
+            "Incipit": "[M]emoriam fecit & cetera. Dilectissimi in christo Iesu devotissimi & fidelissimi christiani.",
+            "Explicit": "Se una medicina vile eterna: est materiale di tanta che ella rende uno corpo vigoroso e forte: multo magiormente fra questo la medicina eterna del sancto & degno corpo de christo Iesu. Amen."
+          },
+          {
+            "page": "53v-60v",
+            "title": "Feria sexta in passione",
+            "name": "Gesù Cristo, Bonaventura, San Bernardo, Isaia profeta, Giovanni evangelista, Sant’Ambrogio, Geremia profeta, San Geronimo, San Giuseppe, Vergine Maria, Simeone profeta, Marco evangelista, Pilato, Barabba, Gabriele angelo, Anna, Caifa sacerdote, Elisabetta, Sant’Agostino, Lazzaro, Maria Maddalena, Giuda, Adamo, Zaccaria profeta, Erode, San Pietro apostolo, Gregorio Magno, Giacomo il minore profeta, Malco sacerdote, Cesare, Simone di Cirene.",
+            "Incipit": "[O] vos omnes qui transitis per viam attendite & videte si est dolor similis dolori meo. Scribuntur hec verba originaliter Trenorum primo capitulo.",
+            "Explicit": "Rispose Pilato: essi partirono signando la pietra del sepulchro lassando certa gente a guardia d’esso Amen."
+          },
+          {
+            "page": "60v-61v",
+            "title": "Nel giorno de la pascha",
+            "name": "Marco evangelista, Davide re, Gesù, Dio, Giona profeta, Maddalena, Sansone, Giovanni evangelista, Isaia profeta, Matteo evangelista, Amos profeta, Geremia profeta, Abramo, San Giovanni, Balaam profeta.",
+            "Incipit": "[I]esum quem queritis crucifixum surrexit non est hic. Marci capitulo ultimo & in evangelio odierno.",
+            "Explicit": "E iera necessario che fusse adimpito tutto cio chi est scripto di me ne le prophetie e psalmi."
+          },
+          {
+            "page": "61v-62v",
+            "title": "Feria secunda",
+            "name": "Luca evangelista, Cristo Gesù, Dio, San Pietro apostolo, San Giovanni Battista, Santa Maria, Matteo evangelista.",
+            "Incipit": "[O] stulti & tardi corde ad credendum in omnibus his que locuti sunt prophete: Luce ultimo & in evangelio hodierno.",
+            "Explicit": "Lenate e non despogliar lo tuo corpo da l’anima tua e levate suso bello come uno sole vene e a presso di Hierusalem circha Emanus & cetera."
+          },
+          {
+            "page": "62-63v",
+            "title": "Feria tertia",
+            "name": "Luca evangelista, Gesù Cristo, Giovanni evangelista, Atanasio di Alessandria vescovo, Matteo evangelista, San Paolo apostolo.",
+            "Incipit": "[P]ax vobis Luce ultimo capitolo & in evangelio hodierno.",
+            "Explicit": "con la mente saciata: la quel sacieta ci presti dio in questa vita per gratia in paradiso per gloria Amen."
+          },
+          {
+            "page": "63v-64v",
+            "title": "Dominica in octava pasce",
+            "name": "Giovanni evangelista, Gesù Cristo, Dio, Maria Maddalena, Davide re, Matteo evangelista, San Paolo apostolo, Bonaventura da Bagnoregio, Geremia profeta, Graziano giurista, Luca evangelista, Isaia profeta, San Tommaso apostolo.",
+            "Incipit": "[P]ax vobis. Ioannis capitulo xx. Padri & figlioli in Iesu Christo dilectissimi mei e voi sorelle devote per la gratia di Dio siamo pervenuti a questo giorno ultimo paschale dove christo iesu nostro redemptore annuncia a tutti gli soi inimici e benivoli la pace dicendo a tutti: Siati li ben trovati: la mia pace sempre sia con voi.",
+            "Explicit": "Habiamo veduto el signore & non volse credere per in fine che tocho le piaghe a confirmatione de la fede: la quale ne fa havere in questo mondo la gratia in altro la gloria: ad quam nos perducat Amen."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "index": 2,
+    "number": "4B2",
+    "author": "Ognibene de’ Bonisoli",
+    "title": "NAPOLI, ACCADEMIA PONTANIANA, 4B2",
+    "name": "Incunabolo cartaceo",
+    "year": "1495",
+    "pages": "cc. 368",
+    "size": "mm 310 x 220",
+    "details": "L’incunabolo Oratio de laudibus eloquentiae di OMNIBONUS LEONICENUS risale al 1495.",
+    "digitalSource": "/collections/incunaboli/4b2-ognibene-bonisoli-viewer",
+    "description": {
+      "id": "2",
+      "popupinfo": {
+        "author": "Ognibene de’ Bonisoli",
+        "title": "Oratio de laudibus eloquentiae",
+        "publication": "MCCCCXCV \n Incunabolo cartaceo, carte di guardia cartacee; cc. 368. Sul contropiatto anteriore etichetta dell’Accademia Pontaniana che segnala la collocazione 4B2 e annotazione V B 16. Sul contropiatto posteriore annotazione manoscritta: 1=00. Sul verso della c. 368 indicazione della data di stampa 15 luglio 1495: Anno ab incarnatione domini. M.ccccxcv. Die.xv.Iulii.",
+        "dimensions": "4°, mm 310 x 220 (Incipit v).",
+        "signature": "a-Evi + Fiv Fascicoli prevalenti: 6 bifogli (senioni) + 4 bifogli (quaternione).",
+        "imprint": "umui r.ci m.at prdi (C) 1495 (R).",
+        "textLayout": "a piena pagina e monocolonnare con commento a cornice non regolare.",
+        "lines": "ll. 60 in inchiostro nero.",
+        "requests": "due annotazioni manoscritte alle carte b6r e g3r.",
+        "binding": "Legatura in pergamena rigida su piatti di cartone. Dorso liscio con nome dell’autore e titolo dell’opera: Orationi di Cicerone; sono presenti due etichette con una collocazione attuale (4B2) e precedente (VB16).",
+        "language": "Latino.",
+        "condition": "Fori sparsi, margini non rifilati e deteriorati, macchie scure estese su alcune delle carte. La carta bianca iniziale è strappata.",
+        "decoration": "Spazi capitali vuoti senza lettere guida; aggiunte successivamente alcune iniziali in inchiostro nero, di mediocre fattura.",
+        "location": "4B2",
+        "summary": {
+                        "subject": "Il titolo \"Oratio de laudibus eloquentiae\" si riferisce a un'orazione in lode dell'eloquenza, un tema comune nella retorica umanistica del Rinascimento. Ecco i punti principali:\n\nContenuto e autori\n- Ognibene da Lonigo: Una delle orazioni più note con questo titolo è stata scritta da Ognibene da Lonigo nel 1485. In essa, Ognibene sottolinea l'importanza assoluta dell'eloquenza in tutti i campi della vita umana.\n- Franciscus Tranquillus Andronicus: Un'altra orazione con lo stesso titolo è stata data e pubblicata da Franciscus Tranquillus Andronicus a Lipsia nel 1518. Questa orazione include informazioni sulla sua educazione in Italia.\n\nImportanza storica e culturale\n- Influenza culturale: Le orazioni in lode dell'eloquenza riflettono l'interesse rinascimentale per la retorica e la cultura classica, influenzando la formazione degli oratori e la pratica della comunicazione efficace.\n- Rinascita culturale: Queste orazioni sono esempi della riscoperta e valorizzazione della cultura antica durante il Rinascimento, un periodo caratterizzato da un rinnovato interesse per l'educazione e la comunicazione.\n\nIn sintesi, l'opera è un'importante fonte per lo studio della retorica e della cultura umanistica del Rinascimento, arricchita da contributi di vari autori che aiutano a comprendere meglio l'importanza dell'eloquenza nella società dell'epoca.",
+                        "sources": [
+                          "https://www.jstor.org/stable/20867176",
+                          "https://hrcak.srce.hr/245880",
+                          "https://www.grafiati.com/en/literature-selections/italian-orations/",
+                          "https://www.jstor.org/stable/10.1525/rh.2008.26.2.139",
+                          "https://cimagl.saxo.ku.dk/download/70/70Harsting3-12.pdf",
+                          "https://philpapers.org/rec/GAWDHD",
+                          "https://www.degruyter.com/document/doi/10.7591/9781501737589-006/pdf?licenseType=restricted"
+                        ]
+                      },
+        "internalDescriptionTitle": 1,
+        "Internal_description": [
+          {
+            "title": "Incipit",
+            "titleDetail": "Clarissimi et eloquentissimi Rhetoris Omniboni Leoniceni: Oratio de laudibus eloquetiae:feliciter incipit.",
+            "Incipit": "Quantum admirationis habeat eloquentia Vicentini cives.",
+            "Explicit": "Ex quibus sibi patriae suae fructus uberrimos consequentur."
+          },
+          {
+            "title": "Prefazione",
+            "titleDetail": "Preafatio eiusdem in Marci Tulii oratorem.",
+            "Incipit": "Quantum Ciceronis orator scriptis omnibus non dico aliorum.",
+            "Explicit": "Erudtionis nostrae testimonium esse putemos: finis preafationis."
+          },
+          {
+            "page": "cc. b1r-h2r",
+            "title": "De oratore opusculm una cum commentario – Liber primum",
+            "Incipit": "Cogitanti mihi saepenumero. Quae in principiis librorum requiri solent.",
+            "Explicit": "Neque enim inquit tam mihi moluestus fuit, quod ius nostrum civile pervellit, quam iucundus, quod se id nescire confessus est."
+          },
+          {
+            "page": "cc. h2r-u2r",
+            "title": "De oratore opusculm una cum commentario – Liber secundus",
+            "Incipit": "Magna nobis pueris, Quinte frater, si memoria tenes, opinio fuit, L. Crassum non plus attigisse doctrinae, quam quantum prima illa puerili institutione potuisset.",
+            "Explicit": "Omnes se vel statim vel si ipse post meridiem mallet, quam primum tamen audire velle dixerunt."
+          },
+          {
+            "page": "cc. u2r-&4r",
+            "title": "De oratore opusculm una cum commentario – Liber tertius",
+            "Incipit": "Instituenti mihi Quinte frater eum sermonem referre et mandare huic tertio libro.",
+            "Explicit": "Sed iam surgamus inquit nosque curemus et aliquando ab hac contentione disputationis animos nostros curamque laxemus."
+          },
+          {
+            "page": "cc. &4r-R1v",
+            "title": "De perfecto oratore",
+            "Incipit": "Utrum difficilius aut maius esset negare tibi saepius idem roganti an efficere id quod rogares diu multumquem Brute, dubitavi.",
+            "Explicit": "Tu autem velim, si tibi ea quae disputata sunt minus probabuntur, ut aut maius opus institutum putes quam effici potuerit, aut, dum tibi roganti voluerim obsequi, verecundia negandi scribendi me impudentiam suscepisse."
+          },
+          {
+            "page": "c. R1v",
+            "title": "Marcus Tullius Cicero salutem dicit Caio Trebatio - Epistulae ad Familiares - XIX. Scr. Regii V. Kal. Sextili.",
+            "Incipit": "Vide, quanti apud me sis; etsi iure id quidem, non enim te amore vinco.",
+            "Explicit": "In qua quidem nos te continebimus, si et salvi redierimus et salva ista offenderimus. Vale. V. Cal. Sextili. Rhegio."
+          },
+          {
+            "page": "cc.R2r-R5v",
+            "title": "Topicorum Liber ad Caium Trebatium.",
+            "Incipit": "Maiores nos res scribere ingressos, C. Trebati, et his libris quos brevi tempore satis multos edidimus digniores, e cursu ipso revocavit voluntas tua.",
+            "Explicit": "Sic tibi nos ad id quod quasi mancipio dare debuimus ornamenta quaedam voluimus non debita accedere."
+          },
+          {
+            "page": "cc. R5v-A4r",
+            "title": "De partitione oratoria",
+            "Incipit": "Studeo, mi pater, Latine ex te audire ea quae mihi tu de ratione dicendi Graece tradidisti—si modo tibi est otium, et si vis.",
+            "Explicit": "Ego vero, ac magno quidem studio, mi pater; multisque ex tuis praeclarissimis muneribus nullum maius exspecto."
+          },
+          {
+            "page": "cc. A4r-C4r",
+            "title": "Brutus",
+            "Incipit": "Cum e Cilicia decedens Rhodum venissem et eo mihi de Q. Hortensi morte esset adlatum, opinione omnium maiorem animo cepi dolorem.",
+            "Explicit": "nihil dico amplius, tantum dico: si mihi accidisset, ut numerarer in multis: si operosa est concursatio magis oportunorum."
+          },
+          {
+            "page": "cc. C4r-C6r",
+            "title": "Commentariolum petitionis",
+            "Incipit": "Etsi tibi omnia suppetunt ea quae consequi ingenio aut usu homines aut diligentia possunt, tamen amore nostro non sum alienum arbitratus ad te perscribere ea quae mihi veniebant in mentem dies ac noctes de petitione tua cogitanti, non ut aliquid ex his novi addisceres, sed ut ea quae in re dispersa atque infinita viderentur esse ratione e distributione sub uno aspectu ponerentur.",
+            "Explicit": "Volo enim hoc commentariolum petitionis haberi omni ratione perfectum."
+          },
+          {
+            "page": "cc. C6r-C6v",
+            "title": "De optimo genere oratorum",
+            "Incipit": "Oratorum genera esse dicuntur tamquam poetarum; id secus est, nam alterum est multiplex.",
+            "Explicit": "Sed de nobis satis. Aliquando enim Aeschinem ipsum Latine dicentem audiamus."
+          },
+          {
+            "page": "cc.D1r-E1r",
+            "title": "Contra Cthesiphontem de demosthenis coronatione per Leonardum Aretinum in latinum Orationem interpretata Oratio incipit.",
+            "Incipit": "Quanti conatus parenter viri Athenienses ad hoc iudicium oppugnandum.",
+            "Explicit": "Si minus ut potui. Vos autem ex dictis et omissis iuste pro republica decernatis."
+          },
+          {
+            "page": "cc.E1r-F3v",
+            "title": "Oratio Demosthenis in Aeschinem per Leonardum Aretinum in latinum conversa.",
+            "Incipit": "Aduersus philippum macedoniae regem.",
+            "Explicit": "Nobis autem reliquis liberationem impendentis metus et salutem indubiam praestare."
+          },
+          {
+            "page": "cc.F3v",
+            "title": "Aeschines, Epistula populoque Atheniensi.",
+            "Incipit": "Non me hercule ex scaena vt aiebat Demosthenes sed et liberaliter scribere doctus.",
+            "Explicit": "Et maiorum exemplum: cui necessarium est magisquam Malanopo contra vos roganti annuere."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "index": 3,
+    "number": "4B3",
+    "author": "Achillini Alessandro",
+    "title": "NAPOLI, ACCADEMIA PONTANIANA, 4B3",
+    "name": "Incunabolo cartaceo",
+    "year": "1498",
+    "pages": "cc. 51[1]",
+    "size": "mm 295 x 210",
+    "details": "L'incunabolo De orbibus libri Quattuor di ACHILLINI ALESSANDRO è stato pubblicato in Bologna ad opera di Benedicti Hectoris nel 1498.",
+    "digitalSource": "/collections/incunaboli/4b3-alexandri-achillini-viewer",
+    "description": {
+      "id": "3",
+      "popupinfo": {
+        "author": "Achillini Alessandro",
+        "title": "De orbibus libri Quattuor",
+        "publication": ": Bononie (Bologna): editus et impressus Benedicti Hectoris Bononiensis, MCCCCLXXXXVIII. Incunabolo cartaceo, carte di guardia cartacee; cc.51 [1]; cartulazione a stampa, in cifre arabiche nell’angolo superiore a destra del recto; le carte 2 e 15 sono numerate erroneamente. Sul contropiatto anteriore etichetta dell’Accademia Pontaniana che segnala la collocazione 4B3 e annotazione manoscritta: n° 122. Sul contropiatto posteriore annotazione manoscritta: 1=00. Sul verso della c. [52] marca tipografica: Croce di Lorena su cerchio con triangolo inscritto con iniziale B.",
+        "dimensions": "4°, mm 295 x 210 (carta a2r).",
+        "signature": "a-hvi + iiv. Fascicoli prevalenti: 6 bifogli (senioni) + 4 bifogli (quaternione).",
+        "imprint": "itsa iths rulo bimo (3). 1498 (R).",
+        "textLayout": "Bicolonnare.",
+        "lines": "ll. 52 in inchiostro nero.",
+        "requests": ": Richiami di attenzione, glosse manoscritte e diversi metodi di sottolineatura tra cui si evidenzia la cosiddetta manicula che è presente nella maggior parte delle carte. Nell’occhietto è presente un’annotazione manoscritta.",
+        "binding": ": Legatura in carta rigida su piatti di cartone. Dorso liscio con indicazione dell’autore, del titolo, del luogo e dell’anno di pubblicazione: ACHILLINI – DE ORBIBUS – BONONIE – 1498.",
+        "language": "Latino.",
+        "NamesLinkedToHistory": "Faelli Benedetto, stampatore bolognese; Bentivoglio Giovanni II, signore di Bologna.",
+        "condition": "Coperta danneggiata. Fori da insetti sparsi. Nelle prime pagine la legatura superiore si presenta molto fragile. Carte di guardia anteriore e posteriore deteriorate lungo il bordo inferiore. Alla c.51v strappo nell’angolo inferiore a destra.",
+        "decoration": "Spazi capitali vuoti senza lettere guida; aggiunte successivamente alcune iniziali in inchiostro nero, di mediocre fattura.",
+        "location": "4B3",
+        "summary": {
+                            "subject": "Il titolo \"De orbibus libri Quattuor\" si riferisce a un'opera di Alessandro Achillini, un filosofo e medico italiano del XV-XVI secolo. Ecco i punti principali:\n\nContenuto e autore\n- Alessandro Achillini: Nato a Bologna nel 1463, Achillini fu un'importante figura intellettuale del Rinascimento, noto per i suoi contributi alla filosofia e alla medicina.\n- De orbibus libri Quattuor: Quest'opera, pubblicata nel 1498 a Bologna da Benedictus Hectoris, tratta probabilmente di argomenti filosofici o scientifici relativi alle sfere celesti o ai concetti astronomici dell'epoca.\n\nImportanza storica e culturale\n- Influenza culturale: Le opere di Achillini riflettono l'interesse rinascimentale per la filosofia e la scienza, contribuendo alla riscoperta e alla valorizzazione delle conoscenze antiche.\n- Rinascita culturale: Questa edizione è un esempio della rinascita culturale del Rinascimento, caratterizzata da un rinnovato interesse per l'educazione e la diffusione del sapere.\n\nPubblicazione\n- Edizione del 1498: Pubblicata a Bologna da Benedictus Hectoris, questa edizione è un esempio di incunabolo, ovvero un libro stampato nei primi anni della stampa, prima del 1501.\n\nIn sintesi, l'opera è un'importante fonte per lo studio della filosofia e della scienza del Rinascimento, arricchita da un contesto storico che riflette l'interesse dell'epoca per la riscoperta delle conoscenze antiche.",
+                            "sources": [
+                              "https://www.yumpu.com/it/document/view/5246625/a-guide-to-italian-books-before-1601-new-york-university-",
+                              "https://www.walmart.com/ip/Alexandri-Achillini-Bononiensis-de-orbibus-libri-quattuor-De-orbibus-libri-quattuor-1498-Leather-Bound/5310107563",
+                              "https://www.e-rara.ch/nav/index/name?query=a&facets=language%3D%22lat%22+and+alpha.printer-publisher1%3D%22h%22&s=printer-publisher&max=100",
+                              "https://philological.cal.bham.ac.uk/bibliography/a.html",
+                              "https://era-prod11.ethz.ch/nav/index/date?facets=alpha.title1%3D%22a%22&query=1401-1500&s=title",
+                              "https://www.e-rara.ch/zut/nav/index/date?query=1401-1500&s=place",
+                              "https://archive.org/stream/bub_gb_yggSAAAAIAAJ/bub_gb_yggSAAAAIAAJ_djvu.txt"
+                            ]
+                          },
+        "internalDescriptionTitle": 1,
+        "Internal_description": [
+          {
+            "page": "cc. 2r-7r",
+            "title": "Dubium primum - Liber primus",
+            "name": "Averroè (101), Aristotele (61), Avicenna (6), Alessandro di Afrodisia (3), Alberto Magno dottore della Chiesa (2), Giovanni Duns Scoto (1), San Tommaso d’Aquino (1).",
+            "Incipit": "Caelum subitiens hoc secundum opus in quattuor libros divido.",
+            "Explicit": "Sed inquantum est forma caeli sibi repugnat."
+          },
+          {
+            "page": "cc. 7r-10r",
+            "title": "Dubium secundum - Liber primus",
+            "name": "Averroè (30), Aristotele (20), Anassagora (1)",
+            "Incipit": "[D]ubitatur secundo utrum stella et eius orbis differant specifice.",
+            "Explicit": "Ad auctoritatem Averrois stelle inquantum quiescenti motus potuit inesse. Non autem inquantum tale quiescens est."
+          },
+          {
+            "page": "cc. 10r-19v",
+            "title": "Dubium tertium - Liber primus",
+            "name": "Averroè (118), Aristotele (53), Tolomeo (10), Alberto Magno dottore della Chiesa (1), Temistio (1)",
+            "Incipit": "[D]ubitur tertio an excentrici sint ponendi.",
+            "Explicit": "Et in hoc finitur liber primus."
+          },
+          {
+            "page": "cc. 19v-22r",
+            "title": "Dubium primum – Liber secundus",
+            "name": "Averroè (32), Aristotele (25), Avicenna (4), Anassagora (1), Alberto Magno dottore della Chiesa (1)",
+            "Incipit": "Expeditis difficultatibus quas de materia caeli proposueram de natura forme id discutiendum est.",
+            "Explicit": "Sed de hiis hactenus que potius silentio pertranseunda sunt que orationibus explicanda."
+          },
+          {
+            "page": "cc. 22r-28r",
+            "title": "Dubium secundum – Liber secundus",
+            "name": "Averroè (62), Aristotele (56), Platone (6)",
+            "Incipit": "Dubium secundum utrum intellectus moveatur.",
+            "Explicit": "In hoc claudit liber secundus."
+          },
+          {
+            "page": "cc. 28r-35v",
+            "title": "Dubium primum – Liber tertius",
+            "name": "Averroè (46), Aristotele (17), Avicenna (3), Platone (3)",
+            "Incipit": "Circa naturam totius caeli sit hoc dubium primum an intelligentia sit forma differentias esse caelo.",
+            "Explicit": "Tertio parte sue creationis novitatem."
+          },
+          {
+            "page": "cc. 35v-40v",
+            "title": "Dubium secundum – Liber tertius",
+            "name": "Averroè (32), Aristotele (17), Anassagora (2), Platone (1)",
+            "Incipit": "Dubium secundum an mutationem femina verit caelum vel mundus.",
+            "Explicit": "Sed de huius haec satis."
+          },
+          {
+            "page": "cc. 40v-41v",
+            "title": "Dubium tertium– Liber tertius",
+            "name": "Aristotele (19), Averroè (4)",
+            "Incipit": "Dubium tertium utrum caelum sit finite magnitudinis in actu.",
+            "Explicit": "Sed in quolibet instanti intrinseco fuit aut erit finitus etc."
+          },
+          {
+            "page": "cc. 41v-42v",
+            "title": "Dubium quartum– Liber tertius",
+            "name": "Aristotele (14), Averroè (11)",
+            "Incipit": "Dubium quartum utrum caelum sit unum.",
+            "Explicit": "In hoc finitus tertius liber."
+          },
+          {
+            "page": "cc. 42v-43v",
+            "title": "Dubium primum – Liber quartus",
+            "name": "Aristotele (7), Averroè (6)",
+            "Incipit": "Circa celi accidentia figuram lumen motus consideremus.",
+            "Explicit": "Ut sepe asservit et in phylosophia et in astrologia."
+          },
+          {
+            "page": "cc. 43v-44r",
+            "title": "Dubium secundum – Liber quartus",
+            "name": "Averroè (4), Aristotele (1)",
+            "Incipit": "Dubium secundum an caelum sit luminosum de se.",
+            "Explicit": "Ex hoc patet ad secundum etc."
+          },
+          {
+            "page": "cc. 44v-46v",
+            "title": "Dubium tertium – Liber quartus",
+            "name": "Averroè (30), Aristotele (14), Anassagora (1), Avicenna (1), Alessandro di Afrodisia (1).",
+            "Incipit": "Dubium tertium utrum motus Caeli fuerit aeternus.",
+            "Explicit": "Et que tempus materialis est ipse motus et que formaliter comples per animarum."
+          },
+          {
+            "page": "cc. 46v-47v",
+            "title": "Dubium quartum – Liber quartus",
+            "name": "Averroè (9), Aristotele (3).",
+            "Incipit": "Dubium quartum utrum motus caeli sit naturalis.",
+            "Explicit": "Que dicta sunt vera de motu acquisivo autem conservativo."
+          },
+          {
+            "page": "cc. 47v-51r",
+            "title": "Dubium quintum – Liber quartus",
+            "name": "Averroè (21), Aristotele (15), Tolomeo (3), Avicenna (1), Alessandro di Afrodisia (1).",
+            "Incipit": "Ultimo dubitantur utrum caelum agat in inferiora motu locali.",
+            "Explicit": "Hec de caelo nunc dicta sint ad magnitudinem summe bonitatis cui semper sint Laus:Gloria:Honor."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "index": 4,
+    "number": "4B4",
+    "author": "Poggio Bracciolini",
+    "secondAuthor": "Diodoro Siculo ",
+    "title": "NAPOLI, ACCADEMIA PONTANIANA, 4B4",
+    "name": "Incunabolo cartaceo",
+    "year": "1496; 1497",
+    "pages": "cc. 1-76, [1,2]; cc. 3-95 [1,2]",
+    "size": "mm 310 x 225",
+    "details": "L’incunabolo presenta due quattrocentine di POGGIO BRACCIOLINI rilegate insieme: la prima consiste nel De antiquorum gestis fabulosis libri I-VI di Diodoro Siculo stampata nel 1496 in Venezia ad opera di Giovanni da Cerreto; la seconda consiste nel De vitis philosophorum libri I-X di Diogene Laerzio stampata a Venezia nel 1497 ad opera di Benedetto Fontana.",
+    "digitalSource": "/collections/incunaboli/4b4-diodorus-siculus-viewer",
+    "popupTitle": "t('popup.4b4description')",
+    "description": {
+      "id": "4",
+      "popupinfo": {
+        "parts": "2",
+        "popupTitle": true,
+        "author": "Poggio Bracciolini",
+        "secondAuthor": "Diodoro Siculo ",
+        "title": "De antiquorum gestis fabulosis libri I-VI",
+        "publication": "Venetiis impressum per Magistrum Ioannem de Cereto de Tridino alias Tacuinum. Anno salutis dominice. M.CCCC.LXXXXVI.XII.Kalen.Octobris.Imperante Serenissimo principe Augustino Barbadico.Incunabolo cartaceo, carte di guardia cartacee; cc. 1-76, [1,2] Alle carte 1-76 si legge la traduzione fatta da Poggio Bracciolini dell’opera di Diodoro Siculo in sei libri intitolata De antiquorum gestis fabulosis, corretta da Bartolomeo Merula e pubblicata a Venezia nel 1496; cartulazione a stampa in cifre romane in alto a destra del recto; le carte 58 e 72 sono numerate erroneamente. Sul recto della carta [1] occhietto: Diodorus Siculos; sul recto della carta [2] marca tipografica: doppio cerchio sormontato da una doppia croce con le iniziali Z e T. Sul contropiatto anteriore etichetta dell’Accademia Pontaniana che segnala la collocazione 4B4 e annotazione n° 117. Sul contropiatto posteriore annotazione manoscritta: 3=00. Sul dorso etichetta dell’Accademia Pontaniana con la dicitura 4B4. ",
+        "dimensions": "4° mm 310 x 225 (carta 1r).",
+        "signature": "av + b-nvi Fascicoli prevalenti: 6 bifogli (senioni)+ 5 bifogli (quinione).",
+        "imprint": "utmu hocu us9: abli (3) 1496 (R).",
+        "textLayout": "A piena pagina.",
+        "lines": "ll. 43 in inchiostro nero.",
+        "requests": "Richiami a stampa nel margine esterno, annotazioni manoscritte e diversi metodi di sottolineatura.",
+        "binding": "Legatura in pergamena rigida su piatti di cartone; dorso liscio con i nomi dell’autore Pogius Florentinus e dell’autore secondario Diodorus Siculos.",
+        "language": "Latino.",
+        "NamesLinkedToHistory": "papa Niccolò V dedicatario, Bartolomeo Merula emendatore, Giovanni da Cerreto detto Tacuino tipografo, Agostino Barbarigo doge di Venezia.",
+        "condition": "Fori da insetto soprattutto lungo la linea di cerniera e margini rifilati con conseguente perdita di note manoscritte in diverse carte. Coperta restaurata: nell’occasione aggiunte una carta di guardia anteriore ed una posteriore.",
+        "decoration": "Spazi capitali con lettere guida che presentano elementi decorativi vegetali e animati.",
+        "location": "4B4.",
+        "summary": {
+                        "subject": "Il titolo \"De antiquorum gestis fabulosis libri I-VI\" sembra riferirsi a una traduzione latina di una parte dell'opera di Diodoro Siculo, un importante storico greco del I secolo a.C. Tuttavia, non ci sono informazioni dirette su un'edizione specifica con questo titolo.\n\nDiodoro Siculo e la sua opera\n- Biblioteca storica: Diodoro Siculo scrisse una *Biblioteca storica*, un'opera enciclopedica che copre un arco cronologico dalla guerra di Troia fino ai suoi tempi. Originariamente composta da quaranta libri, solo quindici sono pervenuti integralmente.\n- Traduzioni latine: La prima traduzione latina parziale della *Biblioteca storica* fu realizzata da Leonardo Bruni entro il 1405, su richiesta di Coluccio Salutati. Successivamente, Poggio Bracciolini tradusse alcuni libri, che furono pubblicati con il titolo *De antiquorum gestis fabulosis* nel XV secolo.\n\nImportanza storica e culturale\n- Influenza culturale: Le opere di Diodoro Siculo hanno esercitato un'influenza significativa sulla storiografia occidentale, specialmente nel Rinascimento, quando le opere classiche venivano riscoperte e studiate con grande interesse.\n- Rinascita culturale: Queste traduzioni riflettono l'interesse rinascimentale per la cultura classica e la riscoperta delle fonti storiche, che caratterizzò il periodo come un momento di rinnovamento culturale e intellettuale.\n\nIn sintesi, l'opera è un'importante fonte per lo studio della storia antica, arricchita da traduzioni latine che ne aumentano l'accessibilità e la diffusione tra gli studiosi del Rinascimento. Tuttavia, non ci sono informazioni specifiche su un'edizione intitolata \"De antiquorum gestis fabulosis libri I-VI\".",
+                        "sources": [
+                          "https://iris.unive.it/retrieve/100f4cb6-45bc-44aa-aff7-463e3ba1c65a/956296-1217943.pdf",
+                          "https://www.horti-hesperidum.com/hh/wp-content/uploads/2017/01/Venuti-Horti-Hesperidum.pdf",
+                          "https://api.pageplace.de/preview/DT0400.9783110747966_A46273035/preview-9783110747966_A46273035.pdf",
+                          "https://www.degruyter.com/document/doi/10.1515/9783110747966-010/pdf?licenseType=restricted",
+                          "https://philological.cal.bham.ac.uk/bibliography/poggio.html",
+                          "https://www.degruyterbrill.com/document/doi/10.1515/9783110747966-013/html",
+                          "https://www.academia.edu/10348073/Diodoro_Siculo_in_Enciclopedia_machiavelliana",
+                          "https://www.degruyter.com/document/doi/10.1515/9783110747966-007/pdf?licenseType=restricted"
+                        ]
+                      },
+        "internalDescriptionTitle": 1,
+        "Internal_description": [
+          {
+            "page": "c. 1r",
+            "title": "Pogius Florentinus ad Nicolaum Quintum Pont.Max.",
+            "name": "Poggio Fiorentino, papa Niccolò V, Senofonte, Diodoro Siculo.",
+            "Incipit": "Nullus antea quantun vis praeclarus rerum scriptor fuit Sanctissime pater.",
+            "Explicit": "Diodori Siculi a Pogio florentino in latinum traducti de antiquorum gestis fabulosis. Liber I."
+          },
+          {
+            "page": "cc. 1v-9v",
+            "title": "Liber primus",
+            "name": "Alessandro il Macedone, Apollodoro di Atene, Anassagora, Osiride, Iside, Dioniso, Eumolpo, Orfeo, Giove, Omero, Rea, Giunone, Vulcano, Vesta, Mercurio, Tifeo, Apollo, Venere, Cerere, Ercole, Anteo, Busiride, Anubi, Trittolemo, Prometeo, Licurgo, Cadmo, Semele, Serapide, Plutone, Saturno, Mnesteo, Eretteo, Arsinoe, Erodoto, Senofonte, Tucidide, Eforo, Teopompo, Tolomeo I, Anassagora, Erodoto, Democrito, Meandro, Etolo, Cefiso.",
+            "Incipit": "Magnas merito gratias rerum scriptoribus homines debent",
+            "Explicit": "Finit liber primus: incipit secundus in quo haec contínentur."
+          },
+          {
+            "page": "cc. 9v-21r",
+            "title": "Liber secundus",
+            "name": "Alessandro il Macedone, Orfeo, Pitagora, Omero, Platone, Democrito.",
+            "Incipit": "Cum primus liber propter ipsius magnitudinem in duos sit libros divisus.",
+            "Explicit": "Explicit liber secundus incipit tertius in quo hec continentur primum."
+          },
+          {
+            "page": "cc.21v-32v",
+            "title": "Liber tertius",
+            "name": "Staurobate re dell’India, Arbace re, Antigono, Nicanore, Seleuco, Erodoto, Artaserse re, Ciro re, Alessandro il Macedone, Silla.",
+            "Incipit": "Superiore libro: iis quae ad aegyptiorum deos.",
+            "Explicit": "Explicit liber tertius. Incipit quartus in quo haec continentur."
+          },
+          {
+            "page": "cc.32v-46r",
+            "title": "Liber quartus",
+            "name": "Ergamene re di Nubia, Agatarchide, Artemidoro, Arsinoe regina egizia, Antimaco di Colofone.",
+            "Incipit": "Posteaquam superius de aegypti asiaeque secundum quaquae provintiam memoratu dignis rebus scripsimus.",
+            "Explicit": "Nos iuxta ordinem a nobis perscriptum quartum descripsimus librum."
+          },
+          {
+            "page": "cc.46v-63r",
+            "title": "Liber quintus",
+            "name": "Cesare, Tiberio, Dracone, Cleopatra, Esculapio.",
+            "Incipit": "Haud sane nos fugit vetustarum rerum cognitionem scriptoribus ut multis labant contingere.",
+            "Explicit": "Postea vero quam de hominibus ac semideis prout a principio sumus polliciti scripsimus finem huic libro statuemus."
+          },
+          {
+            "page": "cc. 64v-76v",
+            "title": "Liber sextus",
+            "name": "Epimenide.",
+            "Incipit": "Cum omnia in quibus historia versat complecti rerum scriptores deceat.",
+            "Explicit": "Graeci postea expulsis inde caribus barbaris plures ex eis tenuerunt: quibus de rebus suo loco scribetur a nobis. Finis."
+          }
+        ]
+      },
+      "popupinfo2": {
+        "author": "Poggio Bracciolini",
+        "secondAuthor": "Diogene Laerzio",
+        "title": "De vitis philosophorum libri I-X",
+        "publication": "Impressum Venetijs: per Philippum Pinzi. Sumptibus domini Benedicti Fontana, Anno Dni M.CCCCXCVII.die XXII Iunij.Incunabolo cartaceo, carte di guardia cartacee; cc.3-95 [1,2].Alle carte 3-95 si legge la traduzione fatta da Poggio Bracciolini dell’opera di Diogene Laerzio in dieci libri intitolata De vitis philosophorum pubblicata a Venezia nel 1497; cartulazione a stampa in cifre romane in alto a destra del recto; la carta 12 è numerata erroneamente. Sul recto della carta [1] occhietto: Diogenes Laercius. Sul recto della carta [2] marca tipografica: Fontana che scorre da albero con tre rami; in basso busto maschile, in alto iniziali B e F. Sul contropiatto anteriore etichetta dell’Accademia Pontaniana che segnala la collocazione 4B4 e annotazione n° 117. Sul contropiatto posteriore annotazione manoscritta: 3=00. Sul dorso etichetta dell’Accademia Pontaniana con la dicitura 4B4.",
+        "dimensions": "4° mm 310 x 225 (carta 1r)",
+        "signature": "a- mviii. Fascicolo prevalente: 8 bifogli (ottonione).",
+        "imprint": "r.do a:s. meut sidu (7) 1497 (R).",
+        "textLayout": "A piena pagina",
+        "lines": "ll. tra 44 e 46 in inchiostro nero.",
+        "requests": "Richiami a stampa nel margine esterno, annotazioni manoscritte e diversi metodi di sottolineatura.",
+        "binding": "Legatura in pergamena rigida su piatti di cartone; dorso liscio con i nomi dell’autore Pogius Florentinus e dell’autore secondario Diodorus Siculos.",
+        "language": "Latino.",
+        "NamesLinkedToHistory": "Filippo Pinzi stampatore veneziano, Benedetto Fontana tipografo.",
+        "condition": "Fori da insetto soprattutto lungo la linea di cerniera e margini rifilati con conseguente perdita di note manoscritte in diverse carte. Coperta restaurata: nell’occasione aggiunte una carta di guardia anteriore ed una posteriore.",
+        "decoration": "Spazi capitali vuoti con lettere guida aggiunte successivamente in inchiostro nero.",
+        "location": "4B4",
+        "Internal_description": [
+          {
+            "page": "cc. 3r-14v",
+            "title": "Liber primus",
+            "name": "Serse, Dracone, Eraclide, Pitagora, Talete, Anassimandro, Anassagora, Archelao, Socrate, Platone, Clitomaco, Zenone, Leucippo, Democrito, Epicuro, Menedemo, Pirro, Teodoro, Carneade, Brisone, Aristotele, Crisippo, Alessandro il Macedone, Apollodoro, Anassimene, Milziade.",
+            "Incipit": "C.Laertii Diogenis vitae et sententiae eorum qui in philosophia probati fuerunt.",
+            "Explicit": "Cuius principem thaletem fuisse memoravimus Anaximandri praeceptorem."
+          },
+          {
+            "page": "cc. 14v-26v",
+            "title": "Liber secundus",
+            "name": "Anassimandro, Apollodoro, Demetrio, Anassagora, Socrate, Euripide, Aristofane, Alessandro il Macedone, Omero, Eraclito, Aristotele, Senofonte, Platone, Alcibiade, Antistene, Aristippo, Tucidide, Eschine, Epicuro, Clitomaco, Euclide, Tolomeo, Metrocle, Epigene, Zenone, Eraclide, Epigene.",
+            "Incipit": "Anaximandro milesio Praxiades pater fuit.",
+            "Explicit": "Transeundum autem est ad platonem qui in caepit academiam: et ad eos qui ab ipso sunt quot fuerunt eloquentes."
+          },
+          {
+            "page": "cc.26v-34r",
+            "title": " Liber tertius",
+            "name": "Apollodoro, Alessandro il Macedone, Platone, Epicarmo, Aristotele, Euclide, Zenone, Eschilo.",
+            "Incipit": "Plato aristone patre et matre perictiona.",
+            "Explicit": "Et alius poeta priscae comoediae."
+          },
+          {
+            "page": "cc.34r-39v",
+            "title": "Liber quartus",
+            "name": "Clitomaco, Aristippo, Senocrate, Platone, Euripide, Aristofane, Sofocle, Archesilao, Omero, Euripide, Apollodoro, Alcibiade, Lacide di Cirene, Attalo, Carneade.",
+            "Incipit": "Quae de Platone dicenda erant per viribus diximus: quid de eo viro singuli sensisset studiose in unum corpus colligentes.",
+            "Explicit": "Veniendum iam ad peripateticos: et eos a Platone venientes: quorum fuit princeps Aristoteles: et primo de ipso dicendum."
+          },
+          {
+            "page": "cc.40r-47r",
+            "title": "Liber quintus",
+            "name": "Aristotele, Platone, Carneade, Teofrasto, Archesilao, Aristide, Ippocrate, Demetrio Falereo, Socrate, Aristomache, Tolomeo, Eraclide pontico, Zenone.",
+            "Incipit": "Aristoteles nicomachi Phaestiadisquae filius stagirites fuit.",
+            "Explicit": "Quartusdecimus conscripsit de astrologia."
+          },
+          {
+            "page": "cc.47r-54v",
+            "title": "Liber sextus",
+            "name": "Platone, Socrate, Teofrasto, Seniade, Demostene, Asclepio, Alessandro il Macedone, Anassimene, Senofonte, Metrocle, Ipparchia, Menippo, Menedemo.",
+            "Incipit": "Anthistenes antisthenis filius atheniensis fuit.",
+            "Explicit": "Veniendum iam ad stoicos: quorum princeps fuit. Zeno Cratis discipulus."
+          },
+          {
+            "page": "cc.55r-70r",
+            "title": "Liber septimus",
+            "name": "Crisippo, Stilpone, Senocrate, Zenone, Epicuro, Aristone, Sofocle, Socrate, Apollonio, Antigono, Apollodoro, Crisippo, Archedemo, Atenodoro, Antipatro, Platone, Cleante, Posidonio, Democrito, Tolomeo.",
+            "Incipit": "Diogenis Laertii de vitis philosophorum liber Septimus Incipit.",
+            "Explicit": "Probatio quod voluptas bonum non sit quattuor de dictis super."
+          },
+          {
+            "page": "cc.70r-76v",
+            "title": "Liber octavus",
+            "name": "Pitagora, Apollodoro, Aristippo, Aristotele, Pitagora, Empedocle, Anassagora, Anassimandro, Democrito, Omero, Terenzio, Platone, Filolao.",
+            "Incipit": "Laertii Diogenis de vitis philosophorum Liber octavus Incipit.",
+            "Explicit": "Eudoxum ob famae claritatem gloritatemque appellabant."
+          },
+          {
+            "page": "cc.76v-84v",
+            "title": "Liber nonus",
+            "name": "Eraclito, Pitagora, Senofane, Dario, Socrate, Pausania, Apollodoro, Teofrasto, Esiodo, Senofonte, Empedocle, Platone, Parmenide, Democrito, Ippocrate, Aristotele, Eraclide, Parmenide, Leucippo, Zenone, Anassagora, Antistene, Filolao, Archelao, Protagora, Anassimene, Plutarco.",
+            "Incipit": "Diogenis Laertii de vitis philosophorum Liber nonus Incipit.",
+            "Explicit": "Porro sextum saturnius auduvit cognomento cythinas et ipse empericus."
+          },
+          {
+            "page": "cc.84v-95r",
+            "title": "Liber decimus",
+            "name": "Aristotele, Apollodoro, Democrito, Epicuro, Socrate, Archelao, Zenone, Anassimene, Erodoto.",
+            "Incipit": "Diogenis laertii de vitis philosophorum Liber decimus Incipit.",
+            "Explicit": "Fidem ac probationem certissimamque propinquitatem adsumentes lamentis persecuti non sunt desuncti celeriorem obitum. Finis."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "index": 5,
+    "number": "4C1",
+    "author": "alladio Negri, conosciuto come Palladio Fusco.",
+    "title": "NAPOLI, ACCADEMIA PONTANIANA, 4C1",
+    "name": "Incunabolo cartaceo",
+    "year": "1496",
+    "year2": "1614",
+    "pages": "cc. 1-36, [1,2]; pp. 102; pp. 1-57",
+    "size": "mm 275 x 205",
+    "details": "L’incunabolo contiene tre opere rilegate insieme: una quattrocentina di PALLADIO FUSCO contenente l’edizione Catullo una cum commentariis stampata nel 1496 a Venezia ad opera di Giovanni Tacuino da Tridino; due seicentine entrambe di POMPEO GARIGLIANO stampate nel 1614 a Napoli ad opera di Giovanni Domenico Roncagliolo contenenti i commenti ai dialoghi Fedone ed Epinomide di Platone.",
+    "digitalSource": "/collections/incunaboli/4c1-palladius-fuscus-viewer",
+    "description": {
+      "parts": "3",
+      "id": "5",
+      "popupinfo": {
+        "author": "Palladio Negri, conosciuto come Palladio Fusco.",
+        "secondAuthor": "Catullo.",
+        "title": "Catullo una cum commentariis Eruditi Viri Palladi Fusci Patavini",
+        "publication": "Impressum Venetiis per Ioannem tacuinum de tridino. Anno salutis M. CCCC.LXXXXVI. die vero. xxviii.Aprilis. Augustino Bardadico duce venetiarum inclito.Incunabolo cartaceo, carte di guardia cartacee; cc. 1-36, [1,2]; la carta f5 presenta un’errata segnatura (f2);Alle carte 1-36 si legge l’edizione di Catullo intitolata Catullo una cum commentariis Eruditi Viri Palladi Fusci Patavini commentata da Palladio Negri e pubblicata Venezia nel 1496. Sul recto della carta [1] occhietto: Catullo una cum commentariis Eruditi Viri Palladi Fusci Patavini; sul verso della carta [1] privilegio librario rilasciato dai membri del Collegio della Repubblica di Venezia: si tratta di una protezione garantita da un diritto di esclusione, nel senso che era fatto divieto a chiunque non fosse titolare del privilegio di stampare, importare o vendere l’opera sottoposta a protezione legale nel Dominio veneziano. In caso di inosservanza delle disposizioni i trasgressori incorrevano, di norma, nel pagamento di una multa, generalmente divisa in tre parti.Sul recto della carta [2] dedica: Palladius Fuscus iuveni clarissimo Laurentio Bragadeno patritio veneto felicitatem; sul verso della carta [2] si legge una vita Catulli e una dedica dell’autore al lettore: Palladius ad lectorem. Sul recto della carta 36 marca tipografica: doppio cerchio sormontato da una doppia croce con le iniziali Z e T. Sul contropiatto anteriore etichetta dell’Accademia Pontaniana che segnala la collocazione 4C1. Sul dorso etichetta dell’Accademia Pontaniana con la dicitura 4C1. ",
+        "dimensions": "8° mm 205x275 (carta a3r).",
+        "signature": "a-fvi Fascicolo prevalente: 6 bifogli (senioni).",
+        "imprint": "e.li a.la i.bi pacu (C) 1496 (R)",
+        "textLayout": "Bicolonnare con commento a cornice non regolare.",
+        "lines": "tra 60 e 63 ll. in inchiostro nero.",
+        "requests": "Richiami a stampa nel margine esterno, annotazioni manoscritte e diversi metodi di sottolineatura, tra cui si evidenzia la cosiddetta manicula alle carte b4v e c1r.",
+        "binding": "Legatura in pergamena rigida su piatti di cartone. Dorso liscio con i nomi degli autori secondari Catullo e Platone; è presente l’etichetta con la collocazione attuale (4C1).",
+        "language": "Latino, Greco.",
+        "condition": "Sparsi fori da insetto e margini rifilati con conseguente perdita di note manoscritte in diverse carte.",
+        "location": "4C1",
+        "summary": {
+                            "subject": "Il titolo \"Catullo una cum commentariis Eruditi Viri Palladi Fusci Patavini\" si riferisce a un'edizione delle opere di Catullo con commenti di Palladio Fusco, un umanista italiano del XV secolo.\n\nContenuto e autore\n- Catullo: L'opera include i carmi di Catullo, un importante poeta latino noto per le sue elegie amorose e per la sua influenza sulla letteratura occidentale.\n- Commenti di Palladio Fusco: I commenti di Palladio Fusco, un erudito di Padova, sono stati aggiunti per aiutare a comprendere meglio i testi di Catullo. Fusco è noto per i suoi contributi alla filologia classica e alla diffusione delle opere antiche nel Rinascimento.\n- Edizione del 1496: Questa edizione è stata pubblicata a Venezia nel 1496 da Ioannem Tacuinum.\n\nImportanza storica e culturale\n- Influenza culturale: Le opere di Catullo hanno esercitato un'influenza profonda sulla letteratura occidentale, specialmente nel Rinascimento, quando le opere classiche venivano riscoperte e studiate con grande interesse.\n- Rinascita culturale: Questa edizione riflette l'interesse rinascimentale per la cultura classica e la riscoperta delle fonti letterarie, che caratterizzò il periodo come un momento di rinnovamento culturale e intellettuale.\n\nIn sintesi, l'opera è un'importante fonte per lo studio della poesia latina, arricchita da commenti eruditi che aiutano a comprendere meglio i testi e la loro rilevanza culturale nel Rinascimento.",
+                            "sources": [
+                              "https://www.repository.unipr.it/bitstream/1889/3606/7/TesiPhD-Bertone.pdf",
+                              "https://www.treccani.it/enciclopedia/palladio-negri_(Dizionario-Biografico)/",
+                              "https://it.wikipedia.org/wiki/Palladio_Negri",
+                              "https://rabida.uhu.es/dspace/bitstream/handle/10272/7658/Una_possibile_rilettura.pdf?sequence=2",
+                              "https://www.degruyterbrill.com/document/doi/10.1515/9783110735543-003/html",
+                              "https://www.degruyter.com/document/doi/10.1515/9783110735543/pdf?licenseType=restricted",
+                              "http://elea.unisa.it/bitstream/handle/10556/2404/tesi_di_dottorato_F_Toscano.pdf?sequence=8&isAllowed=y",
+                              "https://core.ac.uk/download/639903100.pdf"
+                            ]
+                          },
+        "internalDescriptionTitle": 1,
+        "Internal_description": [
+          {
+            "page": "c. 1r",
+            "title": "Occhietto"
+          },
+          {
+            "page": "c. 1v",
+            "title": "Privilegio",
+            "Incipit": "Serenissime ac excellentissime Princeps",
+            "Explicit": "Ioannes Franciscus Bragadenus Caput loco Consiliarii."
+          },
+          {
+            "page": "c. 2r",
+            "title": "Palladius Fuscus iuveni clarissimo Laurentio Bragadeno patritio veneto felicitatem",
+            "Incipit": "Nuper ab amicis exoratus Laurenti Iuvenis optime et in nostris studiis eminentissime ut commentarios quos in Catullum pridem scripsi.",
+            "Explicit": "Claras Palladio faces ferente."
+          },
+          {
+            "page": "c. 2v",
+            "title": "Vita Catulli – Palladius ad lectorem",
+            "Incipit": "Valerius Catullus quem ob eximiam eruditionem posteriores poetae doctum appellarunt.",
+            "Explicit": "Iam Catullum interpretari incipiamus."
+          },
+          {
+            "page": "cc. A iii r – F vi r",
+            "title": "Palladii Fusci in Catullum commentarii",
+            "Incipit": "Cui dono. Versus est endecasyllabus.",
+            "Explicit": "Valeat praestantia tua cui me plurimum commendo.",
+            "name": "Plauto, Plinio, Marziale, Gellio, Varo, Virgilio, Stazio, Pomponio, Strabone, Quintiliano, Marziale, Cicerone, Plutarco, Orazio, Strabone, Quintiliano, Silio Italico, Properzio, Gioveniale, Terenzio, Tibullo, Svetonio, Scipione, Diodoro, Seneca, Aristotele, Ovidio, Diodoro, Omero, Manilio."
+          }
+        ]
+      },
+      "popupinfo2": {
+        "author": "Pompeo Garigliano",
+        "secondAuthor": "Platone",
+        "title": "In Platonis Dialogum, qui Phaedo, seu de animorum immortalitate inscribitur Pompei Garigliani Capuani Commentarii. Accessit locuples rerum index.",
+        "publication": "Neapoli, ex Typographia Ioannis Dominici Roncalioli M.DC.XIV. Imprimatur Petrus Antonius Ghibertus Vic. Gen.Seicentina stampata a Napoli presso l’editore Giovanni Domenico Roncagliolo nel 1614 con l’imprimatur del Vicario generale Pietro Antonio Ghiberti e col visto del Deputatus agostiniano Taddeo Caputo; dedicatario dell’opera è il cardinale Bonifazio Caetani.Alle pagine 1-102 si legge la traduzione in latino dell’opera di Platone Phaedonem corredata dal commento di Pompeo Garigliano; numerazione a stampa in cifre arabe in alto a destra della pagina. La pagina 82 è numerata erroneamente. In apertura, su pagine non numerate figurano: il frontespizio, la dedica e l’Index Rerum.Sul contropiatto anteriore etichetta dell’Accademia Pontaniana che segnala la collocazione attuale 4C1. Sul dorso etichetta dell’Accademia Pontaniana con la dicitura 4C1. ",
+        "dimensions": "8° mm 205x275 (carta a3r)",
+        "signature": "A-Niv Fascicolo prevalente 4 bifogli (quaternione).",
+        "imprint": "inan aduc vepe tequ (3) 1614 (R).",
+        "textLayout": "A piena pagina e bicolonnare.",
+        "lines": "58 ll. in inchiostro nero",
+        "binding": "Legatura in pergamena rigida su piatti di cartone. Dorso liscio con i nomi degli autori secondari Catullo e Platone; è presente l’etichetta con la collocazione attuale (4C1). ",
+        "language": "Latino, Greco.",
+        "condition": "Coperta leggermente danneggiata lungo la linea di cerniera; alla pagina 65 sono presenti due fori.",
+        "frontPage": "Vignetta calcografica.",
+        "decoration": "Spazi capitali vuoti con lettere guida aggiunte successivamente in inchiostro nero; alcune presentano elementi decorativi vegetali.",
+        "location": "4C1",
+        "internalDescriptionTitle": 1,
+        "Internal_description": [
+          {
+            "page": "p. 1",
+            "title": "In Platonis Phaedonem vel de immortalitate animorum. Argumentum.",
+            "Incipit": "Disputationem quam Socrates cum Phaedone, aliisque discipulis moriturus retexit, Phaedo Echecrati narrat.",
+            "Explicit": "Unumquemque ad recte, atque pie vivendum admonens, ad hoc anima ipsa innortalis probate fortem indipiscatur talem."
+          },
+          {
+            "page": "pp. 1-102",
+            "title": "Platonis Phaedo, vel de Immortalitate Animorum.",
+            "Incipit": "Ipse ne o Phedo, affuisti qua die Socrates venenum bibit in carcere?",
+            "Explicit": "Et ii quorum ut legitur apud Plutarchum propter absentiam parentes obtegere non potuerunt, miseri censebantur. Finis.",
+            "name": "Fedone, Echecrate, Socrate, Simmia, Cebete, Critone."
+          }
+        ]
+      },
+      "popupinfo3": {
+        "author": "Pompeo Garigliano",
+        "secondAuthor": "Platone",
+        "title": "In Platonis Epinomidem seu philosophum Pompei Garigliani Capuani Commentarii. Accessit locuples rerum index.",
+        "publication": "Neapoli, ex Typographia Ioannis Dominici Roncalioli M.DC.XIV. Imprimatur Petrus Antonius Ghibertus Vic. Gen.Seicentina stampata a Napoli presso l’editore Giovanni Domenico Roncagliolo nel 1614 con l’imprimatur del Vicario generale Pietro Antonio Ghiberti e col visto del Deputatus agostiniano Taddeo Caputo; dedicatario dell’opera è il cardinale Bonifazio Caetani.Alle pagine 1-102 si legge la traduzione in latino dell’opera di Platone Phaedonem corredata dal commento di Pompeo Garigliano; numerazione a stampa in cifre arabe in alto a destra della pagina. La pagina 82 è numerata erroneamente. In apertura, su pagine non numerate figurano: il frontespizio, la dedica e l’Index Rerum.Sul contropiatto anteriore etichetta dell’Accademia Pontaniana che segnala la collocazione attuale 4C1. Sul dorso etichetta dell’Accademia Pontaniana con la dicitura 4C1.",
+        "dimensions": "8° mm 205x275 (carta a3r)",
+        "signature": "A-Niv Fascicolo prevalente 4 bifogli (quaternione).",
+        "imprint": "inan aduc vepe tequ (3) 1614 (R).",
+        "textLayout": "Bicolonnare",
+        "lines": "ll. in inchiostro nero.",
+        "binding": "Legatura in pergamena rigida su piatti di cartone. Dorso liscio con i nomi degli autori secondari Catullo e Platone; è presente l’etichetta con la collocazione attuale (4C1).",
+        "language": "Latino, Greco.",
+        "condition": "Coperta leggermente danneggiata lungo la linea di cerniera.",
+        "frontPage": "Vignetta calcografica.",
+        "decoration": "Spazi capitali vuoti con lettere guida aggiunte successivamente in inchiostro nero; alcune presentano elementi decorativi vegetali.",
+        "location": "4C1",
+        "internalDescriptionTitle": 1,
+        "Internal_description": [
+          {
+            "page": "p. 1",
+            "title": "In Platonis Epinomidem seu philosophum. Argumentum.",
+            "Incipit": "Epinomis liber divinissima quidem promit in medium, nempe sapientia a cive, ac civitatis custode obtinendam esse, qua tamquam omnium legum finis contrahitur felicitas.",
+            "Explicit": "Tempus in quo haec sunt percipienda."
+          },
+          {
+            "page": "pp. 1-58",
+            "title": "Platonis Epinomis, seu Philosophus.",
+            "Incipit": "Iam, ut communiter flatueramus, huc tandem, omnes tres o hospes recte pervenimus",
+            "Explicit": "Oportet, ut partier magistratus dignitate insigniantur: quae enucleate suo loco explicata clarebunt.",
+            "name": "Ateniese, Clinia, Megillo."
+          },
+          {
+            "page": "non numerate (in chiusura)",
+            "title": "Caesar Gariglianus lectori",
+            "Incipit": "Candide Lector te in his legendis commentariis cautum praestare volo.",
+            "Explicit": "Tunc vero Theologum agens e aquae a fide Catholica deviant acerrime respuet. Vale."
+          }
+        ]
+      }
+    }
+  },
+  {
+    "index": 6,
+    "number": "4C2",
+    "author": "Eusebio di Cesarea",
+    "title": "NAPOLI, ACCADEMIA PONTANIANA, 4C2",
+    "name": "Incunabolo cartaceo",
+    "year": "1479",
+    "pages": "cc. 169",
+    "size": "mm 295 x 195",
+    "details": "L’incunabolo Historia ecclesiastica di EUSEBIO DI CESAREA è stata pubblicato in Mantova ad opera di Schall Johann nel 1479.",
+    "digitalSource": "/collections/incunaboli/4c2-eusebius-caesariensis-viewer",
+    "description": {
+      "id": "6",
+      "popupinfo": {
+        "author": "Eusebio di Cesarea",
+        "title": "Historia Ecclesiastica",
+        "publication": "Schallus Ioannes celebri Germanicus arte aere premit. Mantus principe Foederico. Referebat Iulius annos Mille quater centum septuaginta novem. Incunabolo cartaceo, carte di guardia cartacee; cc. 169; cartulazione manoscritta in cifre arabiche nell’angolo inferiore a sinistra del recto. Sul contropiatto anteriore etichetta dell’Accademia Pontaniana che segnala la collocazione 4C2; sul verso della c. 169 timbro rotondo in inchiostro blu dell’Accademia Pontaniana e timbro del numero di inventario in inchiostro nero.",
+        "dimensions": "8°, mm 295 x 195 (c. 1r)",
+        "signature": "",
+        "imprint": "l.it III. usrè buta (C) 1479 (A).",
+        "textLayout": "A piena pagina",
+        "lines": "ll. 34 in inchiostro nero.",
+        "requests": "Richiami di attenzione nella maggior parte delle carte; si evidenzia la presenza della cosiddetta manicula alle carte 8v, 10r, 88v e 112v.",
+        "binding": "Legatura novecentesca in pergamena rigida su piatti di cartone eseguita da Achille Fiore; sul contropiatto posteriore etichetta: Legatoria A. FIORE Napoli. Nell’occasione aggiunte una carta di guardia anteriore ed una posteriore. Dorso liscio con nome dell’autore e titolo dell’opera: C. EUSEBIUS – HISTORIA ECCLESIASTICA.",
+        "language": "Latino, volgare.",
+        "NamesLinkedToHistory": "",
+        "condition": "Coperta restaurata. Sparsi fori da insetti. Solo nei casi più evidenti interventi di restauro con carta giapponese, come alla carta 169v. ",
+        "decoration": "Spazi capitali vuoti senza lettere guida.",
+        "location": "4C2",
+        "summary": {
+                        "subject": "Il titolo \"Historia Ecclesiastica\" può riferirsi a diverse opere storiche che documentano la storia del Cristianesimo. Ecco una panoramica delle principali opere con questo titolo:\n\n1. **Eusebio di Cesarea - Historia Ecclesiastica**\nAutore: Eusebio di Cesarea, storico e vescovo del IV secolo.\n\nContenuto: È il primo resoconto cronologico completo della storia del Cristianesimo, dalla sua nascita nel I secolo fino al IV secolo. Include informazioni sui successori degli apostoli, i martiri cristiani, le eresie e le relazioni con il mondo pagano.\n\nLingua: Scritta originariamente in greco, è sopravvissuta anche in versioni latine, armene e siriache.\n\nImportanza: Considerata la prima narrazione storica dal punto di vista cristiano, ha influenzato la storiografia ecclesiastica per secoli.\n\n2. **Beda il Venerabile - Historia Ecclesiastica Gentis Anglorum**\nAutore: Beda il Venerabile, monaco anglosassone del VIII secolo.\n\nContenuto: Una storia della Chiesa cristiana in Inghilterra e della crescita del Cristianesimo tra gli Anglosassoni. L'opera tratta anche di eventi storici generali legati alla storia inglese.\n\nLingua: Scritta in latino nel 731.\n\nImportanza: È una delle fonti principali per la storia anglosassone e ha contribuito alla formazione di un'identità nazionale inglese.\n\n3. **Socrate Scolastico - Historia Ecclesiastica**\nAutore: Socrate Scolastico, storico bizantino del V secolo.\n\nContenuto: Continua la narrazione di Eusebio, coprendo il periodo dal 305 al 439 d.C., concentrandosi sulla storia della Chiesa orientale.\n\nLingua: Scritta in greco.\n\nImportanza: Offre una prospettiva più critica rispetto a quella di Eusebio.\n\n4. **Altre opere**\nEvagrio Scolastico: Una continuazione della storia ecclesiastica nel VI secolo.\n\nOrderico Vitale: Una versione medievale che documenta la storia della Chiesa nell'Europa occidentale.\n\n**Significato culturale**\nLe opere intitolate Historia Ecclesiastica sono fondamentali per comprendere lo sviluppo del Cristianesimo e la sua interazione con la società e la politica nel corso dei secoli. Questi testi hanno influenzato profondamente la storiografia cristiana e l'identità religiosa delle comunità europee.\n\nIn sintesi, Historia Ecclesiastica è un titolo condiviso da diverse opere che trattano la storia del Cristianesimo, ciascuna con un focus specifico e un'importanza storica significativa.",
+                        "sources": [
+                          "https://en.wikipedia.org/wiki/Ecclesiastical_History_(Eusebius)",
+                          "https://www.historyofinformation.com/detail.php?id=3357",
+                          "https://en.wikipedia.org/wiki/Historia_Ecclesiastica",
+                          "https://en.wikipedia.org/wiki/Ecclesiastical_History_of_the_English_People",
+                          "https://www.britannica.com/topic/Ecclesiastical-History-by-Eusebius",
+                          "https://www.britannica.com/topic/Historia-ecclesiastica-by-Socrates",
+                          "https://www.britannica.com/topic/Ecclesiastical-History-of-the-English-People",
+                          "https://www.cambridge.org/core/books/abs/old-english-version-of-bedes-historia-ecclesiastica/rewriting-salvation-history/ACA53127F59370E278A8B5BE5AACF1E8"
+                        ]
+                      },
+        "internalDescriptionTitle": 1,
+        "Internal_description": [
+          {
+            "page": "cc.1r-6v",
+            "title": "Indice",
+            "Incipit": "Incipiunt Capitula primi libri hystorie ecclesiastice.",
+            "Explicit": "Expliciunt capitula totius operis."
+          },
+          {
+            "page": "cc.7r-7v",
+            "title": "Prologus Rufini presbyteri in hystoriam ecclesiasticam ad Cromatium episcopum",
+            "Incipit": "Peritorum dicunt esse medicorum: ubi imminere urbibus vel regionibus generales viderint morbos providere aliquod medicamenti vel poculi genus.",
+            "Explicit": "Nostri vero duo libelli a temporibus costantini post persecutionem. Usque ad obitum Theodosii augusti. Explicit prologus. Incipiunt capitula."
+          },
+          {
+            "page": "c. 7v",
+            "title": "Capitula libri hystorie ecclesiastice",
+            "Incipit": "Incipiunt Capitula.",
+            "Explicit": "et eorum que consequenter de syrorum lingua traslata sunt.cap.xv."
+          },
+          {
+            "page": "cc.8r-21v",
+            "title": "Liber primus",
+            "Incipit": "Successiones sanctorum apostolorum et tempora qua salvatore nostro usque ad nos decursa sint queque et qualia in his erga ecclesie statum gesta sint.",
+            "Explicit": "Ut innumeris iudei malis afflicti sunt ac novissime contra romanos arma moverunt."
+          },
+          {
+            "page": "cc.21v-34r",
+            "title": "Liber secundus",
+            "Incipit": "Quecumque oportuit velut in principiis ecclesiasitce hystoriae designari.",
+            "Explicit": "Verum in hoc de iudeis ista sufficiant."
+          },
+          {
+            "page": "cc.35r-51v",
+            "title": "Liber tertius",
+            "Incipit": "Igitur iudei debitis cladbus perurgebatur.",
+            "Explicit": "Habetur autem in evangelio quod dicitur secundum hebreos scripta ista parabola. Sed de his ista sufficiant."
+          },
+          {
+            "page": "cc.52r-67v",
+            "title": "Liber quartus",
+            "Incipit": "Duodecimo anno principatus Traiani Cesaris.",
+            "Explicit": "Eisdem vero temporibus etiam romane ecclesiae Soter episcopus vivendi finem fecit."
+          },
+          {
+            "page": "cc.68r-86v",
+            "title": "Liber quintus",
+            "Incipit": "Igitur Soteri episcopo octo annis in urbe Roma sacerdotio ministrato.",
+            "Explicit": "Denique hec sufficiant hystoriis esse mandata."
+          },
+          {
+            "page": "cc.87r-105v",
+            "title": "Liber sextus",
+            "Incipit": "At cum Severus quoque persecutions agitaret ecclesiis preclara a militibus Cristi prop pietate certamina martyria gerebantur.",
+            "Explicit": "Instructionum et doctrine copiosissimam materiam dereliquit."
+          },
+          {
+            "page": "cc.105v-118r",
+            "title": "Liber septimus",
+            "Incipit": "Septimum nobis ecclesiastice hystorie librum.",
+            "Explicit": "De reliquo vero agones martyrum quos ipsi per nosmetipsos vidimus describentes posteris ad memoriam relinquamus."
+          },
+          {
+            "page": "cc.118v-129v",
+            "title": "Liber octavus",
+            "Incipit": "Apostolorum successionibus intra vii libros anobis conclusis.",
+            "Explicit": "Sed post hec quis consecutum sit videamus."
+          },
+          {
+            "page": "cc.130r-139v",
+            "title": "Liber nonus",
+            "Incipit": "Huiuscemodi edictis imperialibus per omnem locum Asie Pontique propositis.",
+            "Explicit": "Quam poterimus breviter addemus. Hec etiam decimo libro ecclesiastice hystorie continentur."
+          },
+          {
+            "page": "cc.140r-155v",
+            "title": "Liber decimus",
+            "Incipit": "Cum apud Alexandriam post Achillam qui Petro martyri successerat.",
+            "Explicit": "Locum simul et inaniter cepta reliquere."
+          },
+          {
+            "page": "cc.156r-169v",
+            "title": "Liber undecimus",
+            "Incipit": "Post Iuliani Necem tandem civile nobis Ioviniani reparatur imperium.",
+            "Explicit": "Cum principibus piissimis percepturus premia meritorum."
+          }
+        ]
+      }
+    }
+  }
+]

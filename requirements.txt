@@ -1,0 +1,4 @@
+bitsandbytes
+transformers
+accelerate
+python-dotenv

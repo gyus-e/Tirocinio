@@ -27,7 +27,7 @@ bnb_config = BitsAndBytesConfig(
 
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
-    quantization_config=bnb_config,
+    # quantization_config=bnb_config,
     device_map="auto",
     token=hf_token,
 )
@@ -36,37 +36,47 @@ tokenizer = AutoTokenizer.from_pretrained(model_id)
 
 Settings.llm = HuggingFaceLLM(model=model, tokenizer=tokenizer)
 Settings.embed_model = HuggingFaceEmbedding(model_name=embed_model_id)
-Settings.chunk_size = 512
-Settings.chunk_overlap = 64
+Settings.chunk_size = 1024
+Settings.chunk_overlap = 128
 
 
-async def main():
-
-    from cag import read_kv_cache, prepare_kvcache, write_kv_cache, clean_up, generate
-    from rag import agent
+def get_or_create_kv_cache(kv_cache_path: str):
+    from cag import read_kv_cache, prepare_kvcache, write_kv_cache
 
     if os.path.exists(kv_cache_path):
         knowledge_cache, kv_len = read_kv_cache(kv_cache_path)
     else:
-        from knowledge import knowledge
+        from knowledge import documents
 
+        knowledge = "\n".join([doc.text for doc in documents])
         knowledge_cache, kv_len = prepare_kvcache(model, tokenizer, documents=knowledge)
         write_kv_cache(knowledge_cache, kv_cache_path)
 
+    return knowledge_cache, kv_len
+
+
+def run_cag(knowledge_cache, kv_len: int, query: str):
+    from cag import clean_up, generate
+
+    clean_up(knowledge_cache, kv_len)
+    input_ids = tokenizer.encode(query, return_tensors="pt").to(model.device)
+    output = generate(model, input_ids, knowledge_cache)
+    return tokenizer.decode(output[0], skip_special_tokens=True, temperature=None)
+
+
+async def main():
+    from rag import agent
     from querys import querys
 
     for query in querys:
         print(f"Query:\n{query}")
-
         rag_response = await agent.run(query)
         print(f"RAG:\n{rag_response}")
 
-        clean_up(knowledge_cache, kv_len)
-        input_ids = tokenizer.encode(query, return_tensors="pt").to(model.device)
-        output = generate(model, input_ids, knowledge_cache)
-        cag_response = tokenizer.decode(
-            output[0], skip_special_tokens=True, temperature=None
-        )
+    knowledge_cache, kv_len = get_or_create_kv_cache(kv_cache_path)
+    for query in querys:
+        print(f"Query:\n{query}")
+        cag_response = run_cag(knowledge_cache, kv_len, query)
         print(f"CAG:\n{cag_response}")
 
 

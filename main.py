@@ -1,5 +1,9 @@
 import torch
-from transformers import AutoTokenizer, BitsAndBytesConfig, AutoModelForCausalLM
+from transformers import (
+    AutoTokenizer,
+    BitsAndBytesConfig,
+    AutoModelForCausalLM,
+)
 import bitsandbytes as bnb
 from llama_index.core import Settings
 from llama_index.llms.huggingface import HuggingFaceLLM
@@ -40,43 +44,20 @@ Settings.chunk_size = 1024
 Settings.chunk_overlap = 128
 
 
-def get_or_create_kv_cache(kv_cache_path: str):
-    from cag import read_kv_cache, prepare_kvcache, write_kv_cache
-
-    if os.path.exists(kv_cache_path):
-        knowledge_cache, kv_len = read_kv_cache(kv_cache_path)
-    else:
-        from knowledge import documents
-
-        knowledge = "\n".join([doc.text for doc in documents])
-        knowledge_cache, kv_len = prepare_kvcache(model, tokenizer, documents=knowledge)
-        write_kv_cache(knowledge_cache, kv_cache_path)
-
-    return knowledge_cache, kv_len
-
-
-def run_cag(knowledge_cache, kv_len: int, query: str):
-    from cag import clean_up, generate
-
-    clean_up(knowledge_cache, kv_len)
-    input_ids = tokenizer.encode(query, return_tensors="pt").to(model.device)
-    output = generate(model, input_ids, knowledge_cache)
-    return tokenizer.decode(output[0], skip_special_tokens=True, temperature=None)
-
-
 async def main():
-    from rag import agent
     from querys import querys
+    from rag import agent, context
+    from cag import get_or_create_kv_cache, run_cag
 
     for query in querys:
         print(f"Query:\n{query}")
-        rag_response = await agent.run(query)
+        rag_response = await agent.run(query, ctx=context)
         print(f"RAG:\n{rag_response}")
 
-    knowledge_cache, kv_len = get_or_create_kv_cache(kv_cache_path)
+    knowledge_cache, kv_len = get_or_create_kv_cache(model, tokenizer, kv_cache_path)
     for query in querys:
         print(f"Query:\n{query}")
-        cag_response = run_cag(knowledge_cache, kv_len, query)
+        cag_response = run_cag(model, tokenizer, knowledge_cache, kv_len, query)
         print(f"CAG:\n{cag_response}")
 
 

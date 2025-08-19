@@ -1,27 +1,27 @@
-from llama_index.core import (
-    VectorStoreIndex,
-    StorageContext,
-    Settings,
-)
+from llama_index.core import VectorStoreIndex, Settings
 from llama_index.core.workflow import Context
 from llama_index.core.agent.workflow import AgentWorkflow
-from llama_index.vector_stores.chroma import ChromaVectorStore
-import chromadb
-from knowledge import documents
+from llama_index.llms.huggingface import HuggingFaceLLM
+from llama_index.embeddings.huggingface import HuggingFaceEmbedding
+from documents import documents
+from model import model, tokenizer, embed_model_id
+from storage_context import (
+    storage_context,
+    vector_store,
+    ephemeral_client,
+    collection_exists,
+)
 
 
-ephemeral_client = True
-db = chromadb.EphemeralClient() if ephemeral_client else chromadb.HttpClient()
+Settings.llm = HuggingFaceLLM(
+    model=model,
+    tokenizer=tokenizer,
+    device_map="auto",
+)
+Settings.embed_model = HuggingFaceEmbedding(model_name=embed_model_id)
+Settings.chunk_size = 1024
+Settings.chunk_overlap = 128
 
-try:
-    chroma_collection = db.get_collection("quickstart")
-    collection_exists = True
-except Exception as e:
-    chroma_collection = db.create_collection("quickstart")
-    collection_exists = False
-
-vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
-storage_context = StorageContext.from_defaults(vector_store=vector_store)
 
 index = (
     VectorStoreIndex.from_documents(

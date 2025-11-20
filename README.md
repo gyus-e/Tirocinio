@@ -20,6 +20,7 @@ It can be found in `~/.cache/huggingface/hub`
     ```
         pip install -r requirements-lock.txt
     ```
+- (Optional) If you have a GPU and want to use CUDA, run `install_cuda.sh`
 - (Optional) Start the chroma container if you want persistent storage for your embeddings
     ```
         docker run --name chroma -p 8000:8000 -v ./chroma/data:/data -v ./chroma/config.yaml:/config.yaml ghcr.io/chroma-core/chroma:1.3.5

@@ -26,10 +26,12 @@ bnb_config = BitsAndBytesConfig(
     bnb_4bit_compute_dtype=torch.bfloat16,
 )
 
+device = "cuda" if torch.cuda.is_available() else "auto"
+
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
     # quantization_config=bnb_config,
-    device_map="auto",
+    device_map=device,
     token=hf_token,
 )
 print("Model loaded successfully.")

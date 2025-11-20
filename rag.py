@@ -37,7 +37,10 @@ Settings.llm = HuggingFaceLLM(
         "repetition_penalty": repetition_penalty,
     },
 )
-Settings.embed_model = HuggingFaceEmbedding(model_name=embed_model_id)
+Settings.embed_model = HuggingFaceEmbedding(
+    model_name=embed_model_id,
+    parallel_process=True,
+)
 Settings.chunk_size = chunk_size
 Settings.chunk_overlap = chunk_overlap
 print("RAG Settings configured.")

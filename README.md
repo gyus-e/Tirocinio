@@ -22,7 +22,7 @@ It can be found in `~/.cache/huggingface/hub`
     ```
 - (Optional) Start the chroma container if you want persistent storage for your embeddings
     ```
-        docker run --name chroma -p 8000:8000 -v ./chroma/chroma-data:/data -v ./chroma/config.yaml:/config.yaml ghcr.io/chroma-core/chroma:1.3.5
+        docker run --name chroma -p 8000:8000 -v ./chroma/data:/data -v ./chroma/config.yaml:/config.yaml ghcr.io/chroma-core/chroma:1.3.5
     ```
 - (Optional) Replace the content of the `documents` folder with your desired context
 - (Optional) Tweak the settings in `config.py`

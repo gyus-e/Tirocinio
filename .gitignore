@@ -3,4 +3,5 @@ __pycache__
 .env
 secrets/hf_token.txt
 kv_cache
-chroma/data
+chroma
+!chroma/config.yaml

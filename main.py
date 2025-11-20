@@ -1,13 +1,13 @@
 import asyncio
 import time
 
-import config
-import documents
-import storage_context
-from model import model, tokenizer
-from queries import queries
-from rag import agent, context
+import config  # Must be imported first to initialize settings
+import documents  # Loads the documents
+import storage_context  # Creates the vector storage
+from model import model, tokenizer  # Loads the model and tokenizer
+from rag import agent, context  # Sets up RAG agent and context
 from cag import get_or_create_kv_cache, get_kv_len, run_cag
+from queries import queries
 
 
 async def test_rag(queries: list[str]):

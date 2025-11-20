@@ -2,6 +2,7 @@ import torch
 import os
 from transformers.cache_utils import DynamicCache
 from config import cag_system_prompt, cag_answer_instruction, kv_cache_path
+from documents import doc_text
 
 
 def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
@@ -79,10 +80,12 @@ def clean_up(kv: DynamicCache, origin_len: int):
     """
     Truncate the KV Cache to the original length.
     """
-    for i in range (len(kv)):
+    for i in range(len(kv)):
         keys, values = kv[i]
         kv.layers[i].keys = keys[..., :origin_len, :] if keys is not None else None
-        kv.layers[i].values = values[..., :origin_len, :] if values is not None else None
+        kv.layers[i].values = (
+            values[..., :origin_len, :] if values is not None else None
+        )
 
 
 def generate(
@@ -114,9 +117,7 @@ def generate(
         # usare una copia temporanea della kv
         # temp_kv = kv
         for _ in range(max_new_tokens):
-            outputs = model(
-                input_ids=next_token, past_key_values=kv, use_cache=True
-            )
+            outputs = model(input_ids=next_token, past_key_values=kv, use_cache=True)
             next_token_logits = outputs.logits[:, -1, :]
             next_token = next_token_logits.argmax(dim=-1).unsqueeze(-1)
             next_token = next_token.to(embed_device)
@@ -127,13 +128,13 @@ def generate(
 
             if (next_token.item() in model.config.eos_token_id) and (_ > 0):
                 break
-            
+
     return output_ids[:, origin_ids.shape[-1] :]
 
 
-def get_or_create_kv_cache(model, tokenizer, kv_cache_path=kv_cache_path) -> DynamicCache:
-    from documents import doc_text
-
+def get_or_create_kv_cache(
+    model, tokenizer, kv_cache_path=kv_cache_path
+) -> DynamicCache:
     if os.path.exists(kv_cache_path):
         kv = torch.load(kv_cache_path, weights_only=True)
         print("KV Cache loaded from disk.")
@@ -152,16 +153,14 @@ def get_or_create_kv_cache(model, tokenizer, kv_cache_path=kv_cache_path) -> Dyn
 
 
 def get_kv_len(kv: DynamicCache) -> int:
-    if (len(kv) == 0):
+    if len(kv) == 0:
         return 0
-    
+
     keys, _ = kv[0]
     return keys.shape[2] if keys is not None else 0
 
 
 def run_cag(model, tokenizer, kv: DynamicCache, kv_len: int, query: str):
-    from cag import clean_up, generate
-
     clean_up(kv, kv_len)
     input_ids = tokenizer.encode(query, return_tensors="pt").to(model.device)
     output = generate(model, input_ids, kv)

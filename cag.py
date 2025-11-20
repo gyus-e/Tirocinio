@@ -1,8 +1,13 @@
 import torch
 import os
 from transformers.cache_utils import DynamicCache
-from config import cag_system_prompt, cag_answer_instruction, kv_cache_path
 from documents import doc_text
+from config import (
+    cag_system_prompt,
+    cag_answer_instruction,
+    kv_cache_path,
+    max_new_tokens,
+)
 
 
 def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
@@ -92,7 +97,7 @@ def generate(
     model,
     input_ids: torch.Tensor,
     kv: DynamicCache,
-    max_new_tokens: int = 300,
+    max_new_tokens: int,
 ) -> torch.Tensor:
     """
     Generate text with greedy decoding.
@@ -163,5 +168,5 @@ def get_kv_len(kv: DynamicCache) -> int:
 def run_cag(model, tokenizer, kv: DynamicCache, kv_len: int, query: str):
     clean_up(kv, kv_len)
     input_ids = tokenizer.encode(query, return_tensors="pt").to(model.device)
-    output = generate(model, input_ids, kv)
+    output = generate(model, input_ids, kv, max_new_tokens)
     return tokenizer.decode(output[0], skip_special_tokens=True, temperature=None)

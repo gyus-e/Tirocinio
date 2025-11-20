@@ -7,7 +7,7 @@ use_ephemeral_client = chroma_host is None or chroma_port is None
 
 db = (
     chromadb.EphemeralClient()
-    if use_ephemeral_client
+    if chroma_host is None or chroma_port is None
     else chromadb.HttpClient(host=chroma_host, port=chroma_port)
 )
 print("ChromaDB Client initialized.")
@@ -16,11 +16,11 @@ if use_ephemeral_client:
 
 collection_already_exists: bool | None = None
 try:
-    collection_already_exists = True
     chroma_collection = db.get_collection(collection_name)
+    collection_already_exists = True
 except Exception as e:
-    collection_already_exists = False
     chroma_collection = db.create_collection(collection_name)
+    collection_already_exists = False
 print("ChromaDB Collection ready.")
 
 

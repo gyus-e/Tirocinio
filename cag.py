@@ -9,6 +9,8 @@ from config import (
     max_new_tokens,
 )
 
+torch.serialization.add_safe_globals([DynamicCache])
+
 
 def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
     """

@@ -10,7 +10,7 @@ chroma_port = None  # 8000
 chroma_collection_name = "pontaniana-collection"
 
 chunk_size = 1024
-chunk_overlap = 128
+chunk_overlap = 256
 retrieve_top_k = 3
 
 temperature = 0.1

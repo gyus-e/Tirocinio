@@ -14,13 +14,13 @@ print("ChromaDB Client initialized.")
 if use_ephemeral_client:
     print("Using EphemeralClient.")
 
-collection_already_exists: bool | None = None
-try:
-    chroma_collection = db.get_collection(collection_name)
-    collection_already_exists = True
-except Exception as e:
-    chroma_collection = db.create_collection(collection_name)
-    collection_already_exists = False
+collection_already_exists = collection_name in [c.name for c in db.list_collections()]
+
+chroma_collection = (
+    db.get_collection(collection_name)
+    if collection_already_exists
+    else db.create_collection(collection_name)
+)
 print("ChromaDB Collection ready.")
 
 

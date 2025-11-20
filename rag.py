@@ -56,7 +56,10 @@ index = (
 )
 print("RAG Index created.")
 
-query_engine = index.as_query_engine(llm=Settings.llm, similarity_top_k=retrieve_top_k)
+query_engine = index.as_query_engine(
+    llm=Settings.llm,
+    similarity_top_k=retrieve_top_k,
+)
 print("RAG QueryEngine ready.")
 
 

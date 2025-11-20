@@ -1,0 +1,25 @@
+services:
+  chroma:
+    image: ghcr.io/chroma-core/chroma:1.3.5
+    container_name: chroma
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./chroma/config.yaml:/config.yaml
+      - ./chroma/data:/data
+
+  app:
+    build: .
+    container_name: app
+    depends_on:
+      - chroma
+    volumes:
+      - ./config.py:/app/config.py:ro
+      - ./documents:/app/documents:ro
+      - ./kv_cache:/app/kv_cache
+    environment:
+      - HF_TOKEN_PATH=/run/secrets/hf_token
+
+secrets:
+  hf_token:
+    file: ./secrets/hf_token.txt

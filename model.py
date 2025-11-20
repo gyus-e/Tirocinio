@@ -7,13 +7,15 @@ from transformers import (
 import bitsandbytes as bnb
 from dotenv import load_dotenv
 import os
-
+from config import model_id
 
 load_dotenv()
 hf_token = os.getenv("HF_TOKEN")
-
-model_id = "meta-llama/Llama-3.2-3B-Instruct"
-embed_model_id = "BAAI/bge-m3"
+if not hf_token:
+    hf_token_path = os.getenv("HF_TOKEN_PATH")
+    if hf_token_path and os.path.exists(hf_token_path):
+        with open(hf_token_path, "r") as f:
+            hf_token = f.read().strip()
 
 # Configuration for 4-bit quantization using bitsandbytes.
 # (Optional) can be passed to AutoModelForCausalLM.from_pretrained().
@@ -30,4 +32,7 @@ model = AutoModelForCausalLM.from_pretrained(
     device_map="auto",
     token=hf_token,
 )
+print("Model loaded successfully.")
+
 tokenizer = AutoTokenizer.from_pretrained(model_id)
+print("Tokenizer loaded successfully.")

@@ -1,4 +1,6 @@
 __pycache__
 .venv
 .env
-kv_cache.pt
+secrets/hf_token.txt
+kv_cache
+chroma/data

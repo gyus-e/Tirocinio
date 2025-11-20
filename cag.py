@@ -1,7 +1,7 @@
 import torch
-import bitsandbytes as bnb
-from transformers.cache_utils import DynamicCache
 import os
+from transformers.cache_utils import DynamicCache
+from config import cag_system_prompt, cag_answer_instruction, kv_cache_path
 
 
 def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
@@ -20,11 +20,11 @@ def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
     embed_device = model.model.embed_tokens.weight.device
 
     input_ids = tokenizer.encode(prompt, return_tensors="pt").to(embed_device)
-    past_key_values = DynamicCache()
+    kv = DynamicCache()
     with torch.no_grad():
         outputs = model(
             input_ids=input_ids,
-            past_key_values=past_key_values,
+            past_key_values=kv,
             use_cache=True,
             output_attentions=False,
             output_hidden_states=False,
@@ -36,9 +36,9 @@ def prepare_kvcache(
     model,
     tokenizer,
     documents,
-    system_prompt="You are a medical assistant for giving short answers based on given reports.",
-    answer_instruction="Answer the question with a super short answer.",
-):
+    system_prompt: str,
+    answer_instruction: str,
+) -> DynamicCache:
     """
     Prepares kv cache for CAG by constructing a prompt with the content of the documents.
     The structure of this prompt, including any specific instructions or special tokens,
@@ -56,10 +56,10 @@ def prepare_kvcache(
         DynamicCache: KV Cache
     """
 
-    knowledges = f"""
-    <|begin_of_text|>
+    prompt = f"""
     <|start_header_id|>system<|end_header_id|>
-    {system_prompt}<|eot_id|>
+    {system_prompt}
+    <|eot_id|>
     <|start_header_id|>user<|end_header_id|>
     Context information is below.
     ------------------------------------------------
@@ -68,41 +68,27 @@ def prepare_kvcache(
     {answer_instruction}
     Question:
     """
-    kv = preprocess_knowledge(model, tokenizer, knowledges)
-    kv_len = kv.key_cache[0].shape[-2]
-    print("kvlen: ", kv_len)
-    return kv, kv_len
 
+    kv = preprocess_knowledge(model, tokenizer, prompt)
 
-def write_kv_cache(kv: DynamicCache, path: str):
-    """
-    Write the KV Cache to a file.
-    """
-    torch.save(kv, path)
-
-
-def read_kv_cache(path: str):
-    """
-    Read the KV Cache from a file.
-    """
-    kv = torch.load(path, weights_only=True)
-    kv_len = kv.key_cache[0].shape[-2]
-    return kv, kv_len
+    print("CAG Knowledge processed")
+    return kv
 
 
 def clean_up(kv: DynamicCache, origin_len: int):
     """
     Truncate the KV Cache to the original length.
     """
-    for i in range(len(kv.key_cache)):
-        kv.key_cache[i] = kv.key_cache[i][:, :, :origin_len, :]
-        kv.value_cache[i] = kv.value_cache[i][:, :, :origin_len, :]
+    for i in range (len(kv)):
+        keys, values = kv[i]
+        kv.layers[i].keys = keys[..., :origin_len, :] if keys is not None else None
+        kv.layers[i].values = values[..., :origin_len, :] if values is not None else None
 
 
 def generate(
     model,
     input_ids: torch.Tensor,
-    past_key_values: DynamicCache,
+    kv: DynamicCache,
     max_new_tokens: int = 300,
 ) -> torch.Tensor:
     """
@@ -111,7 +97,7 @@ def generate(
     Args:
         model: HuggingFace model with automatic device mapping
         input_ids: Input token ids
-        past_key_values: KV Cache for knowledge
+        kv: KV Cache for knowledge
         max_new_tokens: Maximum new tokens to generate
     """
 
@@ -124,39 +110,59 @@ def generate(
     next_token = input_ids
 
     with torch.no_grad():
+        # idea per evitare di pulire la kv:
+        # usare una copia temporanea della kv
+        # temp_kv = kv
         for _ in range(max_new_tokens):
             outputs = model(
-                input_ids=next_token, past_key_values=past_key_values, use_cache=True
+                input_ids=next_token, past_key_values=kv, use_cache=True
             )
             next_token_logits = outputs.logits[:, -1, :]
             next_token = next_token_logits.argmax(dim=-1).unsqueeze(-1)
             next_token = next_token.to(embed_device)
 
-            past_key_values = outputs.past_key_values
+            kv = outputs.past_key_values
 
             output_ids = torch.cat([output_ids, next_token], dim=1)
 
             if (next_token.item() in model.config.eos_token_id) and (_ > 0):
                 break
+            
     return output_ids[:, origin_ids.shape[-1] :]
 
 
-def get_or_create_kv_cache(model, tokenizer, kv_cache_path: str):
-    from documents import json_data
+def get_or_create_kv_cache(model, tokenizer, kv_cache_path=kv_cache_path) -> DynamicCache:
+    from documents import doc_text
 
     if os.path.exists(kv_cache_path):
-        knowledge_cache, kv_len = read_kv_cache(kv_cache_path)
+        kv = torch.load(kv_cache_path, weights_only=True)
+        print("KV Cache loaded from disk.")
     else:
-        knowledge_cache, kv_len = prepare_kvcache(model, tokenizer, documents=json_data)
-        write_kv_cache(knowledge_cache, kv_cache_path)
+        kv = prepare_kvcache(
+            model,
+            tokenizer,
+            documents=doc_text,
+            system_prompt=cag_system_prompt,
+            answer_instruction=cag_answer_instruction,
+        )
+        torch.save(kv, kv_cache_path)
+        print("KV Cache created and saved to disk.")
 
-    return knowledge_cache, kv_len
+    return kv
 
 
-def run_cag(model, tokenizer, knowledge_cache: DynamicCache, kv_len: int, query: str):
+def get_kv_len(kv: DynamicCache) -> int:
+    if (len(kv) == 0):
+        return 0
+    
+    keys, _ = kv[0]
+    return keys.shape[2] if keys is not None else 0
+
+
+def run_cag(model, tokenizer, kv: DynamicCache, kv_len: int, query: str):
     from cag import clean_up, generate
 
-    clean_up(knowledge_cache, kv_len)
+    clean_up(kv, kv_len)
     input_ids = tokenizer.encode(query, return_tensors="pt").to(model.device)
-    output = generate(model, input_ids, knowledge_cache)
+    output = generate(model, input_ids, kv)
     return tokenizer.decode(output[0], skip_special_tokens=True, temperature=None)

@@ -39,7 +39,7 @@ Settings.llm = HuggingFaceLLM(
 )
 Settings.embed_model = HuggingFaceEmbedding(
     model_name=embed_model_id,
-    parallel_process=True,
+    parallel_process=False,  # Weird issues with multiprocessing
 )
 Settings.chunk_size = chunk_size
 Settings.chunk_overlap = chunk_overlap

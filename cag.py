@@ -1,3 +1,4 @@
+import logging
 import torch
 import os
 from transformers.cache_utils import DynamicCache, DynamicLayer
@@ -80,7 +81,7 @@ def prepare_kvcache(
 
     kv = preprocess_knowledge(model, tokenizer, prompt)
 
-    print("CAG Knowledge processed")
+    logging.debug("CAG Knowledge processed")
     return kv
 
 
@@ -149,7 +150,7 @@ def get_or_create_kv_cache(kv_cache_path) -> DynamicCache:
 
     if os.path.exists(kv_cache_path):
         kv = torch.load(kv_cache_path, weights_only=True)
-        print("KV Cache loaded from disk.")
+        logging.debug("KV Cache loaded from disk.")
     else:
         from documents import documents  # Load the documents only if they are needed
 
@@ -161,7 +162,7 @@ def get_or_create_kv_cache(kv_cache_path) -> DynamicCache:
             answer_instruction=cag_answer_instruction,
         )
         torch.save(kv, kv_cache_path)
-        print("KV Cache created and saved to disk.")
+        logging.debug("KV Cache created and saved to disk.")
 
     return kv
 

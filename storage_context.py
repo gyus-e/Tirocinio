@@ -1,4 +1,5 @@
 import chromadb
+import logging
 from llama_index.vector_stores.chroma import ChromaVectorStore
 from config import chroma_host, chroma_port, chroma_collection_name as collection_name
 
@@ -10,12 +11,12 @@ db = (
     and chroma_port != ""
     else chromadb.EphemeralClient()
 )
-print("ChromaDB Client initialized.")
+logging.debug("ChromaDB Client initialized.")
 
 
 chroma_collection = db.get_or_create_collection(collection_name)
-print(f"ChromaDB Collection {collection_name} ready.")
+logging.debug(f"ChromaDB Collection {collection_name} ready.")
 
 
 vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
-print("VectorStore initialized.")
+logging.debug("VectorStore initialized.")

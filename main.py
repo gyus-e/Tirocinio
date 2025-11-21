@@ -2,7 +2,8 @@ import asyncio
 import time
 import gc
 import torch
-from config import kv_cache_path
+import logging
+import config
 
 
 async def test_rag(queries: list[str]):
@@ -11,7 +12,7 @@ async def test_rag(queries: list[str]):
     rag_total_time = 0.0
 
     for query in queries:
-        print(f"Query:\n{query}")
+        logging.info(f"Query:\n{query}\n")
 
         start = time.perf_counter()
         # rag_response = await agent.run(query, ctx=context)
@@ -21,10 +22,10 @@ async def test_rag(queries: list[str]):
         elapsed = end - start
         rag_total_time += elapsed
 
-        print(f"RAG:\n{rag_response}")
-        print(f"Time elapsed: {elapsed:.3f} seconds")
+        logging.info(f"RAG:\n{rag_response}\n")
+        logging.info(f"Time elapsed: {elapsed:.3f} seconds\n\n")
 
-    print(
+    logging.info(
         f"RAG time for {len(queries)} queries: {rag_total_time:.3f}s, avg: {rag_total_time/len(queries):.3f}s"
     )
 
@@ -35,13 +36,13 @@ def test_cag(queries: list[str]):
     torch.cuda.empty_cache()
     gc.collect()
 
-    knowledge_cache = get_or_create_kv_cache(kv_cache_path)
+    knowledge_cache = get_or_create_kv_cache(config.kv_cache_path)
     kv_len = get_kv_len(knowledge_cache)
 
     cag_total_time = 0.0
 
     for query in queries:
-        print(f"Query:\n{query}")
+        logging.info(f"Query:\n{query}\n")
 
         start = time.perf_counter()
         cag_response = run_cag(knowledge_cache, query)
@@ -51,10 +52,10 @@ def test_cag(queries: list[str]):
         cag_total_time += elapsed
 
         clean_up(knowledge_cache, kv_len)
-        print(f"CAG:\n{cag_response}")
-        print(f"Time elapsed: {elapsed:.3f} seconds")
+        logging.info(f"CAG:\n{cag_response}\n")
+        logging.info(f"Time elapsed: {elapsed:.3f} seconds\n\n")
 
-    print(
+    logging.info(
         f"CAG time for {len(queries)} queries: {cag_total_time:.3f}s, avg: {cag_total_time/len(queries):.3f}s"
     )
 
@@ -62,12 +63,18 @@ def test_cag(queries: list[str]):
 if __name__ == "__main__":
     from queries import queries
 
+    logging.basicConfig(
+        filename=f"./logs/{time.strftime("%Y%m%d-%H%M%S")}.log",
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+    )
+
     if not queries:
-        print("No queries found.")
+        logging.error("No queries found.")
         exit(1)
 
-    print("Starting RAG tests")
+    logging.info("================\t Beginning RAG tests... \t================")
     asyncio.run(test_rag(queries))
 
-    print("Starting CAG tests")
+    logging.info("================\t Beginning CAG tests... \t================")
     test_cag(queries)

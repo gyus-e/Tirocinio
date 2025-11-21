@@ -1,4 +1,5 @@
 import torch
+import logging
 from llama_index.core import StorageContext, VectorStoreIndex, Settings
 from llama_index.core.workflow import Context
 from llama_index.core.agent.workflow import AgentWorkflow
@@ -44,14 +45,14 @@ Settings.embed_model = HuggingFaceEmbedding(
 )
 Settings.chunk_size = chunk_size
 Settings.chunk_overlap = chunk_overlap
-print("RAG Settings configured.")
+logging.debug("RAG Settings configured.")
 
 if chroma_collection.count() > 0:
     index = VectorStoreIndex.from_vector_store(
         vector_store=vector_store,
         embed_model=Settings.embed_model,
     )
-    print("RAG Index loaded from existing collection.")
+    logging.debug("RAG Index loaded from existing collection.")
 else:
     from documents import documents  # Load the documents only if they are needed
 
@@ -60,20 +61,20 @@ else:
         storage_context=StorageContext.from_defaults(vector_store=vector_store),
         embed_model=Settings.embed_model,
     )
-    print("RAG Index created from documents.")
+    logging.debug("RAG Index created from documents.")
 
 query_engine = index.as_query_engine(
     llm=Settings.llm,
     similarity_top_k=retrieve_top_k,
 )
-print("RAG QueryEngine ready.")
+logging.debug("RAG QueryEngine ready.")
 
 
 async def search_documents(query: str) -> str:
     """Useful for answering natural language questions about the content of the documents."""
-    print(f'search_documents - Searching documents for query: "{query}".')
+    logging.debug(f'search_documents - Searching documents for query: "{query}".')
     response = await query_engine.aquery(query)
-    print(f'search_documents - Retrieved chunk: "{response}".')
+    logging.debug(f'search_documents - Retrieved chunk: "{response}".')
     return str(response)
 
 
@@ -82,7 +83,7 @@ agent = AgentWorkflow.from_tools_or_functions(
     llm=Settings.llm,
     system_prompt=rag_system_prompt,
 )
-print("RAG AgentWorkflow initialized.")
+logging.debug("RAG AgentWorkflow initialized.")
 
 context = Context(agent)
-print("RAG Context created.")
+logging.debug("RAG Context created.")

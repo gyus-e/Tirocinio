@@ -18,6 +18,7 @@ services:
       - ./config.py:/app/config.py:ro
       - ./documents:/app/documents:ro
       - ./kv_cache:/app/kv_cache
+      - ./models:/app/models
     environment:
       - HF_TOKEN_PATH=/run/secrets/hf_token
       - PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True

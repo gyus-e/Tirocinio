@@ -1,4 +1,5 @@
 import os
+import logging
 import torch
 import bitsandbytes as bnb
 from dotenv import load_dotenv
@@ -34,7 +35,7 @@ model = AutoModelForCausalLM.from_pretrained(
     device_map=device,
     token=hf_token,
 )
-print("Model loaded successfully.")
+logging.debug("Model loaded successfully.")
 
 tokenizer = AutoTokenizer.from_pretrained(model_id)
-print("Tokenizer loaded successfully.")
+logging.debug("Tokenizer loaded successfully.")

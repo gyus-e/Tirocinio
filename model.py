@@ -1,12 +1,12 @@
+import os
 import torch
+import bitsandbytes as bnb
+from dotenv import load_dotenv
 from transformers import (
     AutoTokenizer,
     BitsAndBytesConfig,
     AutoModelForCausalLM,
 )
-import bitsandbytes as bnb
-from dotenv import load_dotenv
-import os
 from config import model_id
 
 load_dotenv()

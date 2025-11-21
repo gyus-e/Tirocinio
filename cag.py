@@ -1,15 +1,14 @@
 import torch
 import os
-from transformers.cache_utils import DynamicCache
-from documents import doc_text
+from transformers.cache_utils import DynamicCache, DynamicLayer
+from model import model, tokenizer, device
 from config import (
     cag_system_prompt,
     cag_answer_instruction,
-    kv_cache_path,
     max_new_tokens,
 )
 
-torch.serialization.add_safe_globals([DynamicCache])
+torch.serialization.add_safe_globals([DynamicCache, DynamicLayer])
 
 
 def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
@@ -25,7 +24,9 @@ def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
     """
 
     # check which device is used. This depends on the chosen model.
-    embed_device = model.model.embed_tokens.weight.device
+    embed_device = (
+        "cuda" if device == "cuda" else model.model.embed_tokens.weight.device
+    )
 
     input_ids = tokenizer.encode(prompt, return_tensors="pt").to(embed_device)
     kv = DynamicCache()
@@ -69,12 +70,12 @@ def prepare_kvcache(
     {system_prompt}
     <|eot_id|>
     <|start_header_id|>user<|end_header_id|>
-    Context information is below.
+    Contesto:
     ------------------------------------------------
     {documents}
     ------------------------------------------------
     {answer_instruction}
-    Question:
+    Domanda:
     """
 
     kv = preprocess_knowledge(model, tokenizer, prompt)
@@ -111,7 +112,9 @@ def generate(
         max_new_tokens: Maximum new tokens to generate
     """
 
-    embed_device = model.model.embed_tokens.weight.device
+    embed_device = (
+        "cuda" if device == "cuda" else model.model.embed_tokens.weight.device
+    )
 
     origin_ids = input_ids
     input_ids = input_ids.to(embed_device)
@@ -120,16 +123,19 @@ def generate(
     next_token = input_ids
 
     with torch.no_grad():
-        # idea per evitare di pulire la kv:
-        # usare una copia temporanea della kv
-        # temp_kv = kv
+        # idea per evitare di pulire la kv: usare una copia temporanea
+        temp_kv = kv
         for _ in range(max_new_tokens):
-            outputs = model(input_ids=next_token, past_key_values=kv, use_cache=True)
+            outputs = model(
+                input_ids=next_token,
+                past_key_values=temp_kv,
+                use_cache=True,
+            )
             next_token_logits = outputs.logits[:, -1, :]
             next_token = next_token_logits.argmax(dim=-1).unsqueeze(-1)
             next_token = next_token.to(embed_device)
 
-            kv = outputs.past_key_values
+            temp_kv = outputs.past_key_values
 
             output_ids = torch.cat([output_ids, next_token], dim=1)
 
@@ -139,17 +145,18 @@ def generate(
     return output_ids[:, origin_ids.shape[-1] :]
 
 
-def get_or_create_kv_cache(
-    model, tokenizer, kv_cache_path=kv_cache_path
-) -> DynamicCache:
+def get_or_create_kv_cache(kv_cache_path) -> DynamicCache:
+
     if os.path.exists(kv_cache_path):
         kv = torch.load(kv_cache_path, weights_only=True)
         print("KV Cache loaded from disk.")
     else:
+        from documents import documents  # Load the documents only if they are needed
+
         kv = prepare_kvcache(
             model,
             tokenizer,
-            documents=doc_text,
+            documents=documents,
             system_prompt=cag_system_prompt,
             answer_instruction=cag_answer_instruction,
         )
@@ -167,8 +174,7 @@ def get_kv_len(kv: DynamicCache) -> int:
     return keys.shape[2] if keys is not None else 0
 
 
-def run_cag(model, tokenizer, kv: DynamicCache, kv_len: int, query: str):
-    clean_up(kv, kv_len)
+def run_cag(kv: DynamicCache, query: str):
     input_ids = tokenizer.encode(query, return_tensors="pt").to(model.device)
     output = generate(model, input_ids, kv, max_new_tokens)
     return tokenizer.decode(output[0], skip_special_tokens=True, temperature=None)

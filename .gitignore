@@ -2,6 +2,7 @@ __pycache__
 .venv
 .env
 secrets/hf_token.txt
+models
 kv_cache
 chroma
 !chroma/config.yaml

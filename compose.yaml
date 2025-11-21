@@ -20,6 +20,7 @@ services:
       - ./kv_cache:/app/kv_cache
     environment:
       - HF_TOKEN_PATH=/run/secrets/hf_token
+      - PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 secrets:
   hf_token:

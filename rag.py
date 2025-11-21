@@ -1,19 +1,18 @@
-from llama_index.core import VectorStoreIndex, Settings
+import torch
+from llama_index.core import StorageContext, VectorStoreIndex, Settings
 from llama_index.core.workflow import Context
 from llama_index.core.agent.workflow import AgentWorkflow
 from llama_index.llms.huggingface import HuggingFaceLLM
 from llama_index.embeddings.huggingface import HuggingFaceEmbedding
 from model import model, tokenizer
-from documents import documents
 from storage_context import (
-    storage_context,
     vector_store,
-    use_ephemeral_client,
-    collection_already_exists,
+    chroma_collection,
 )
 from config import (
     max_new_tokens,
     embed_model_id,
+    embed_model_path,
     chunk_size,
     chunk_overlap,
     retrieve_top_k,
@@ -27,7 +26,7 @@ from config import (
 Settings.llm = HuggingFaceLLM(
     model=model,
     tokenizer=tokenizer,
-    device_map="auto",
+    device_map="cuda" if torch.cuda.is_available() else "auto",
     max_new_tokens=max_new_tokens,
     generate_kwargs={
         "do_sample": temperature > 0.0,
@@ -39,25 +38,29 @@ Settings.llm = HuggingFaceLLM(
 )
 Settings.embed_model = HuggingFaceEmbedding(
     model_name=embed_model_id,
-    parallel_process=False,  # Weird issues with multiprocessing
+    device="cuda" if torch.cuda.is_available() else None,
+    cache_folder=embed_model_path,
+    parallel_process=False,
 )
 Settings.chunk_size = chunk_size
 Settings.chunk_overlap = chunk_overlap
 print("RAG Settings configured.")
 
-index = (
-    VectorStoreIndex.from_documents(
-        documents,
-        storage_context=storage_context,
+if chroma_collection.count() > 0:
+    index = VectorStoreIndex.from_vector_store(
+        vector_store=vector_store,
         embed_model=Settings.embed_model,
     )
-    if use_ephemeral_client or not collection_already_exists
-    else VectorStoreIndex.from_vector_store(
-        vector_store,
+    print("RAG Index loaded from existing collection.")
+else:
+    from documents import documents  # Load the documents only if they are needed
+
+    index = VectorStoreIndex.from_documents(
+        documents=documents,
+        storage_context=StorageContext.from_defaults(vector_store=vector_store),
         embed_model=Settings.embed_model,
     )
-)
-print("RAG Index created.")
+    print("RAG Index created from documents.")
 
 query_engine = index.as_query_engine(
     llm=Settings.llm,
@@ -68,7 +71,9 @@ print("RAG QueryEngine ready.")
 
 async def search_documents(query: str) -> str:
     """Useful for answering natural language questions about the content of the documents."""
+    print(f'search_documents - Searching documents for query: "{query}".')
     response = await query_engine.aquery(query)
+    print(f'search_documents - Retrieved chunk: "{response}".')
     return str(response)
 
 

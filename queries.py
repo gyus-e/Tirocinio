@@ -6,7 +6,7 @@ queries = [
     # "Quali stampatori veneziani hanno collaborato con più autori presenti nella collezione e quali caratteristiche hanno in comune le loro pubblicazioni?",
     # "Quali filosofi vengono citati nel Liber tertius dell'opera di Achillini Alessandro e quante volte viene menzionato Averroè nell'intero testo?",
     # "Come si riflette l'influenza di Platone nelle opere della collezione Pontaniana?",
-    # "Quali marche tipografiche sono presenti negli incunaboli della collezione e cosa rappresentano?",
+    "Quali marche tipografiche sono presenti negli incunaboli della collezione e cosa rappresentano?",
     # "Chi è Tommaso di Alessandria e qual è il suo ruolo nelle opere della collezione?",
     # "Riassumi i principali temi religiosi trattati nella collezione, citando specifici esempi dai testi",
 ]

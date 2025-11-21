@@ -4,8 +4,8 @@
  - Docker
 
 # Warning
-Running this software will download the LLM specified in "model.py" on your machine from HuggingFace.
-It can be found in `~/.cache/huggingface/hub`
+Running this software will download the LLM specified in `config.py` on your machine from HuggingFace.
+It can be found in the path pointed by the `HF_HOME` environment variable, and it will default to `~/.cache/huggingface/hub`
 
 # Instructions
 - Register to HuggingFace and get your HF_TOKEN.

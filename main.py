@@ -60,6 +60,23 @@ def test_cag(queries: list[str]):
     )
 
 
+def log_config():
+    logging.info("Configuration:")
+    logging.info(f"model id: {config.model_id}")
+    logging.info(f"max new tokens: {config.max_new_tokens}")
+    logging.info(f"embed model id: {config.embed_model_id}")
+    logging.info(f"chunk size: {config.chunk_size}")
+    logging.info(f"chunk_overlap: {config.chunk_overlap}")
+    logging.info(f"retrieve_top_k: {config.retrieve_top_k}")
+    logging.info(f"temperature: {config.temperature}")
+    logging.info(f"generate_top_k: {config.generate_top_k}")
+    logging.info(f"generate_top_p: {config.generate_top_p}")
+    logging.info(f"repetition_penalty: {config.repetition_penalty}")
+    logging.info(f"rag system prompt: {config.rag_system_prompt}")
+    logging.info(f"cag system prompt: {config.cag_system_prompt}")
+    logging.info(f"cag answer instruction: {config.cag_answer_instruction}")
+
+
 if __name__ == "__main__":
     from queries import queries
 
@@ -72,6 +89,8 @@ if __name__ == "__main__":
     if not queries:
         logging.error("No queries found.")
         exit(1)
+
+    log_config()
 
     logging.info("================\t Beginning RAG tests... \t================")
     asyncio.run(test_rag(queries))

@@ -123,7 +123,7 @@ def generate(
     next_token = input_ids
 
     with torch.no_grad():
-        # idea per evitare di pulire la kv: usare una copia temporanea
+        # idea per evitare di pulire la kv: usare una copia temporanea (ma questo credo sia un riferimento)
         temp_kv = kv
         for _ in range(max_new_tokens):
             outputs = model(

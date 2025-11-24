@@ -12,7 +12,73 @@ from config import (
 torch.serialization.add_safe_globals([DynamicCache, DynamicLayer])
 
 
-def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
+def get_or_create_kv_cache(kv_cache_path) -> DynamicCache:
+
+    if os.path.exists(kv_cache_path):
+        kv = torch.load(kv_cache_path, weights_only=True)
+        logging.debug("KV Cache loaded from disk.")
+    else:
+        from documents import documents  # Load the documents only if they are needed
+
+        prompt = __build_prompt(
+            documents,
+            cag_system_prompt,
+            cag_answer_instruction,
+        )
+
+        kv = __prepare_kvcache(
+            model,
+            tokenizer,
+            prompt,
+        )
+        torch.save(kv, kv_cache_path)
+        logging.debug("KV Cache created and saved to disk.")
+
+    return kv
+
+
+def get_kv_len(kv: DynamicCache) -> int:
+    if len(kv) == 0:
+        return 0
+
+    keys, _ = kv[0]
+    return keys.shape[2] if keys is not None else 0
+
+
+def run_cag(kv: DynamicCache, query: str):
+    input_ids = tokenizer.encode(query, return_tensors="pt").to(model.device)
+    output = __generate(model, input_ids, kv, max_new_tokens)
+    return tokenizer.decode(output[0], skip_special_tokens=True, temperature=None)
+
+
+def clean_up(kv: DynamicCache, origin_len: int):
+    """
+    Truncate the KV Cache to the original length.
+    """
+    for i in range(len(kv)):
+        keys, values = kv[i]
+        kv.layers[i].keys = keys[..., :origin_len, :] if keys is not None else None
+        kv.layers[i].values = (
+            values[..., :origin_len, :] if values is not None else None
+        )
+
+
+def __build_prompt(documents, system_prompt: str, answer_instruction: str = "") -> str:
+    return f"""
+    <|start_header_id|>system<|end_header_id|>
+    {system_prompt}
+    <|eot_id|>
+    <|start_header_id|>user<|end_header_id|>
+    Contesto:
+    ------------------------------------------------
+    {documents}
+    ------------------------------------------------
+    {answer_instruction}
+    Domanda:
+    """
+
+
+def __preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
     """
     Prepare knowledge kv cache for CAG by passing the prompt to the model.
     Args:
@@ -42,12 +108,10 @@ def preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
     return outputs.past_key_values
 
 
-def prepare_kvcache(
+def __prepare_kvcache(
     model,
     tokenizer,
-    documents,
-    system_prompt: str,
-    answer_instruction: str,
+    prompt: str,
 ) -> DynamicCache:
     """
     Prepares kv cache for CAG by constructing a prompt with the content of the documents.
@@ -58,46 +122,19 @@ def prepare_kvcache(
     Args:
         model: HuggingFace model with automatic device mapping
         tokenizer: HuggingFace tokenizer
-        documents: any object that can be converted to a string, containing the documents contents
-        system_prompt: The general instructions for the model
-        answer_instruction: Other instructions for answering questions
+        prompt: The knowledge to preprocess, which is basically a prompt
 
     Returns:
         DynamicCache: KV Cache
     """
 
-    prompt = f"""
-    <|start_header_id|>system<|end_header_id|>
-    {system_prompt}
-    <|eot_id|>
-    <|start_header_id|>user<|end_header_id|>
-    Contesto:
-    ------------------------------------------------
-    {documents}
-    ------------------------------------------------
-    {answer_instruction}
-    Domanda:
-    """
-
-    kv = preprocess_knowledge(model, tokenizer, prompt)
+    kv = __preprocess_knowledge(model, tokenizer, prompt)
 
     logging.debug("CAG Knowledge processed")
     return kv
 
 
-def clean_up(kv: DynamicCache, origin_len: int):
-    """
-    Truncate the KV Cache to the original length.
-    """
-    for i in range(len(kv)):
-        keys, values = kv[i]
-        kv.layers[i].keys = keys[..., :origin_len, :] if keys is not None else None
-        kv.layers[i].values = (
-            values[..., :origin_len, :] if values is not None else None
-        )
-
-
-def generate(
+def __generate(
     model,
     input_ids: torch.Tensor,
     kv: DynamicCache,
@@ -126,6 +163,13 @@ def generate(
     with torch.no_grad():
         # idea per evitare di pulire la kv: usare una copia temporanea (ma questo credo sia un riferimento)
         temp_kv = kv
+
+        eos_ids = (
+            [model.config.eos_token_id]
+            if isinstance(model.config.eos_token_id, int)
+            else model.config.eos_token_id
+        )
+
         for _ in range(max_new_tokens):
             outputs = model(
                 input_ids=next_token,
@@ -140,42 +184,7 @@ def generate(
 
             output_ids = torch.cat([output_ids, next_token], dim=1)
 
-            if (next_token.item() in model.config.eos_token_id) and (_ > 0):
+            if (next_token.item() in eos_ids) and (_ > 0):
                 break
 
     return output_ids[:, origin_ids.shape[-1] :]
-
-
-def get_or_create_kv_cache(kv_cache_path) -> DynamicCache:
-
-    if os.path.exists(kv_cache_path):
-        kv = torch.load(kv_cache_path, weights_only=True)
-        logging.debug("KV Cache loaded from disk.")
-    else:
-        from documents import documents  # Load the documents only if they are needed
-
-        kv = prepare_kvcache(
-            model,
-            tokenizer,
-            documents=documents,
-            system_prompt=cag_system_prompt,
-            answer_instruction=cag_answer_instruction,
-        )
-        torch.save(kv, kv_cache_path)
-        logging.debug("KV Cache created and saved to disk.")
-
-    return kv
-
-
-def get_kv_len(kv: DynamicCache) -> int:
-    if len(kv) == 0:
-        return 0
-
-    keys, _ = kv[0]
-    return keys.shape[2] if keys is not None else 0
-
-
-def run_cag(kv: DynamicCache, query: str):
-    input_ids = tokenizer.encode(query, return_tensors="pt").to(model.device)
-    output = generate(model, input_ids, kv, max_new_tokens)
-    return tokenizer.decode(output[0], skip_special_tokens=True, temperature=None)

@@ -14,10 +14,14 @@ async def test_rag(queries: list[str]):
     for query in queries:
         logging.info(f"Query:\n{query}\n")
 
-        start = time.perf_counter()
-        # rag_response = await agent.run(query, ctx=context)
-        rag_response = await query_engine.aquery(query)
-        end = time.perf_counter()
+        if config.use_rag_agent:
+            start = time.perf_counter()
+            rag_response = await agent.run(query, ctx=context)
+            end = time.perf_counter()
+        else:
+            start = time.perf_counter()
+            rag_response = await query_engine.aquery(query)
+            end = time.perf_counter()
 
         elapsed = end - start
         rag_total_time += elapsed
@@ -64,6 +68,7 @@ def log_config():
     logging.info("Configuration:")
     logging.info(f"model id: {config.model_id}")
     logging.info(f"max new tokens: {config.max_new_tokens}")
+    logging.info(f"using RAG agent: {config.use_rag_agent}")
     logging.info(f"embed model id: {config.embed_model_id}")
     logging.info(f"chunk size: {config.chunk_size}")
     logging.info(f"chunk_overlap: {config.chunk_overlap}")
@@ -81,7 +86,7 @@ if __name__ == "__main__":
     from queries import queries
 
     logging.basicConfig(
-        filename=f"./logs/{time.strftime("%Y%m%d-%H%M%S")}.log",
+        filename=f"./logs/{config.model_id.split('/')[1]}-{time.strftime("%Y-%m-%d--%H-%M-%S")}.log",
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
     )

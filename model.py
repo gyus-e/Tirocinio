@@ -31,7 +31,7 @@ device = "cuda" if torch.cuda.is_available() else "auto"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
-    # quantization_config=bnb_config,
+    quantization_config=bnb_config,
     device_map=device,
     token=hf_token,
 )

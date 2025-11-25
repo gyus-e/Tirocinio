@@ -38,7 +38,7 @@ def cag_query(query: str) -> str:
     """Useful for answering natural language questions using the cached knowledge."""
     response = generate_response(
         __KV,
-        query,
+        f"{query}\nRisposta:\n",  # Evita che il modello generi altre domande oppure la scritta "Risposta:"
         MODEL,
         TOKENIZER,
         EMBED_DEVICE,

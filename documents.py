@@ -1,6 +1,6 @@
 import logging
 from llama_index.core import SimpleDirectoryReader
-from config import documents_dir
+from config import DOCUMENTS_DIR
 
-documents = SimpleDirectoryReader(documents_dir).load_data()
-logging.debug("Documents loaded:", len(documents))
+DOCUMENTS = SimpleDirectoryReader(DOCUMENTS_DIR).load_data()
+logging.debug("Documents loaded: %d", len(DOCUMENTS))

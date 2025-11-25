@@ -1,22 +1,22 @@
 import chromadb
 import logging
 from llama_index.vector_stores.chroma import ChromaVectorStore
-from config import chroma_host, chroma_port, chroma_collection_name as collection_name
+from config import CHROMA_HOST, CHROMA_PORT, CHROMA_COLLECTION_NAME as collection_name
 
-db = (
-    chromadb.HttpClient(host=chroma_host, port=chroma_port)
-    if chroma_host is not None
-    and chroma_port is not None
-    and chroma_host != ""
-    and chroma_port != ""
+DB = (
+    chromadb.HttpClient(host=CHROMA_HOST, port=CHROMA_PORT)
+    if CHROMA_HOST is not None
+    and CHROMA_PORT is not None
+    and CHROMA_HOST != ""
+    and CHROMA_PORT != ""
     else chromadb.EphemeralClient()
 )
 logging.debug("ChromaDB Client initialized.")
 
 
-chroma_collection = db.get_or_create_collection(collection_name)
+CHROMA_COLLECTION = DB.get_or_create_collection(collection_name)
 logging.debug(f"ChromaDB Collection {collection_name} ready.")
 
 
-vector_store = ChromaVectorStore(chroma_collection=chroma_collection)
+VECTOR_STORE = ChromaVectorStore(chroma_collection=CHROMA_COLLECTION)
 logging.debug("VectorStore initialized.")

@@ -1,48 +1,50 @@
-model_id = "meta-llama/Llama-3.2-3B-Instruct"
-# model_id = "microsoft/Phi-3-mini-4k-instruct"
-# model_id = "google/gemma-3-4b-it"
-# model_id = "mistralai/Mistral-7B-Instruct-v0.2"
-# model_id = "mistralai/Mistral-7B-Instruct-v0.3"
-use_4bit_quantization = True
-max_new_tokens = 512
+MODEL_ID = "meta-llama/Llama-3.2-3B-Instruct"
+# MODEL_ID = "microsoft/Phi-3-mini-4k-instruct"
+# MODEL_ID = "google/gemma-3-4b-it"
+# MODEL_ID = "mistralai/Mistral-7B-Instruct-v0.3"
 
-documents_dir = "./documents"
+USE_4BIT_QUANTIZATION = True
+MAX_NEW_TOKENS = 512
 
-# RAG configuration settings
-# embed_model_id = "BAAI/bge-m3"
-# embed_model_id = "sentence-transformers/all-MiniLM-L6-v2"
-embed_model_id = "nickprock/sentence-bert-base-italian-uncased"
-# embed_model_id = "nomic-ai/nomic-embed-text-v1.5"
+DOCUMENTS_DIR = "./documents"
 
-embed_model_path = "./models/embedding-model"
 
-max_iterations = 5
+## RAG configuration settings
 
-chroma_host = "localhost"
-chroma_port = 8000
-chroma_collection_name = f"{embed_model_id.split('/')[1]}_embeddings"
+# EMBED_MODEL_ID = "BAAI/bge-m3"
+# EMBED_MODEL_ID = "sentence-transformers/all-MiniLM-L6-v2"
+EMBED_MODEL_ID = "nickprock/sentence-bert-base-italian-uncased"
+# EMBED_MODEL_ID = "nomic-ai/nomic-embed-text-v1.5"
 
-chunk_size = 1024
-chunk_overlap = 256
-retrieve_top_k = 5
+EMBED_MODEL_PATH = "./models/embedding-model"
 
-temperature = 0.2
-generate_top_k = 40
-generate_top_p = 0.8
-repetition_penalty = 1.1
+MAX_ITERATIONS = 10
 
-rag_system_prompt = """
+CHROMA_HOST = "localhost"
+CHROMA_PORT = 8000
+CHROMA_COLLECTION_NAME = f"{EMBED_MODEL_ID.split('/')[1]}_embeddings"
+
+CHUNK_SIZE = 1024
+CHUNK_OVERLAP = 256
+RETRIEVE_TOP_K = 5
+
+TEMPERATURE = 0.2
+GENERATE_TOP_K = 40
+GENERATE_TOP_P = 0.8
+REPETITION_PENALITY = 1.1
+
+RAG_SYSTEM_PROMPT = """
     Hai a disposizione documenti relativi al catalogo della Biblioteca Pontaniana di Napoli.
     Usa la funzione "search_documents" una sola volta per cercare informazioni utili.
     Dopo aver usato "search_documents", rispondi immediatamente utilizzando le informazioni trovate.
     Se non hai trovato informazioni rilevanti, rispondi con "Non lo so" e termina la risposta.
 """.strip()
 
-# CAG configuration settings
-kv_cache_path = f"./kv_cache/kv_cache_{model_id.split('/')[1]}.pt"
-cag_system_prompt = """
-    Rispondi utilizzando le informazioni che ti sono fornite.
+
+## CAG configuration settings
+
+KV_CACHE_PATH = f"./kv_cache/kv_cache_{MODEL_ID.split('/')[1]}.pt"
+CAG_SYSTEM_PROMPT = """
+    Rispondi allo User Prompt utilizzando le informazioni che ti sono fornite.
     Se non sono sufficienti a rispondere, rispondi con "Non lo so" e termina la risposta.
-""".strip()
-cag_answer_instructions = """
 """.strip()

@@ -9,7 +9,7 @@ import config
 
 
 async def test_rag(queries: list[str]):
-    from rag import agent, context, query_engine
+    from rag import AGENT, CONTEXT, QUERY_ENGINE
 
     rag_total_time = 0.0
 
@@ -18,17 +18,17 @@ async def test_rag(queries: list[str]):
 
         start = time.perf_counter()
         try:
-            rag_response = await agent.run(
+            rag_response = await AGENT.run(
                 query,
-                ctx=context,
-                max_iterations=config.max_iterations,
+                ctx=CONTEXT,
+                max_iterations=config.MAX_ITERATIONS,
             )
         except WorkflowRuntimeError as e:
             max_iterations_time = time.perf_counter()
             logging.warning(
                 f"Max iterations reached after {max_iterations_time - start} seconds. Falling back to QueryEngine."
             )
-            rag_response = await query_engine.aquery(query)
+            rag_response = await QUERY_ENGINE.aquery(query)
         end = time.perf_counter()
 
         elapsed = end - start
@@ -43,13 +43,10 @@ async def test_rag(queries: list[str]):
 
 
 def test_cag(queries: list[str]):
-    from cag import get_or_create_kv_cache, get_kv_len, run_cag, clean_up
+    from cag import cag_query
 
     torch.cuda.empty_cache()
     gc.collect()
-
-    knowledge_cache = get_or_create_kv_cache(config.kv_cache_path)
-    kv_len = get_kv_len(knowledge_cache)
 
     cag_total_time = 0.0
 
@@ -57,13 +54,12 @@ def test_cag(queries: list[str]):
         logging.info(f"Query:\n{query}")
 
         start = time.perf_counter()
-        cag_response = run_cag(knowledge_cache, query)
+        cag_response = cag_query(query)
         end = time.perf_counter()
 
         elapsed = end - start
         cag_total_time += elapsed
 
-        clean_up(knowledge_cache, kv_len)
         logging.info(f"CAG response:\n{cag_response}")
         logging.info(f"Time elapsed: {elapsed:.3f} seconds\n")
 
@@ -75,25 +71,23 @@ def test_cag(queries: list[str]):
 def log_config():
     logging.info(
         f"""Configuration:
-    model_id: {config.model_id}
-    use_4bit_quantization: {config.use_4bit_quantization}
-    max_new_tokens: {config.max_new_tokens}
+    MODEL_ID: {config.MODEL_ID}
+    USE_4BIT_QUANTIZATION: {config.USE_4BIT_QUANTIZATION}
+    MAX_NEW_TOKENS: {config.MAX_NEW_TOKENS}
     
-    embed_model_id: {config.embed_model_id}
-    max_iterations: {config.max_iterations}
-    chunk_size: {config.chunk_size}
-    chunk_overlap: {config.chunk_overlap}
-    retrieve_top_k: {config.retrieve_top_k}
-    temperature: {config.temperature}
-    generate_top_k: {config.generate_top_k}
-    generate_top_p: {config.generate_top_p}
-    repetition_penalty: {config.repetition_penalty}
+    EMBED_MODEL_ID: {config.EMBED_MODEL_ID}
+    MAX_ITERATIONS: {config.MAX_ITERATIONS}
+    CHUNK_SIZE: {config.CHUNK_SIZE}
+    CHUNK_OVERLAP: {config.CHUNK_OVERLAP}
+    RETRIEVE_TOP_K: {config.RETRIEVE_TOP_K}
+    TEMPERATURE: {config.TEMPERATURE}
+    GENERATE_TOP_K: {config.GENERATE_TOP_K}
+    GENERATE_TOP_P: {config.GENERATE_TOP_P}
+    REPETITION_PENALITY: {config.REPETITION_PENALITY}
     
-    rag_system_prompt: {config.rag_system_prompt}
+    RAG_SYSTEM_PROMPT: {config.RAG_SYSTEM_PROMPT}
     
-    cag_system_prompt: {config.cag_system_prompt}
-    
-    cag_answer_instructions: {config.cag_answer_instructions}
+    CAG_SYSTEM_PROMPT: {config.CAG_SYSTEM_PROMPT}
     """
     )
 
@@ -102,10 +96,9 @@ if __name__ == "__main__":
     from queries import queries
 
     logging.basicConfig(
-        filename=f"./logs/{config.model_id.split('/')[1]}-{time.strftime("%Y-%m-%d--%H-%M-%S")}.log",
+        filename=f"./logs/{config.MODEL_ID.split('/')[1]}-{time.strftime("%Y-%m-%d--%H-%M-%S")}.log",
         level=logging.INFO,
         format="%(asctime)s - %(levelname)s - %(message)s",
-        # format="%(message)s",
     )
 
     if not queries:

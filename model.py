@@ -8,34 +8,38 @@ from transformers import (
     BitsAndBytesConfig,
     AutoModelForCausalLM,
 )
-from config import model_id, use_4bit_quantization
+from config import MODEL_ID, USE_4BIT_QUANTIZATION
 
 load_dotenv()
-hf_token = os.getenv("HF_TOKEN")
-if not hf_token:
-    hf_token_path = os.getenv("HF_TOKEN_PATH")
-    if hf_token_path and os.path.exists(hf_token_path):
-        with open(hf_token_path, "r") as f:
-            hf_token = f.read().strip()
+__HF_TOKEN = os.getenv("HF_TOKEN")
+if not __HF_TOKEN:
+    __HF_TOKEN_PATH = os.getenv("HF_TOKEN_PATH")
+    if __HF_TOKEN_PATH and os.path.exists(__HF_TOKEN_PATH):
+        with open(__HF_TOKEN_PATH, "r") as f:
+            __HF_TOKEN = f.read().strip()
 
 # Configuration for 4-bit quantization using bitsandbytes.
 # (Optional) can be passed to AutoModelForCausalLM.from_pretrained().
-bnb_config = BitsAndBytesConfig(
+__BNB_CONFIG = BitsAndBytesConfig(
     load_in_4bit=True,
     bnb_4bit_use_double_quant=True,
     bnb_4bit_quant_type="nf4",
     bnb_4bit_compute_dtype=torch.bfloat16,
 )
 
-device = "cuda" if torch.cuda.is_available() else "auto"
+DEVICE = "cuda" if torch.cuda.is_available() else "auto"
 
-model = AutoModelForCausalLM.from_pretrained(
-    model_id,
-    quantization_config=bnb_config if use_4bit_quantization else None,
-    device_map=device,
-    token=hf_token,
+MODEL = AutoModelForCausalLM.from_pretrained(
+    MODEL_ID,
+    quantization_config=__BNB_CONFIG if USE_4BIT_QUANTIZATION else None,
+    device_map=DEVICE,
+    token=__HF_TOKEN,
 )
 logging.debug("Model loaded successfully.")
 
-tokenizer = AutoTokenizer.from_pretrained(model_id)
+TOKENIZER = AutoTokenizer.from_pretrained(MODEL_ID)
 logging.debug("Tokenizer loaded successfully.")
+
+EMBED_DEVICE = (
+    "cuda" if torch.cuda.is_available() else MODEL.model.embed_tokens.weight.device
+)

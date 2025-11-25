@@ -35,17 +35,14 @@ rag_system_prompt = """
     Hai a disposizione documenti relativi al catalogo della Biblioteca Pontaniana di Napoli.
     Usa la funzione "search_documents" una sola volta per cercare informazioni utili.
     Dopo aver usato "search_documents", rispondi immediatamente utilizzando le informazioni trovate.
-    Se non trovi informazioni rilevanti, rispondi con "Non lo so" e termina la risposta.
-    Non ripetere la ricerca e non fare ulteriori tentativi.
+    Se non hai trovato informazioni rilevanti, rispondi con "Non lo so" e termina la risposta.
 """.strip()
 
 # CAG configuration settings
 kv_cache_path = f"./kv_cache/kv_cache_{model_id.split('/')[1]}.pt"
 cag_system_prompt = """
-    Sei un assistente bibliotecario che risponde alle domande utilizzando le informazioni fornite dal contesto.
-    Il contesto contiene informazioni relative al catalogo della Biblioteca Pontaniana di Napoli.
+    Rispondi utilizzando le informazioni che ti sono fornite.
+    Se non sono sufficienti a rispondere, rispondi con "Non lo so" e termina la risposta.
 """.strip()
-cag_answer_instruction = """
-    Rispondi utilizzando le informazioni che ti sono state fornite nel contesto.
-    Se non sono presenti informazioni rilevanti, rispondi con "Non lo so".
+cag_answer_instructions = """
 """.strip()

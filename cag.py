@@ -5,7 +5,7 @@ from transformers.cache_utils import DynamicCache, DynamicLayer
 from model import model, tokenizer, device
 from config import (
     cag_system_prompt,
-    cag_answer_instruction,
+    cag_answer_instructions,
     max_new_tokens,
 )
 
@@ -23,7 +23,7 @@ def get_or_create_kv_cache(kv_cache_path) -> DynamicCache:
         prompt = __build_prompt(
             documents,
             cag_system_prompt,
-            cag_answer_instruction,
+            cag_answer_instructions,
         )
 
         kv = __preprocess_knowledge(
@@ -65,14 +65,16 @@ def clean_up(kv: DynamicCache, origin_len: int):
         )
 
 
-def __build_prompt(documents, system_prompt: str, answer_instruction: str) -> str:
+def __build_prompt(documents, system_prompt: str, answer_instructions: str) -> str:
     return f"""
     <|start_header_id|>system<|end_header_id|>
     {system_prompt.strip()}
     <|eot_id|>
-    <|start_header_id|>user<|end_header_id|>
+    <|start_header_id|>context<|end_header_id|>
     {str(documents).strip()}
-    {answer_instruction.strip()}
+    {answer_instructions.strip()}
+    <|eot_id|>
+    <|start_header_id|>user<|end_header_id|>
     """.strip()
 
 

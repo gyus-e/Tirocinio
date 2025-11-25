@@ -7,4 +7,5 @@ llama-index-core
 llama-index-llms-huggingface
 llama-index-embeddings-huggingface
 llama-index-vector-stores-chroma
+llama-index-readers-file
 sentencepiece

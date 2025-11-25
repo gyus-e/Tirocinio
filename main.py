@@ -14,7 +14,7 @@ async def test_rag(queries: list[str]):
     rag_total_time = 0.0
 
     for query in queries:
-        logging.info(f"Query:\n{query}\n")
+        logging.info(f"Query:\n{query}")
 
         start = time.perf_counter()
         try:
@@ -26,7 +26,7 @@ async def test_rag(queries: list[str]):
         except WorkflowRuntimeError as e:
             max_iterations_time = time.perf_counter()
             logging.warning(
-                f"Max iterations reached after {max_iterations_time - start} seconds.\nFalling back to QueryEngine."
+                f"Max iterations reached after {max_iterations_time - start} seconds. Falling back to QueryEngine."
             )
             rag_response = await query_engine.aquery(query)
         end = time.perf_counter()
@@ -34,8 +34,8 @@ async def test_rag(queries: list[str]):
         elapsed = end - start
         rag_total_time += elapsed
 
-        logging.info(f"RAG:\n{rag_response}\n")
-        logging.info(f"Time elapsed: {elapsed:.3f} seconds\n\n")
+        logging.info(f"RAG response:\n{rag_response}")
+        logging.info(f"Time elapsed: {elapsed:.3f} seconds\n")
 
     logging.info(
         f"RAG agent time for {len(queries)} queries: {rag_total_time:.3f}s, avg: {rag_total_time/len(queries):.3f}s\n\n"
@@ -54,7 +54,7 @@ def test_cag(queries: list[str]):
     cag_total_time = 0.0
 
     for query in queries:
-        logging.info(f"Query:\n{query}\n")
+        logging.info(f"Query:\n{query}")
 
         start = time.perf_counter()
         cag_response = run_cag(knowledge_cache, query)
@@ -64,8 +64,8 @@ def test_cag(queries: list[str]):
         cag_total_time += elapsed
 
         clean_up(knowledge_cache, kv_len)
-        logging.info(f"CAG:\n{cag_response}\n")
-        logging.info(f"Time elapsed: {elapsed:.3f} seconds\n\n")
+        logging.info(f"CAG response:\n{cag_response}")
+        logging.info(f"Time elapsed: {elapsed:.3f} seconds\n")
 
     logging.info(
         f"CAG time for {len(queries)} queries: {cag_total_time:.3f}s, avg: {cag_total_time/len(queries):.3f}s\n\n"
@@ -89,11 +89,11 @@ def log_config():
     generate_top_p: {config.generate_top_p}
     repetition_penalty: {config.repetition_penalty}
     
-    rag system prompt: {config.rag_system_prompt}
+    rag_system_prompt: {config.rag_system_prompt}
     
-    cag system prompt: {config.cag_system_prompt}
+    cag_system_prompt: {config.cag_system_prompt}
     
-    cag answer instruction: {config.cag_answer_instruction}
+    cag_answer_instructions: {config.cag_answer_instructions}
     """
     )
 

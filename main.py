@@ -24,7 +24,10 @@ async def test_rag(queries: list[str]):
                 max_iterations=config.max_iterations,
             )
         except WorkflowRuntimeError as e:
-            logging.warning(e, "Falling back to QueryEngine...")
+            max_iterations_time = time.perf_counter()
+            logging.warning(
+                f"Max iterations reached after {max_iterations_time - start} seconds.\nFalling back to QueryEngine."
+            )
             rag_response = await query_engine.aquery(query)
         end = time.perf_counter()
 

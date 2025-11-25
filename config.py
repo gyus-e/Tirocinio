@@ -9,14 +9,14 @@ max_new_tokens = 512
 documents_dir = "./documents"
 
 # RAG configuration settings
-embed_model_id = "BAAI/bge-m3"
+# embed_model_id = "BAAI/bge-m3"
 # embed_model_id = "sentence-transformers/all-MiniLM-L6-v2"
-# embed_model_id = "nickprock/sentence-bert-base-italian-uncased"
+embed_model_id = "nickprock/sentence-bert-base-italian-uncased"
 # embed_model_id = "nomic-ai/nomic-embed-text-v1.5"
 
 embed_model_path = "./models/embedding-model"
 
-max_iterations = 3
+max_iterations = 5
 
 chroma_host = "localhost"
 chroma_port = 8000

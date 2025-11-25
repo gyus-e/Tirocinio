@@ -42,10 +42,10 @@ rag_system_prompt = """
 # CAG configuration settings
 kv_cache_path = f"./kv_cache/kv_cache_{model_id.split('/')[1]}.pt"
 cag_system_prompt = """
-    Sei un assistente bibliotecario che risponde alle domande utilizzando le informazioni fornite dal contesto.\n
-    Il contesto contiene informazioni relative al catalogo della Biblioteca Pontaniana di Napoli.\n
+    Sei un assistente bibliotecario che risponde alle domande utilizzando le informazioni fornite dal contesto.
+    Il contesto contiene informazioni relative al catalogo della Biblioteca Pontaniana di Napoli.
 """.strip()
 cag_answer_instruction = """
-    Rispondi utilizzando le informazioni che ti sono state fornite nel contesto.\n
+    Rispondi utilizzando le informazioni che ti sono state fornite nel contesto.
     Se non sono presenti informazioni rilevanti, rispondi con "Non lo so".
 """.strip()

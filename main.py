@@ -106,6 +106,5 @@ if __name__ == "__main__":
     logging.info("================\t Beginning CAG tests... \t================")
     test_cag(queries)
 
-    logging.info(
-        "================\t Beginning RAG QueryEngine tests... \t================"
-    )
+    logging.info("================\t Beginning RAG tests... \t================")
+    asyncio.run(test_rag(queries))

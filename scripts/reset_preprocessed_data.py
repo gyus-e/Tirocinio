@@ -3,7 +3,7 @@ import chromadb
 
 chroma_host = "localhost"
 chroma_port = 8000
-kv_cache_path = "../kv_cache"
+kv_cache_path = "./kv_cache"
 
 db = chromadb.HttpClient(host=chroma_host, port=chroma_port)
 for collection in db.list_collections():
@@ -11,6 +11,7 @@ for collection in db.list_collections():
     db.delete_collection(name=collection.name)
 
 kv_cache_dir = "/".join(kv_cache_path.split("/")[:2])
+print(f"Clearing KV cache directory: {kv_cache_dir}")
 if os.path.exists(kv_cache_dir):
     for file in os.listdir(f"{kv_cache_dir}/"):
         print(f"Removing file: {kv_cache_dir}/{file}")

@@ -24,10 +24,10 @@ chroma_collection_name = f"{embed_model_id.split('/')[1]}_embeddings"
 
 chunk_size = 1024
 chunk_overlap = 256
-retrieve_top_k = 3
+retrieve_top_k = 5
 
-temperature = 0.1
-generate_top_k = 50
+temperature = 0.2
+generate_top_k = 40
 generate_top_p = 0.8
 repetition_penalty = 1.1
 

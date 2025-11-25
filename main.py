@@ -38,7 +38,7 @@ async def test_rag(queries: list[str]):
         logging.info(f"Time elapsed: {elapsed:.3f} seconds\n\n")
 
     logging.info(
-        f"RAG agent time for {len(queries)} queries: {rag_total_time:.3f}s, avg: {rag_total_time/len(queries):.3f}s"
+        f"RAG agent time for {len(queries)} queries: {rag_total_time:.3f}s, avg: {rag_total_time/len(queries):.3f}s\n\n"
     )
 
 
@@ -68,26 +68,34 @@ def test_cag(queries: list[str]):
         logging.info(f"Time elapsed: {elapsed:.3f} seconds\n\n")
 
     logging.info(
-        f"CAG time for {len(queries)} queries: {cag_total_time:.3f}s, avg: {cag_total_time/len(queries):.3f}s"
+        f"CAG time for {len(queries)} queries: {cag_total_time:.3f}s, avg: {cag_total_time/len(queries):.3f}s\n\n"
     )
 
 
 def log_config():
-    logging.info("Configuration:")
-    logging.info(f"model id: {config.model_id}")
-    logging.info(f"max new tokens: {config.max_new_tokens}")
-    logging.info(f"embed model id: {config.embed_model_id}")
-    logging.info(f"max iterations: {config.max_iterations}")
-    logging.info(f"chunk size: {config.chunk_size}")
-    logging.info(f"chunk_overlap: {config.chunk_overlap}")
-    logging.info(f"retrieve_top_k: {config.retrieve_top_k}")
-    logging.info(f"temperature: {config.temperature}")
-    logging.info(f"generate_top_k: {config.generate_top_k}")
-    logging.info(f"generate_top_p: {config.generate_top_p}")
-    logging.info(f"repetition_penalty: {config.repetition_penalty}")
-    logging.info(f"rag system prompt: {config.rag_system_prompt}")
-    logging.info(f"cag system prompt: {config.cag_system_prompt}")
-    logging.info(f"cag answer instruction: {config.cag_answer_instruction}")
+    logging.info(
+        f"""Configuration:
+    model_id: {config.model_id}
+    use_4bit_quantization: {config.use_4bit_quantization}
+    max_new_tokens: {config.max_new_tokens}
+    
+    embed_model_id: {config.embed_model_id}
+    max_iterations: {config.max_iterations}
+    chunk_size: {config.chunk_size}
+    chunk_overlap: {config.chunk_overlap}
+    retrieve_top_k: {config.retrieve_top_k}
+    temperature: {config.temperature}
+    generate_top_k: {config.generate_top_k}
+    generate_top_p: {config.generate_top_p}
+    repetition_penalty: {config.repetition_penalty}
+    
+    rag system prompt: {config.rag_system_prompt}
+    
+    cag system prompt: {config.cag_system_prompt}
+    
+    cag answer instruction: {config.cag_answer_instruction}
+    """
+    )
 
 
 if __name__ == "__main__":
@@ -96,8 +104,8 @@ if __name__ == "__main__":
     logging.basicConfig(
         filename=f"./logs/{config.model_id.split('/')[1]}-{time.strftime("%Y-%m-%d--%H-%M-%S")}.log",
         level=logging.INFO,
-        # format="%(asctime)s - %(levelname)s - %(message)s",
-        format="%(message)s",
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        # format="%(message)s",
     )
 
     if not queries:

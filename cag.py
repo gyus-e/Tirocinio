@@ -68,13 +68,11 @@ def clean_up(kv: DynamicCache, origin_len: int):
 def __build_prompt(documents, system_prompt: str, answer_instruction: str) -> str:
     return f"""
     <|start_header_id|>system<|end_header_id|>
-    {system_prompt.strip()}\n
+    {system_prompt.strip()}
     <|eot_id|>
-    <|start_header_id|>user<|end_header_id|>\n
-    Contesto:\n
-    {str(documents).strip()}\n
-    <|eot_id|>\n
-    {answer_instruction.strip()}\n
+    <|start_header_id|>user<|end_header_id|>
+    {str(documents).strip()}
+    {answer_instruction.strip()}
     """.strip()
 
 

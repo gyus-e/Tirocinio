@@ -8,7 +8,7 @@ from transformers import (
     BitsAndBytesConfig,
     AutoModelForCausalLM,
 )
-from config import model_id
+from config import model_id, use_4bit_quantization
 
 load_dotenv()
 hf_token = os.getenv("HF_TOKEN")
@@ -31,7 +31,7 @@ device = "cuda" if torch.cuda.is_available() else "auto"
 
 model = AutoModelForCausalLM.from_pretrained(
     model_id,
-    quantization_config=bnb_config,
+    quantization_config=bnb_config if use_4bit_quantization else None,
     device_map=device,
     token=hf_token,
 )

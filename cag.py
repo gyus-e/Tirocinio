@@ -26,11 +26,13 @@ def get_or_create_kv_cache(kv_cache_path) -> DynamicCache:
             cag_answer_instruction,
         )
 
-        kv = __prepare_kvcache(
+        kv = __preprocess_knowledge(
             model,
             tokenizer,
             prompt,
         )
+        logging.debug("CAG Knowledge processed")
+
         torch.save(kv, kv_cache_path)
         logging.debug("KV Cache created and saved to disk.")
 
@@ -63,19 +65,17 @@ def clean_up(kv: DynamicCache, origin_len: int):
         )
 
 
-def __build_prompt(documents, system_prompt: str, answer_instruction: str = "") -> str:
+def __build_prompt(documents, system_prompt: str, answer_instruction: str) -> str:
     return f"""
     <|start_header_id|>system<|end_header_id|>
-    {system_prompt}
+    {system_prompt.strip()}\n
     <|eot_id|>
-    <|start_header_id|>user<|end_header_id|>
-    Contesto:
-    ------------------------------------------------
-    {documents}
-    ------------------------------------------------
-    {answer_instruction}
-    Domanda:
-    """
+    <|start_header_id|>user<|end_header_id|>\n
+    Contesto:\n
+    {str(documents).strip()}\n
+    <|eot_id|>\n
+    {answer_instruction.strip()}\n
+    """.strip()
 
 
 def __preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
@@ -108,32 +108,6 @@ def __preprocess_knowledge(model, tokenizer, prompt: str) -> DynamicCache:
     return outputs.past_key_values
 
 
-def __prepare_kvcache(
-    model,
-    tokenizer,
-    prompt: str,
-) -> DynamicCache:
-    """
-    Prepares kv cache for CAG by constructing a prompt with the content of the documents.
-    The structure of this prompt, including any specific instructions or special tokens,
-    is crucial and depends heavily on the chosen model.
-    The size of the documents is also an important factor to consider,
-    as it can overflow the context window of the model or saturate the memory of the machine that runs the program.
-    Args:
-        model: HuggingFace model with automatic device mapping
-        tokenizer: HuggingFace tokenizer
-        prompt: The knowledge to preprocess, which is basically a prompt
-
-    Returns:
-        DynamicCache: KV Cache
-    """
-
-    kv = __preprocess_knowledge(model, tokenizer, prompt)
-
-    logging.debug("CAG Knowledge processed")
-    return kv
-
-
 def __generate(
     model,
     input_ids: torch.Tensor,
@@ -161,7 +135,6 @@ def __generate(
     next_token = input_ids
 
     with torch.no_grad():
-        # idea per evitare di pulire la kv: usare una copia temporanea (ma questo credo sia un riferimento)
         temp_kv = kv
 
         eos_ids = (

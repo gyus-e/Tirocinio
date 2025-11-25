@@ -1,19 +1,22 @@
-__mymodelidx = 0
-__test_models = [
-    "meta-llama/Llama-3.2-3B-Instruct",
-    "microsoft/Phi-3-mini-4k-instruct",
-    "google/gemma-3-4b-it",
-    "mistralai/Mistral-7B-Instruct-v0.2",
-]
-
-documents_dir = "./documents"
-model_id = __test_models[__mymodelidx]
+model_id = "meta-llama/Llama-3.2-3B-Instruct"
+# model_id = "microsoft/Phi-3-mini-4k-instruct"
+# model_id = "google/gemma-3-4b-it"
+# model_id = "mistralai/Mistral-7B-Instruct-v0.2"
+# model_id = "mistralai/Mistral-7B-Instruct-v0.3"
+use_4bit_quantization = True
 max_new_tokens = 512
 
+documents_dir = "./documents"
+
 # RAG configuration settings
-use_rag_agent = False
-embed_model_id = "nickprock/sentence-bert-base-italian-uncased"
+embed_model_id = "BAAI/bge-m3"
+# embed_model_id = "sentence-transformers/all-MiniLM-L6-v2"
+# embed_model_id = "nickprock/sentence-bert-base-italian-uncased"
+# embed_model_id = "nomic-ai/nomic-embed-text-v1.5"
+
 embed_model_path = "./models/embedding-model"
+
+max_iterations = 3
 
 chroma_host = "localhost"
 chroma_port = 8000
@@ -29,17 +32,20 @@ generate_top_p = 0.8
 repetition_penalty = 1.1
 
 rag_system_prompt = """
-    Hai a disposizione documenti con informazioni relative al catalogo della Biblioteca Pontaniana di Napoli.
-    Usa una sola volta la funzione "search_documents" per trovare informazioni utili a rispondere all'utente, poi rispondi utilizzando le informazioni trovate.
-    Se non trovi informazioni rilevanti, rispondi con "Non lo so".
-"""
+    Hai a disposizione documenti relativi al catalogo della Biblioteca Pontaniana di Napoli.
+    Usa la funzione "search_documents" una sola volta per cercare informazioni utili.
+    Dopo aver usato "search_documents", rispondi immediatamente utilizzando le informazioni trovate.
+    Se non trovi informazioni rilevanti, rispondi con "Non lo so" e termina la risposta.
+    Non ripetere la ricerca e non fare ulteriori tentativi.
+""".strip()
 
 # CAG configuration settings
 kv_cache_path = f"./kv_cache/kv_cache_{model_id.split('/')[1]}.pt"
 cag_system_prompt = """
-    Hai a disposizione informazioni relative al catalogo della Biblioteca Pontaniana di Napoli.
-"""
+    Sei un assistente bibliotecario che risponde alle domande utilizzando le informazioni fornite dal contesto.\n
+    Il contesto contiene informazioni relative al catalogo della Biblioteca Pontaniana di Napoli.\n
+""".strip()
 cag_answer_instruction = """
-    Rispondi utilizzando le informazioni presenti nel contesto fornito.
-    Se non trovi informazioni rilevanti, rispondi con "Non lo so".
-"""
+    Rispondi utilizzando le informazioni che ti sono state fornite nel contesto.\n
+    Se non sono presenti informazioni rilevanti, rispondi con "Non lo so".
+""".strip()

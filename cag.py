@@ -45,4 +45,4 @@ def cag_query(query: str) -> str:
         MAX_NEW_TOKENS,
     )
     clean_up(__KV, __KV_LEN)
-    return str(response)
+    return response

@@ -34,7 +34,7 @@ async def test_rag(queries: list[str]):
         elapsed = end - start
         rag_total_time += elapsed
 
-        logging.info(f"RAG response:\n{rag_response}")
+        logging.info(f"RAG response:\n{str(rag_response).strip()}")
         logging.info(f"Time elapsed: {elapsed:.3f} seconds\n")
 
     logging.info(
@@ -60,7 +60,7 @@ def test_cag(queries: list[str]):
         elapsed = end - start
         cag_total_time += elapsed
 
-        logging.info(f"CAG response:\n{cag_response}")
+        logging.info(f"CAG response:\n{cag_response.strip()}")
         logging.info(f"Time elapsed: {elapsed:.3f} seconds\n")
 
     logging.info(
@@ -107,8 +107,8 @@ if __name__ == "__main__":
 
     log_config()
 
-    logging.info("================\t Beginning CAG tests... \t================")
+    logging.info("\n================\t Beginning CAG tests... \t================")
     test_cag(queries)
 
-    logging.info("================\t Beginning RAG tests... \t================")
+    logging.info("\n================\t Beginning RAG tests... \t================")
     asyncio.run(test_rag(queries))

@@ -6,4 +6,3 @@ models
 kv_cache
 chroma
 !chroma/config.yaml
-logs

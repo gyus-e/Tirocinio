@@ -1,0 +1,76 @@
+"2025-11-26 00:51:24,359 - INFO - RAG response:
+Non posso decifrare il contenuto del messaggio.
+2025-11-26 00:51:24,359 - INFO - Time elapsed: 50.753 seconds";"2025-11-26 00:47:38,967 - INFO - CAG response:
+    I due incunaboli che sono stati pubblicati a Venezia sono stati pubblicati nel 1496 e nel 1498. Il primo è il De antiquorum gestis fabulosis libri I-VI di Diodoro Siculo, e il secondo è De orbibus libri Quattuor di Achillini Alessandro.
+2025-11-26 00:47:38,968 - INFO - Time elapsed: 11.742 seconds"
+"2025-11-26 00:52:26,122 - INFO - RAG response:
+Sembra che il messaggio 4B1 possa rappresentare l'identificatore di un documento o di un'opera, ma non posso fornire una descrizione dettagliata senza ulteriori informazioni. Potresti fornirmi più contesto o spiegarmi cosa si riferisce esattamente?
+2025-11-26 00:52:26,122 - INFO - Time elapsed: 61.762 seconds";"2025-11-26 00:48:40,374 - INFO - CAG response:
+L'incunabolo di Caracciolo Roberto (4B1) è un'opera cartacea di grandi dimensioni, specificamente un incunabolo cartaceo. Ecco le sue caratteristiche fisiche e lo stato di conservazione:
+- Dimensioni: 4° (mm 335 x 236)
+- Anno di pubblicazione: 1485
+- Pagine: 64
+- Size: mm 335 x 236
+- Dettagli: L'incunabolo è stato pubblicato in Venezia ad opera di Thomaso de Alexandria nel 1485.
+- Stato di conservazione: La coperta è stata restaurata. Sparsi fori da insetti. Solo nei casi più evidenti interventi di restauro con carta giapponese. Alla c. 42v si legge un strappo nella parte inferiore della colonna sinistra.
+- Decorazione: Spazi capitali vuoti senza lettere guida.
+- Location: 4B1
+- Autore: Caracciolo Roberto
+- Titolo: NAPOLI, ACCADEMIA PONTANIANA, 4B1
+- Anno di pubblicazione: 1485
+- Pagine: 64
+- Size: mm 335 x 236
+- Dettagli: L'incunabolo è stato pubblicato in Venezia ad opera di Thomaso de Alexandria nel 1485.
+- Stato di conservazione: La coperta è stata restaurata. Sparsi fori da insetti. Solo nei casi più evidenti interventi di restauro con carta giapponese. Alla c. 42v si legge un strappo nella parte inferiore della colonna sinistra.
+- Decorazione: Spazi capitali vuoti senza lettere guida.
+- Location: 4B1
+- Autore: Caracciolo Roberto
+- Titolo: NAPOLI, ACCADEMIA PONTANIANA, 4B1
+- Anno di pubblicazione: 1485
+- Pagine: 64
+- Size: mm 335 x 236
+- Dettagli: L'incunabolo è stato pubblicato in Venezia ad opera di Thomaso de Alexandria nel 1485.
+- Stato di conservazione: La coperta è stata restaurata. Sparsi for
+2025-11-26 00:48:40,374 - INFO - Time elapsed: 61.406 seconds"
+"2025-11-26 00:57:04,433 - INFO - RAG response:
+Gli incunaboli 4B3 e 4C2 hanno diverse caratteristiche, come l'autore, l'anno di pubblicazione e le dimensioni, ma non tutte le informazioni sono disponibili per entrambi gli incunaboli.
+2025-11-26 00:57:04,433 - INFO - Time elapsed: 278.311 seconds";"2025-11-26 00:49:15,526 - INFO - CAG response:
+    Le legature e le decorazioni degli incunaboli 4B3 e 4C2 sono diverse.
+    L'incunabolo 4B3 è legato con una legatura novecentesca in pergamena rigida su piatti di cartone eseguita da Achille Fiore, con un dorso liscio che porta i nomi degli autori secondari Catullo e Platone. 
+    L'incunabolo 4C2, invece, è legato con una legatura novecentesca in pergamena rigida su piatti di cartone eseguita da Achille Fiore, con un dorso liscio che porta i nomi dell'autore Eusebio di Cesarea e del titolo dell'opera Historia Ecclesiastica.
+    Le decorazioni degli incunaboli sono simili, con spazi capitali vuoti senza lettere guida, ma l'incunabolo 4B3 presenta anche una marca tipografica: Croce di Lorena su cerchio con triangolo inscritto con iniziale B.
+    In sintesi, le legature e le decorazioni degli incunaboli 4B3 e 4C2 sono diverse, ma entrambi sono legati con legature novecentesche e presentano decorazioni simili.
+2025-11-26 00:49:15,531 - INFO - Time elapsed: 35.152 seconds"
+"2025-11-26 01:02:13,302 - WARNING - Max iterations reached after 308.8681542999693 seconds. Falling back to QueryEngine.
+2025-11-26 01:03:27,094 - INFO - RAG response:
+ Le marche tipografiche presenti negli incunaboli della collezione sono:
+- Croce di Lorena su cerchio con triangolo inscritto con iniziale B.
+- Spazi capitali vuoti senza lettere guida.
+- Lettere guida con elementi decorativi vegetali e animati.
+- Timbro rotondo in inchiostro blu dell'Accademia Pontaniana e timbro del numero di inventario in inchiostro nero.
+- Cartulazione a stampa in cifre arabiche.
+- Etichette di legatura in pergamena rigida.
+- Iniziali in inchiostro nero di mediocre fattura.
+- Strappo nella parte inferiore della colonna sinistra.
+- Restauri con carta giapponese.
+- Elementi decorativi in inchiostro nero, come pianti e animali.
+- Manicule (spigolature) nelle carte 8v, 10r, 88v e 112v.
+- Timbro rotondo in inchiostro nero dell'Accademia Pontaniana.
+- Etichetta di legatura in pergamena rigida con nome dell'autore e titolo dell'opera.
+- Spazi capitali vuoti senza lettere guida aggiunti successivamente.
+- Iniziali in inchiostro nero aggiunti successivamente di mediocre fattura.
+- Carta di guardia anteriore e posteriore.
+- Dorso liscio con nome dell'autore e titolo dell'opera.
+- Restauri con carta giapponese nella carta 169v.
+- Elementi decorativi in inchiostro nero, come pianti e animali.
+- Timbro rotondo in inchiostro nero dell'Accademia Pontaniana.
+- Etichetta di legatura in pergamena rigida con nome dell'autore e titolo dell'opera.
+- Spazi capitali vuoti senza lettere guida aggiunti successivamente.
+- Iniziali in inchiostro nero aggiunti successivamente di mediocre fattura.
+- Carta di guardia anteriore e posteriore.
+- Dorso liscio con nome dell'autore e titolo dell'opera.
+- Restauri con carta giapponese nella
+2025-11-26 01:03:27,094 - INFO - Time elapsed: 382.660 seconds";"2025-11-26 00:50:16,846 - INFO - CAG response:
+    Le marche tipografiche presenti negli incunaboli della collezione rappresentano le sigle dei tipografi che hanno creato le opere. Queste sigle sono state utilizzate per identificare l'opera e il suo creatore. Le marche tipografiche sono state utilizzate per la prima volta durante la stampa, e sono state utilizzate per identificare l'opera e il suo creatore. Negli incunaboli della collezione, le marche tipografiche sono state utilizzate per identificare l'opera e il suo creatore, e sono state utilizzate per la prima volta durante la stampa. Le marche tipografiche rappresentano le sigle dei tipografi che hanno creato le opere, e sono state utilizzate per identificare l'opera e il suo creatore. Negli incunaboli della collezione, le marche tipografiche sono state utilizzate per identificare l'opera e il suo creatore, e sono state utilizzate per la prima volta durante la stampa. Le marche tipografiche rappresentano le sigle dei tipografi che hanno creato le opere, e sono state utilizzate per identificare l'opera e il suo creatore. Negli incunaboli della collezione, le marche tipografiche sono state utilizzate per identificare l'opera e il suo creatore, e sono state utilizzate per la prima volta durante la stampa. Le marche tipografiche rappresentano le sigle dei tipografi che hanno creato le opere, e sono state utilizzate per identificare l'opera e il suo creatore. Negli incunaboli della collezione, le marche tipografiche sono state utilizzate per identificare l'opera e il suo creatore, e sono state utilizzate per la prima volta durante la stampa. Le marche tipografiche rappresentano le sigle dei tipografi che hanno creato le opere, e sono state utilizzate per identificare l'opera e il suo creatore. Negli incunaboli della collezione, le marche tipografiche sono state utilizzate per identificare l'opera e il suo creatore, e sono
+2025-11-26 00:50:16,846 - INFO - Time elapsed: 61.315 seconds"
+2025-11-26 01:03:27,094 - INFO - RAG agent time for 4 queries: 773.487s, avg: 193.372s;2025-11-26 00:50:16,846 - INFO - CAG time for 4 queries: 169.615s, avg: 42.404s

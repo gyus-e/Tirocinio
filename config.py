@@ -1,8 +1,7 @@
-# MODEL_ID = "meta-llama/Llama-3.2-3B-Instruct"
+MODEL_ID = "meta-llama/Llama-3.2-3B-Instruct"
 # MODEL_ID = "microsoft/Phi-3.5-mini-instruct"
-# MODEL_ID = "google/gemma-3-4b-it"
-MODEL_ID = "Qwen/Qwen2.5-1.5B-Instruct"
-# MODEL_ID = "mistralai/Mistral-7B-Instruct-v0.3"
+# MODEL_ID = "google/gemma-3-1b-it"
+# MODEL_ID = "Qwen/Qwen2.5-1.5B-Instruct"
 
 USE_4BIT_QUANTIZATION = True
 MAX_NEW_TOKENS = 512

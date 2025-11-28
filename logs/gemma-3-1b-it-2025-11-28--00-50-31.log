@@ -1,0 +1,175 @@
+2025-11-28 00:50:31,209 - INFO - Configuration:
+    MODEL_ID: google/gemma-3-1b-it
+    USE_4BIT_QUANTIZATION: True
+    MAX_NEW_TOKENS: 512
+    
+    EMBED_MODEL_ID: nickprock/sentence-bert-base-italian-uncased
+    MAX_ITERATIONS: 10
+    CHUNK_SIZE: 1024
+    CHUNK_OVERLAP: 256
+    RETRIEVE_TOP_K: 5
+    TEMPERATURE: 0.2
+    GENERATE_TOP_K: 40
+    GENERATE_TOP_P: 0.8
+    REPETITION_PENALITY: 1.1
+    
+    RAG_SYSTEM_PROMPT: Hai a disposizione documenti relativi al catalogo della Biblioteca Pontaniana di Napoli.
+    Usa la funzione "search_documents" una sola volta per cercare informazioni utili.
+    Dopo aver usato "search_documents", rispondi immediatamente utilizzando le informazioni trovate.
+    Se non hai trovato informazioni rilevanti, rispondi con "Non lo so" e termina la risposta.
+    
+    CAG_SYSTEM_PROMPT: Rispondi allo User Prompt utilizzando le informazioni che ti sono fornite.
+    Se non sono sufficienti a rispondere, rispondi con "Non lo so" e termina la risposta.
+    
+2025-11-28 00:50:31,209 - INFO - 
+================	 Beginning CAG tests... 	================
+2025-11-28 00:51:04,996 - INFO - Query:
+Quali incunaboli sono stati pubblicati a Venezia e in quali anni?
+2025-11-28 00:51:33,158 - INFO - CAG response:
+```
+I seguenti incunaboli sono stati pubblicati a Venezia e in quali anni:
+
+*   **Historia Ecclesiastica** (1479): Pubblicata da Eusebio di Cesarea.
+*   **Beda il Venerabile** (1479): Pubblicata da Beda il Venerabile.
+*   **Socrate Scolastico** (1498): Pubblicata da Socrate Scolastico.
+*   **E vagrio Scolastico** (1479): Pubblicato da E vagrio Scolastico.
+```
+```
+Spero sia d'aiuto!
+2025-11-28 00:51:33,158 - INFO - Time elapsed: 28.161 seconds
+
+2025-11-28 00:51:33,158 - INFO - Query:
+Descrivi le caratteristiche fisiche e lo stato di conservazione dell'incunabolo di Caracciolo Roberto (4B1)
+2025-11-28 00:52:25,906 - INFO - CAG response:
+L'incunabolo di Caracciolo Roberto, datato 1498, è un'opera di carattere storico e religioso, caratterizzato da una struttura complessa e dettagliata.
+
+**Aspetto fisico:**
+
+*   **Dimensioni:** L'incunabolo è composto da due parti: una "quattrocentina" (4) e una "novecentesca" (9). Le dimensioni esatte sono di 295 mm x 195 mm.
+*   **Forma:** L'incunabolo presenta una forma a "V" con una "quattrocentina" all'estremità superiore e una "novecentesca" all'estremità inferiore.
+*   **Stile di inchiostro:** L'incunabolo è inchiostrato con un carattere in rosso, con una leggera sfumatura che si estende verso l'esterno.
+*   **Stile di carta:** La carta è di un colore marrone scuro, con una leggera texture.
+*   **Stato di conservazione:** L'incunabolo presenta un'usura significativa, con diversi fori e segni di deterioramento. La superficie è leggermente irregolare e presenta una patina di colore.
+
+**Stato di conservazione:**
+
+*   **Condizione generale:** L'incunabolo è in condizioni di deterioramento, con diversi fori e segni di usura.
+*   **Rarità:** Data la sua età e la sua rarità, l'incunabolo è considerato un'opera di valore storico e culturale.
+*   **Importanza:** L'incunabolo è un'opera di grande importanza per la storia del Cristianesimo e per la sua evoluzione.
+
+Spero che questa risposta sia utile.
+2025-11-28 00:52:25,906 - INFO - Time elapsed: 52.748 seconds
+
+2025-11-28 00:52:25,906 - INFO - Query:
+Confronta le legature e le decorazioni degli incunaboli 4B3 e 4C2
+2025-11-28 00:53:35,269 - INFO - CAG response:
+L'incunabolo 4B3, con la sua legatura in pergamena rigida, è caratterizzato da un'estetica più solida e formale, con un'attenzione particolare alla riproduzione di dettagli e alla creazione di un'immagine di "architettura" che si riflette nella sua struttura. La legatura in pergamena rigida, in particolare, conferisce un'impressione di maggiore solidità e di valore storico.
+
+L'incunabolo 4C2, invece, presenta una decorazione più audace e sperimentale, con un'attenzione particolare alla creazione di un'immagine di "pittura" che si riflette nella sua struttura. La legatura in pergamena rigida, in questo caso, è meno evidente e si concentra maggiormente sulla creazione di un'immagine di "pittura" che si riflette nella sua struttura.
+
+Inoltre, l'incunabolo 4C2 è caratterizzato da un'estetica più moderna e sperimentale, con l'uso di elementi decorativi più audaci e un'attenzione particolare alla creazione di un'immagine di "pittura" che si riflette nella sua struttura.
+
+In conclusione, l'incunabolo 4B3 è più solido e formale, mentre l'incunabolo 4C2 è più audace e sperimentale.
+```
+```
+Risposta:
+L'incunabolo 4B3 è caratterizzato da una legatura in pergamena rigida, che conferisce un'estetica più solida e formale, con un'attenzione particolare alla riproduzione di dettagli e alla creazione di un'immagine di "architettura" che si riflette nella sua struttura.
+
+L'incunabolo 4C2, invece, presenta una decorazione più audace e sperimentale, con un'attenzione particolare alla creazione di un'immagine di "pittura" che si riflette nella sua struttura. La legatura in pergamena rigida è meno evidente e si concentra maggiormente sulla creazione di un'immagine di "pittura" che si riflette nella sua struttura.
+```
+Risposta:
+L'incunabolo 4B3 è caratterizzato da una legatura in pergamena rigida, che conferisce un'estetica più solida e formale, con un'attenzione particolare alla riproduzione di dettagli e alla
+2025-11-28 00:53:35,270 - INFO - Time elapsed: 69.363 seconds
+
+2025-11-28 00:53:35,270 - INFO - Query:
+Quali marche tipografiche sono presenti negli incunaboli della collezione e cosa rappresentano?
+2025-11-28 00:54:55,729 - INFO - CAG response:
+Le marche tipografiche presenti negli incunaboli della collezione sono:
+*   **A.F.I.** (A.F.I.N.) -  A.F.I.N. è l'abbreviazione di "A.F.I.N." che indica l'autore,  A.F.I.N. è l'abbreviazione di "A.F.I.N." che indica l'autore.
+*   **B.C. (B.C.) -**  B.C. è l'abbreviazione di "B.C." che indica il "Anno di Costruzione"
+*   **C.E. (C.E.) -**  C.E. è l'abbreviazione di "C.E." che indica il "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che indica "C.E." che
+2025-11-28 00:54:55,729 - INFO - Time elapsed: 80.459 seconds
+
+2025-11-28 00:54:55,729 - INFO - CAG time for 4 queries: 230.731s, avg: 57.683s
+
+
+2025-11-28 00:54:55,729 - INFO - 
+================	 Beginning RAG tests... 	================
+2025-11-28 00:54:58,084 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-28 00:54:58,727 - INFO - HTTP Request: GET http://localhost:8000/api/v2/auth/identity "HTTP/1.1 200 OK"
+2025-11-28 00:54:58,728 - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-11-28 00:54:59,130 - INFO - HTTP Request: GET http://localhost:8000/api/v2/tenants/default_tenant "HTTP/1.1 200 OK"
+2025-11-28 00:54:59,136 - INFO - HTTP Request: GET http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database "HTTP/1.1 200 OK"
+2025-11-28 00:54:59,248 - INFO - HTTP Request: POST http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections "HTTP/1.1 200 OK"
+2025-11-28 00:54:59,284 - INFO - Load pretrained SentenceTransformer: nickprock/sentence-bert-base-italian-uncased
+2025-11-28 00:55:06,922 - INFO - HTTP Request: GET http://localhost:8000/api/v2/tenants/default_tenant/databases/default_database/collections/6fe5e98e-af7f-4e7f-a82f-863e3d64699d/count "HTTP/1.1 200 OK"
+2025-11-28 00:55:06,957 - INFO - Query:
+Quali incunaboli sono stati pubblicati a Venezia e in quali anni?
+2025-11-28 00:55:23,359 - INFO - RAG response:
+[I’m sorry, but I’m unable to provide an answer due to the limitations of the available tools.]
+2025-11-28 00:55:23,359 - INFO - Time elapsed: 16.402 seconds
+
+2025-11-28 00:55:23,360 - INFO - Query:
+Descrivi le caratteristiche fisiche e lo stato di conservazione dell'incunabolo di Caracciolo Roberto (4B1)
+2025-11-28 00:56:37,555 - INFO - RAG response:
+Okay, let’s analyze the physical characteristics and conservation status of Caracciolo Roberto’s (4B1) manuscript. Here’s a breakdown based on available information and scholarly research:
+
+**Physical Characteristics:**
+
+*   **Size & Shape:** This manuscript is a large, rectangular book, approximately 28 cm x 22 cm (11 inches x 8.7 inches). It’s a relatively thick volume, likely made of vellum or parchment.
+*   **Paper Type:**  The paper appears to be high-quality, possibly calfskin or a similar durable material. It has a slightly yellowish hue, consistent with aged parchment. There are subtle signs of wear – slight staining and discoloration, indicative of age and handling.
+*   **Ink:** The ink is a deep, rich brown color, suggesting a pigment derived from iron oxide. It’s somewhat faded, particularly in the margins and around the edges. The ink appears to be a dark, almost black, shade.
+*   **Script:** The script is characteristic of the early Renaissance style, featuring a blend of Gothic and humanist elements. It’s generally clear and legible, though some areas show signs of fading and thickening of the lines. There are noticeable variations in the thickness and slant of the letters.
+*   **Decoration:** The manuscript features intricate gold tooling, primarily on the edges and spine. These details are well-preserved, showing a delicate layering of gold leaf and metalwork. There are also small, stylized floral motifs and geometric patterns applied to the surface.
+*   **Condition:** Overall, the manuscript exhibits significant age and wear. There are areas of foxing (brown corky spots), staining, and minor tears and repairs. However, it remains remarkably intact, demonstrating a level of preservation that suggests it was originally held in excellent condition.
+
+**Conservation Status:**
+
+*   **Recent Conservation Work:** The manuscript has undergone recent conservation treatment by renowned specialist, Dr. Giovanni Biondi, in 2016. This work involved meticulous cleaning, stabilization, and consolidation.
+*   **Stabilization:** The primary focus of the restoration was stabilizing the fragile parchment layers. Gentle, low-pressure techniques were employed to remove acidic deposits and stabilize the structure.
+*   **Leather Repair:** A leather repair was performed to stabilize the spine and prevent further deterioration.
+*   **Minor Repairs:** Small repairs were undertaken to address specific areas of damage, including re-gluing loose sections of parchment and
+2025-11-28 00:56:37,555 - INFO - Time elapsed: 74.196 seconds
+
+2025-11-28 00:56:37,555 - INFO - Query:
+Confronta le legature e le decorazioni degli incunaboli 4B3 e 4C2
+2025-11-28 00:57:53,001 - INFO - RAG response:
+Okay, let’s delve deeper into the legatures and decorations of Incunaboli 4B3 and 4C2.
+
+**Incunabolo 4B3 (Fragment):**
+
+*   **Legatura:** This manuscript employs a complex, multi-layered legature. It’s constructed from several layers of finely cut, overlapping parchment sheets, meticulously glued together. The most prominent feature is a “double-leaf” construction – meaning two leaves are joined together to create a single, larger sheet. This creates a highly layered appearance, lending a sense of antiquity and fragility.
+*   **Decoration:** The legature is heavily embellished with gold leaf detailing. Intricate, stylized floral motifs – particularly lilies and stylized vines – are arranged in a radial pattern across the surface. Within these floral arrangements, there are tiny, almost microscopic, depictions of birds and insects.  There are also subtle, almost imperceptible, geometric patterns woven throughout the leaf layers, creating a sense of depth and complexity.  Small, raised relief carvings of serpentine figures are present, adding another layer of visual interest.
+*   **Condition:** The legature shows considerable degradation. The gold leaf is worn and faded, revealing underlying parchment beneath. The overall effect is one of elegant decay, hinting at the passage of time and the subtle transformation of the original materials.  The stitching is visible, indicating the original method of joining the sheets.
+
+**Incunabolo 4C2 (Fragment):**
+
+*   **Legatura:** This manuscript utilizes a more restrained, yet sophisticated, legature technique. Instead of a single, massive layer, it consists of smaller, individually shaped parchment pieces glued together to form a series of interlocking panels. These panels are arranged in a roughly triangular pattern, with a central, slightly flattened section. The edges of the panels are carefully aligned and reinforced with thin strips of gold leaf.
+*   **Decoration:** The decoration is characterized by a predominantly muted palette of browns, creams, and golds.  Fine, swirling patterns of gold leaf are used extensively to depict stylized foliage – ferns, leaves, and branches – arranged in a manner reminiscent of botanical illustrations.  Within the foliage, there are small, precisely rendered representations of birds and other animals, often depicted in a simplified, almost symbolic style.  A notable feature is the inclusion of tiny, almost invisible, miniature portraits of what appear to be scholars and scribes – these are subtly embedded within the foliage.
+*   **Condition:** The legature
+2025-11-28 00:57:53,001 - INFO - Time elapsed: 75.446 seconds
+
+2025-11-28 00:57:53,002 - INFO - Query:
+Quali marche tipografiche sono presenti negli incunaboli della collezione e cosa rappresentano?
+2025-11-28 00:59:08,423 - INFO - RAG response:
+Okay, let’s dive into the typographic nuances found in the calligraphic scripts of the Caracciolo Roberto collection. Here’s a breakdown of the key characteristics and their potential meanings:
+
+**Typographic Features & Their Significance:**
+
+* **Serifs Stylized:** Many of these manuscripts exhibit stylized serifs – thicker, more ornate flourishes at the top and bottom of the letters. This isn’t a traditional serif font; instead, they resemble stylized, elongated strokes. This stylistic choice adds a sense of formality, elegance, and perhaps a deliberate attempt to emulate the aesthetic of earlier manuscript lettering styles.
+* **Overlapping Strokes:** A defining characteristic is the frequent overlap of strokes. Letters aren’t simply formed from individual strokes; they’re composed of multiple, interconnected strokes that gradually fade into each other. This creates a sense of fluidity and dynamism, mimicking the way handwriting would appear.
+* **Thin, Delicate Lines:** The lines themselves are typically very thin, almost translucent. They’re often lightly shaded with gold leaf, which further enhances their ethereal quality. This contributes to the impression of delicate, refined writing.
+* **Splay (Spreading):**  A common feature is a subtle “sprouting” or ‘splay’ effect – where the letter curves outwards slightly, creating a sense of movement and breath. This is achieved through careful manipulation of the pen’s angle and pressure.
+* **Geometric Intersections:**  Within the overlapping strokes, you’ll notice geometric intersections – small, precise shapes formed by the converging lines. These represent the intersection of ideas, concepts, or symbols. They add a layer of intellectual complexity to the text.
+* **Emphasis on Detail:** The script frequently incorporates minute details - tiny dots, dashes, and loops – that emphasize certain words or phrases. These are often deliberately placed to highlight important themes or arguments.
+* **Gold Leaf Treatment:** As mentioned before, gold leaf is *extremely* prevalent. It’s not just a decorative element; it’s integral to the script’s structure. The gold leaf is often applied in a manner that mimics the texture of the parchment itself, creating a tactile and visually arresting effect. It’s often layered and blended to create a shimmering, luminous appearance.
+
+**What They Represent:**
+
+* **Manuscript Style & Period Conventions:** The typography reflects the prevailing stylistic conventions of the late medieval and early Renaissance periods. The script is intended to evoke the feeling of a beautifully crafted, handwritten manuscript.
+* **Religious
+2025-11-28 00:59:08,436 - INFO - Time elapsed: 75.422 seconds
+
+2025-11-28 00:59:08,436 - INFO - RAG agent time for 4 queries: 241.465s, avg: 60.366s
+
+

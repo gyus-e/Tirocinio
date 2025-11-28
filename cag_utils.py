@@ -42,28 +42,6 @@ def create_kv_cache(
     return kv
 
 
-def get_kv_cache(
-    kv_cache_path: str,
-    system_prompt: str = "",
-    documents=None,
-    model=None,
-    tokenizer=None,
-    embed_device=None,
-) -> DynamicCache:
-    """Load a KV Cache from the specified path or create it if it doesn't exist."""
-    try:
-        return load_kv_cache(kv_cache_path)
-    except FileNotFoundError:
-        return create_kv_cache(
-            kv_cache_path,
-            system_prompt,
-            documents,
-            model,
-            tokenizer,
-            embed_device,
-        )
-
-
 def get_kv_len(kv: DynamicCache) -> int:
     """Get the length of the KV Cache."""
     if len(kv) == 0:
